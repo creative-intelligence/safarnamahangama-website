@@ -39,7 +39,6 @@ export const Footer: React.FC = () => {
               <li><a href="#about" className="hover:text-emerald-400 transition-colors">About Usama Khursheed</a></li>
               <li><a href="#services" className="hover:text-emerald-400 transition-colors">Done-For-You Services</a></li>
               <li><a href="#process" className="hover:text-emerald-400 transition-colors">4-Step Production System</a></li>
-              <li><a href="#calculator" className="hover:text-emerald-400 transition-colors">Interactive ROI Calculator</a></li>
               <li><a href="#portfolio" className="hover:text-emerald-400 transition-colors">Track Record Case Studies</a></li>
               <li><a href="#pricing" className="hover:text-emerald-400 transition-colors">Pricing & Packages</a></li>
               <li><a href="#faq" className="hover:text-emerald-400 transition-colors">Monetization FAQ</a></li>

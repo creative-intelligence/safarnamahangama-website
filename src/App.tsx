@@ -7,7 +7,6 @@ import { AboutFounder } from './components/AboutFounder';
 import { GuaranteeBanner } from './components/GuaranteeBanner';
 import { ServicesSection } from './components/ServicesSection';
 import { ProcessSection } from './components/ProcessSection';
-import { RoiCalculator } from './components/RoiCalculator';
 import { PortfolioProof } from './components/PortfolioProof';
 import { PricingSection } from './components/PricingSection';
 import { FaqSection } from './components/FaqSection';
@@ -47,9 +46,6 @@ export function App() {
 
         {/* 7. 4-Stage Production System */}
         <ProcessSection />
-
-        {/* 8. Interactive ROI & Revenue Calculator */}
-        <RoiCalculator onOpenContact={handleOpenContact} />
 
         {/* 9. Client Case Studies & Proof Grid */}
         <PortfolioProof />
