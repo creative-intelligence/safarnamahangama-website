@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { BrandPreloader } from './components/BrandPreloader';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { YouTubeEngineVisualizer } from './components/YouTubeEngineVisualizer';
@@ -22,9 +21,6 @@ export function App() {
 
   return (
     <div className="min-h-screen bg-[#030C07] text-slate-100 selection:bg-emerald-500 selection:text-black font-sans">
-      {/* Custom Cyber Spark Wire Wipe Preloader */}
-      <BrandPreloader />
-
       {/* Header Navigation */}
       <Navbar onOpenContact={handleOpenContact} />
 
