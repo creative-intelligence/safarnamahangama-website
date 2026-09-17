@@ -19,7 +19,7 @@ export const siteConfig = {
   guarantee: {
     days: 90,
     subscribers: 1000,
-    text: "Reach 1,000+ Subscribers & Monetization Eligibility in 90 Days — Or We Manage & Produce 100% Free Until You Do."
+    text: "Reach 1,000+ Subscribers & Monetization Eligibility in 90 Days — Or We Continue Full Channel Management At Zero Additional Cost Until You Achieve It."
   },
 
   // Contact links
@@ -249,7 +249,7 @@ export const siteConfig = {
         "Custom Channel Branding & Art Setup",
         "Priority 24-48 Hour Turnaround",
         "Weekly Strategy Call with TubeScale Lead Strategists",
-        "90-Day Guarantee or We Work Free"
+        "90-Day Performance SLA Included"
       ],
       ctaText: "Build Your Empire",
       guaranteeNote: "100% DFY Hands-Off"
@@ -264,7 +264,7 @@ export const siteConfig = {
     },
     {
       question: "How does TubeScale's 90-Day Guarantee work?",
-      answer: "If your new channel does not reach 1,000+ subscribers and YouTube Monetization criteria within 90 days of launching with our production on our monthly plans, we continue creating videos and managing your channel 100% free of charge until it does. No fine print!"
+      answer: "If your new channel does not reach 1,000+ subscribers and YouTube Monetization criteria within 90 days of launching with our monthly plans, our team continues producing content and managing your channel at zero additional cost until you achieve eligibility."
     },
     {
       question: "Who owns the YouTube channel and content?",
