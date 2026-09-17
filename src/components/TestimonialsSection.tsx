@@ -11,6 +11,7 @@ interface CustomerVideoReview {
   tourTaken: string;
   reviewSnippet: string;
   videoThumbnail: string;
+  videoUrl: string;
   instagramUrl: string;
   duration: string;
   verified: boolean;
@@ -30,6 +31,7 @@ export const TestimonialsSection: React.FC = () => {
       tourTaken: '5-Day Hunza Family Expedition',
       reviewSnippet: 'Safarnama Hangama arranged the most memorable family trip to Karimabad and Attabad Lake! Everything from luxury transport to family resorts was top-notch.',
       videoThumbnail: '/images/safarnama/safarnama_29.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-traveling-over-the-mountains-in-a-helicopter-41246-large.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '0:45',
       verified: true
@@ -44,6 +46,7 @@ export const TestimonialsSection: React.FC = () => {
       tourTaken: '7-Day Skardu & Deosai Safari',
       reviewSnippet: 'Our 24-member corporate team spent 7 days exploring Deosai Plains, Cold Desert, and Shangrila with 4x4 Prado Jeeps. 100% recommended!',
       videoThumbnail: '/images/safarnama/safarnama_30.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-camper-van-driving-on-a-road-surrounded-by-trees-41484-large.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '1:12',
       verified: true
@@ -58,6 +61,7 @@ export const TestimonialsSection: React.FC = () => {
       tourTaken: '3-Day Swat & Kalam Retreat',
       reviewSnippet: 'As female travelers joining a group tour, safety was our top priority. SafarnamaEscort team treated us like family. Kalam and Malam Jabba were incredible!',
       videoThumbnail: '/images/safarnama/safarnama_31.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-winding-road-in-the-mountains-41243-large.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '0:58',
       verified: true
@@ -72,6 +76,7 @@ export const TestimonialsSection: React.FC = () => {
       tourTaken: 'Fairy Meadows & Nanga Parbat Trek',
       reviewSnippet: 'The trek up to Beyal Camp and Nanga Parbat base with Safar Nama was the best adventure ever! Unforgettable campfire nights under the Milky Way.',
       videoThumbnail: '/images/safarnama/safarnama_32.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-snowy-mountains-41245-large.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '1:05',
       verified: true
@@ -189,25 +194,15 @@ export const TestimonialsSection: React.FC = () => {
               </button>
 
               <div className="relative h-96 w-full bg-slate-950 overflow-hidden">
-                <img
-                  src={activeReviewVideo.videoThumbnail}
-                  alt={activeReviewVideo.author}
+                <video
+                  src={activeReviewVideo.videoUrl}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  poster={activeReviewVideo.videoThumbnail}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-slate-950/40 to-transparent flex flex-col items-center justify-center p-6 text-center">
-                  <a
-                    href={activeReviewVideo.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-4 bg-[#E5983A] text-slate-950 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition mb-3"
-                  >
-                    <Play className="w-8 h-8 fill-slate-950 ml-1" />
-                  </a>
-                  <span className="px-3 py-1 bg-slate-950/90 text-amber-300 text-xs font-black rounded-full border border-amber-500/40 mb-2">
-                    Click to Play Review Reel on Instagram
-                  </span>
-                  <span className="text-[11px] text-slate-300 font-bold">@safarnamahangama Official Channel</span>
-                </div>
               </div>
 
               <div className="p-6 bg-[#04070d]">

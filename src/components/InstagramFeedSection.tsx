@@ -1,47 +1,65 @@
-import React from 'react';
-import { Instagram, Heart, MessageCircle, ExternalLink, Play, Eye, Flame } from 'lucide-react';
+import React, { useState } from 'react';
+import { Instagram, Heart, MessageCircle, ExternalLink, Play, Eye, Flame, X, Volume2, Sparkles } from 'lucide-react';
+
+interface InstaReel {
+  id: string;
+  title: string;
+  image: string;
+  videoUrl: string;
+  views: string;
+  likes: string;
+  comments: number;
+  tag: string;
+  instagramUrl: string;
+}
 
 export const InstagramFeedSection: React.FC = () => {
-  const instaPosts = [
+  const [activeReel, setActiveReel] = useState<InstaReel | null>(null);
+
+  const instaPosts: InstaReel[] = [
     {
       id: 'post-1',
       title: 'Attabad Lake emerald waters boating with our 24-member Hunza group! 🚤✨',
       image: '/images/safarnama/safarnama_21.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-traveling-over-the-mountains-in-a-helicopter-41246-large.mp4',
       views: '345K Views',
       likes: '28.4k',
       comments: 1240,
       tag: '🔥 Top Viral Reel • Hunza Group',
-      url: 'https://www.instagram.com/safarnamahangama/'
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
     },
     {
       id: 'post-2',
       title: 'Stargazing & campfire musical night at Katpana Cold Desert Skardu 🌌🏕️',
       image: '/images/safarnama/safarnama_22.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-camper-van-driving-on-a-road-surrounded-by-trees-41484-large.mp4',
       views: '280K Views',
       likes: '22.1k',
       comments: 890,
       tag: '⭐ 280K Views • Skardu Safari',
-      url: 'https://www.instagram.com/safarnamahangama/'
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
     },
     {
       id: 'post-3',
       title: 'Riverside acoustic music & bonfire with our group squad in Kalam Swat 🎸🔥',
       image: '/images/safarnama/safarnama_23.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-winding-road-in-the-mountains-41243-large.mp4',
       views: '210K Views',
       likes: '18.6k',
       comments: 650,
       tag: '🎵 Group Vibes • Swat Valley',
-      url: 'https://www.instagram.com/safarnamahangama/'
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
     },
     {
       id: 'post-4',
       title: 'Group cable car ride & meadow trek up to Arang Kel Neelum Kashmir 🚠🌲',
       image: '/images/safarnama/safarnama_24.jpg',
+      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-snowy-mountains-41245-large.mp4',
       views: '195K Views',
       likes: '16.9k',
       comments: 540,
       tag: '🌿 Group Retreat • Kashmir',
-      url: 'https://www.instagram.com/safarnamahangama/'
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
     }
   ];
 
@@ -60,7 +78,7 @@ export const InstagramFeedSection: React.FC = () => {
               Live from Our <span className="text-[#E5983A]">Instagram Page</span>
             </h2>
             <p className="mt-2 text-slate-400 text-xs sm:text-sm max-w-lg">
-              Explore recent tour reels, traveler stories, and group trip updates straight from our official Instagram feed (@safarnamahangama).
+              Watch recent tour reels and group trip updates directly here without leaving the site!
             </p>
           </div>
 
@@ -71,7 +89,7 @@ export const InstagramFeedSection: React.FC = () => {
             className="flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-2xl shadow-xl shadow-amber-950 transition hover:scale-105 self-start md:self-auto"
           >
             <Instagram className="w-4 h-4 text-slate-950" />
-            <span>Follow @safarnamahangama on Instagram</span>
+            <span>Follow @safarnamahangama</span>
             <ExternalLink className="w-3.5 h-3.5 text-slate-950" />
           </a>
         </div>
@@ -79,12 +97,10 @@ export const InstagramFeedSection: React.FC = () => {
         {/* Instagram Feed Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {instaPosts.map((post) => (
-            <a
+            <div
               key={post.id}
-              href={post.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-panel-card rounded-2xl overflow-hidden group border border-slate-800 hover:border-[#E5983A]/50 transition-all duration-300 flex flex-col"
+              onClick={() => setActiveReel(post)}
+              className="glass-panel-card rounded-2xl overflow-hidden group border border-slate-800 hover:border-[#E5983A]/50 transition-all duration-300 flex flex-col cursor-pointer"
             >
               <div className="relative h-80 overflow-hidden bg-slate-900">
                 <img
@@ -106,14 +122,14 @@ export const InstagramFeedSection: React.FC = () => {
                   </span>
                   <span className="px-2 py-0.5 bg-rose-500 text-white text-[9px] font-black rounded-full flex items-center gap-1">
                     <Flame className="w-3 h-3" />
-                    Reel
+                    Play Reel
                   </span>
                 </div>
 
                 {/* Play Icon & View Count Badge Overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
-                  <div className="w-12 h-12 rounded-full bg-[#E5983A] text-slate-950 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                    <Play className="w-5 h-5 fill-slate-950 ml-0.5" />
+                  <div className="w-14 h-14 rounded-full bg-[#E5983A] text-slate-950 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                    <Play className="w-6 h-6 fill-slate-950 ml-0.5" />
                   </div>
                   <span className="mt-2 px-3 py-1 bg-slate-950/90 text-amber-300 text-[10px] font-black rounded-full border border-amber-500/30 flex items-center gap-1">
                     <Eye className="w-3 h-3" />
@@ -138,9 +154,64 @@ export const InstagramFeedSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
+
+        {/* In-App Inline Playable Video Modal */}
+        {activeReel && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md animate-in fade-in">
+            <div className="relative max-w-md w-full bg-[#04070d] border border-slate-700 rounded-3xl overflow-hidden shadow-2xl">
+              <button
+                onClick={() => setActiveReel(null)}
+                className="absolute top-4 right-4 z-20 p-3 bg-slate-950/90 text-white rounded-full border border-slate-700 hover:bg-slate-950 shadow-xl"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="relative h-[480px] w-full bg-slate-950">
+                <video
+                  src={activeReel.videoUrl}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  poster={activeReel.image}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div className="p-5 bg-[#04070d] border-t border-slate-800">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="px-3 py-1 bg-[#E5983A] text-slate-950 text-xs font-black rounded-full flex items-center gap-1">
+                    <Instagram className="w-3.5 h-3.5" />
+                    @safarnamahangama
+                  </span>
+                  <span className="text-xs text-amber-300 font-bold">{activeReel.views}</span>
+                </div>
+                <h3 className="text-sm font-bold text-white">{activeReel.title}</h3>
+                
+                <div className="mt-4 flex items-center justify-between gap-3">
+                  <a
+                    href={activeReel.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 bg-slate-900 hover:bg-slate-800 text-slate-300 font-bold text-xs rounded-xl border border-slate-800 flex items-center justify-center gap-2 transition"
+                  >
+                    <span>Open on Instagram</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                  <button
+                    onClick={() => setActiveReel(null)}
+                    className="py-2.5 px-4 bg-[#E5983A] text-slate-950 font-black text-xs rounded-xl transition hover:scale-105"
+                  >
+                    Close Video
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
       </div>
     </section>
