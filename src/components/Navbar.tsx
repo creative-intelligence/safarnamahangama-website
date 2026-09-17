@@ -11,6 +11,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 60);
@@ -26,19 +27,39 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
       if (totalHeight > 0) {
         setScrollProgress(Math.min(100, (scrollY / totalHeight) * 100));
       }
+
+      // Scroll Spy: Determine active section as user scrolls up and down
+      const sectionIds = ['about', 'services', 'process', 'portfolio', 'pricing', 'faq'];
+      const scrollPosition = scrollY + 220;
+
+      let found = '';
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (element) {
+          const top = element.offsetTop;
+          const height = element.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            found = id;
+            break;
+          }
+        }
+      }
+
+      setActiveSection(found);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Process', href: '#process' },
-    { name: 'TrackRecord', href: '#portfolio' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Services', href: '#services', id: 'services' },
+    { name: 'Process', href: '#process', id: 'process' },
+    { name: 'TrackRecord', href: '#portfolio', id: 'portfolio' },
+    { name: 'Pricing', href: '#pricing', id: 'pricing' },
+    { name: 'FAQ', href: '#faq', id: 'faq' },
   ];
 
   return (
@@ -73,18 +94,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
           </div>
         </a>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex items-center gap-1 bg-[#081610]/80 border border-emerald-900/40 px-4 py-1.5 rounded-full backdrop-blur-md">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className="px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-300 hover:text-white hover:bg-emerald-500/20 hover:text-emerald-300 transition-all duration-200"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
+        {/* Desktop Links with Animated White Rounded Active Button */}
+        <ul className="hidden md:flex items-center gap-1.5 bg-[#081610]/80 border border-emerald-900/40 px-3 py-1.5 rounded-full backdrop-blur-md">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  className={`rounded-full text-xs font-bold transition-all duration-300 inline-block ${
+                    isActive
+                      ? 'bg-white text-black px-4 py-1.5 shadow-[0_0_18px_rgba(255,255,255,0.7)] scale-105 font-extrabold'
+                      : 'px-3.5 py-1.5 text-slate-300 hover:text-white hover:bg-emerald-500/20 hover:text-emerald-300 font-semibold'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* CTA Button */}
@@ -112,17 +140,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-[#081610] border-b border-emerald-900/50 px-4 pt-3 pb-6 space-y-3">
           <ul className="space-y-1 text-left">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-4 py-2.5 rounded-lg text-sm font-medium text-slate-200 hover:bg-emerald-600/20 hover:text-emerald-400 transition-colors"
-                >
-                  {link.name}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block px-4 py-2.5 rounded-xl text-sm transition-all duration-300 ${
+                      isActive
+                        ? 'bg-white text-black font-black shadow-lg'
+                        : 'font-medium text-slate-200 hover:bg-emerald-600/20 hover:text-emerald-400'
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
           <div className="pt-2">
             <button
