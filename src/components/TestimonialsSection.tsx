@@ -1,72 +1,242 @@
-import React from 'react';
-import { REVIEWS_DATA } from '../data/reviewsData';
-import { Star, Quote, CheckCircle2, Heart } from 'lucide-react';
+import React, { useState } from 'react';
+import { Star, Play, CheckCircle2, Heart, Instagram, ExternalLink, X, MessageSquareQuote } from 'lucide-react';
+
+interface CustomerVideoReview {
+  id: string;
+  author: string;
+  location: string;
+  avatar: string;
+  rating: number;
+  date: string;
+  tourTaken: string;
+  reviewSnippet: string;
+  videoThumbnail: string;
+  instagramUrl: string;
+  duration: string;
+  verified: boolean;
+}
 
 export const TestimonialsSection: React.FC = () => {
+  const [activeReviewVideo, setActiveReviewVideo] = useState<CustomerVideoReview | null>(null);
+
+  const videoReviews: CustomerVideoReview[] = [
+    {
+      id: 'video-1',
+      author: 'Hamza & Family',
+      location: 'Lahore',
+      avatar: '/images/safarnama/safarnama_29.jpg',
+      rating: 5,
+      date: 'August 2026',
+      tourTaken: '5-Day Hunza Family Expedition',
+      reviewSnippet: 'Safarnama Hangama arranged the most memorable family trip to Karimabad and Attabad Lake! Everything from luxury transport to family resorts was top-notch.',
+      videoThumbnail: '/images/safarnama/safarnama_29.jpg',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '0:45',
+      verified: true
+    },
+    {
+      id: 'video-2',
+      author: 'Dr. Zeeshan & Corporate Team',
+      location: 'Islamabad',
+      avatar: '/images/safarnama/safarnama_30.jpg',
+      rating: 5,
+      date: 'July 2026',
+      tourTaken: '7-Day Skardu & Deosai Safari',
+      reviewSnippet: 'Our 24-member corporate team spent 7 days exploring Deosai Plains, Cold Desert, and Shangrila with 4x4 Prado Jeeps. 100% recommended!',
+      videoThumbnail: '/images/safarnama/safarnama_30.jpg',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '1:12',
+      verified: true
+    },
+    {
+      id: 'video-3',
+      author: 'Fatima Noor & Friends',
+      location: 'Karachi',
+      avatar: '/images/safarnama/safarnama_31.jpg',
+      rating: 5,
+      date: 'September 2026',
+      tourTaken: '3-Day Swat & Kalam Retreat',
+      reviewSnippet: 'As female travelers joining a group tour, safety was our top priority. SafarnamaEscort team treated us like family. Kalam and Malam Jabba were incredible!',
+      videoThumbnail: '/images/safarnama/safarnama_31.jpg',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '0:58',
+      verified: true
+    },
+    {
+      id: 'video-4',
+      author: 'Usman Chaudhry & Squad',
+      location: 'Rawalpindi',
+      avatar: '/images/safarnama/safarnama_32.jpg',
+      rating: 5,
+      date: 'June 2026',
+      tourTaken: 'Fairy Meadows & Nanga Parbat Trek',
+      reviewSnippet: 'The trek up to Beyal Camp and Nanga Parbat base with Safar Nama was the best adventure ever! Unforgettable campfire nights under the Milky Way.',
+      videoThumbnail: '/images/safarnama/safarnama_32.jpg',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '1:05',
+      verified: true
+    }
+  ];
+
   return (
-    <section className="py-24 bg-slate-950 text-white relative">
+    <section id="reviews" className="py-24 bg-[#04070d] text-white relative border-t border-slate-800/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <Heart className="w-3.5 h-3.5 fill-amber-400" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/80 border border-[#E5983A]/40 text-[#E5983A] text-xs font-bold uppercase tracking-wider mb-3">
+            <Heart className="w-3.5 h-3.5 fill-[#E5983A]" />
             Loved by 5,000+ Explorers
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            Stories from Our <span className="text-emerald-400">Travelers</span>
+            Customer Video Reviews & <span className="text-[#E5983A]">Instagram Experience Reels</span>
           </h2>
-          <p className="mt-2 text-slate-400 text-xs sm:text-sm">
-            Read real feedback from families, couples, and solo travelers who explored Northern Pakistan with Safar Nama Hangama.
+          <p className="mt-3 text-slate-400 text-xs sm:text-sm">
+            Watch real video feedback and trip experiences shared by families, group squads, and couples who traveled with Safar Nama Hangama!
           </p>
         </div>
 
-        {/* Reviews Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {REVIEWS_DATA.map((rev) => (
+        {/* Video Reviews Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {videoReviews.map((rev) => (
             <div
               key={rev.id}
-              className="glass-panel-card p-6 rounded-3xl border border-slate-800 flex flex-col justify-between space-y-4"
+              onClick={() => setActiveReviewVideo(rev)}
+              className="glass-panel-card rounded-3xl overflow-hidden border border-slate-800 hover:border-[#E5983A]/50 transition duration-300 cursor-pointer flex flex-col group"
             >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-amber-400">
-                    {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400" />
-                    ))}
-                  </div>
-                  <span className="text-[11px] font-medium text-emerald-400 bg-emerald-950/80 px-2.5 py-1 rounded-full border border-emerald-500/30 flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3" />
+              {/* Video Reel Thumbnail Container */}
+              <div className="relative h-72 overflow-hidden bg-slate-900">
+                <img
+                  src={rev.videoThumbnail}
+                  alt={rev.author}
+                  className="w-full h-full object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+                  onError={(e: any) => {
+                    e.target.onerror = null;
+                    e.target.src = '/images/destinations/hunza_attabad.jpg';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/30 to-transparent" />
+
+                {/* Verified Badge */}
+                <div className="absolute top-3 left-3">
+                  <span className="px-2.5 py-1 bg-slate-950/90 backdrop-blur-md text-emerald-400 text-[10px] font-bold rounded-full border border-emerald-500/40 flex items-center gap-1 shadow-md">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-400" />
                     Verified Traveler
                   </span>
                 </div>
 
-                <Quote className="w-8 h-8 text-slate-700 mb-2 opacity-60" />
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed italic">
-                  "{rev.reviewText}"
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <img
-                    src={rev.avatar}
-                    alt={rev.author}
-                    className="w-10 h-10 rounded-full object-cover border border-slate-700"
-                  />
-                  <div>
-                    <h4 className="text-xs font-bold text-white">{rev.author}</h4>
-                    <span className="text-[10px] text-slate-400">{rev.location} • {rev.date}</span>
-                  </div>
+                {/* Duration Tag */}
+                <div className="absolute top-3 right-3">
+                  <span className="px-2 py-0.5 bg-slate-950/90 text-amber-300 text-[10px] font-black rounded-md border border-amber-500/30">
+                    {rev.duration}
+                  </span>
                 </div>
 
-                <span className="text-[10px] text-amber-400 font-semibold bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-800">
-                  {rev.tourTaken}
-                </span>
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+                  <div className="w-14 h-14 rounded-full bg-[#E5983A] text-slate-950 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                    <Play className="w-6 h-6 fill-slate-950 ml-0.5" />
+                  </div>
+                </div>
               </div>
+
+              {/* Review Info Card */}
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-3 bg-[#04070d]">
+                <div>
+                  <div className="flex items-center gap-1 text-[#E5983A] mb-2">
+                    {[...Array(rev.rating)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-[#E5983A]" />
+                    ))}
+                  </div>
+
+                  <p className="text-xs text-slate-300 italic line-clamp-3 leading-relaxed">
+                    "{rev.reviewSnippet}"
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between">
+                  <div>
+                    <h4 className="text-xs font-black text-white">{rev.author}</h4>
+                    <span className="text-[10px] text-slate-400 font-medium">{rev.location} • {rev.date}</span>
+                  </div>
+
+                  <a
+                    href={rev.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="p-2 bg-slate-900 hover:bg-[#E5983A] hover:text-slate-950 text-slate-400 rounded-full border border-slate-800 transition"
+                    title="Watch Review on Instagram"
+                  >
+                    <Instagram className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+
             </div>
           ))}
         </div>
+
+        {/* Video Reel Lightbox Modal */}
+        {activeReviewVideo && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md animate-in fade-in">
+            <div className="relative max-w-lg w-full bg-[#04070d] border border-slate-700 rounded-3xl overflow-hidden shadow-2xl text-white">
+              <button
+                onClick={() => setActiveReviewVideo(null)}
+                className="absolute top-4 right-4 z-10 p-3 bg-slate-950/80 text-white rounded-full border border-slate-700 hover:bg-slate-950"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="relative h-96 w-full bg-slate-950 overflow-hidden">
+                <img
+                  src={activeReviewVideo.videoThumbnail}
+                  alt={activeReviewVideo.author}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-slate-950/40 to-transparent flex flex-col items-center justify-center p-6 text-center">
+                  <a
+                    href={activeReviewVideo.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-4 bg-[#E5983A] text-slate-950 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition mb-3"
+                  >
+                    <Play className="w-8 h-8 fill-slate-950 ml-1" />
+                  </a>
+                  <span className="px-3 py-1 bg-slate-950/90 text-amber-300 text-xs font-black rounded-full border border-amber-500/40 mb-2">
+                    Click to Play Review Reel on Instagram
+                  </span>
+                  <span className="text-[11px] text-slate-300 font-bold">@safarnamahangama Official Channel</span>
+                </div>
+              </div>
+
+              <div className="p-6 bg-[#04070d]">
+                <div className="flex items-center gap-1 text-[#E5983A] mb-2">
+                  {[...Array(activeReviewVideo.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#E5983A]" />
+                  ))}
+                  <span className="text-xs font-extrabold text-white ml-2">{activeReviewVideo.tourTaken}</span>
+                </div>
+                <h3 className="text-lg font-black text-white">{activeReviewVideo.author} ({activeReviewVideo.location})</h3>
+                <p className="text-xs text-slate-300 mt-2 leading-relaxed italic">
+                  "{activeReviewVideo.reviewSnippet}"
+                </p>
+
+                <a
+                  href={activeReviewVideo.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 w-full py-3 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] text-slate-950 font-black text-xs rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] transition"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>Open Review Reel on Instagram (@safarnamahangama)</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+            </div>
+          </div>
+        )}
 
       </div>
     </section>

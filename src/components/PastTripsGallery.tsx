@@ -19,7 +19,7 @@ export const PastTripsGallery: React.FC = () => {
   const groupPhotos: GroupPhoto[] = [
     {
       id: 'photo-1',
-      title: 'Hunza Group Photo at Attabad Lake',
+      title: 'Hunza Group Expedition at Attabad Lake',
       location: 'Attabad Lake, Hunza',
       category: 'group',
       date: 'Autumn 2026',
@@ -35,11 +35,11 @@ export const PastTripsGallery: React.FC = () => {
       date: 'Summer 2026',
       travelersCount: 18,
       image: '/images/safarnama/safarnama_7.jpg',
-      caption: 'Riverside bonfire with live guitar acoustic music under the stars in Kalam.'
+      caption: 'Riverside bonfire with live acoustic guitar music under the stars in Kalam.'
     },
     {
       id: 'photo-3',
-      title: 'Romantic Sunset at Eagle’s Nest',
+      title: 'Romantic Couple Escape at Eagle’s Nest',
       location: 'Duikar, Hunza',
       category: 'honeymoon',
       date: 'Spring 2026',
@@ -79,7 +79,7 @@ export const PastTripsGallery: React.FC = () => {
     },
     {
       id: 'photo-7',
-      title: 'Katpana Cold Desert Stargazing Night',
+      title: 'Katpana Cold Desert Stargazing Group',
       location: 'Katpana Desert, Skardu',
       category: 'group',
       date: 'August 2026',
@@ -106,6 +106,36 @@ export const PastTripsGallery: React.FC = () => {
       travelersCount: 22,
       image: '/images/safarnama/safarnama_14.jpg',
       caption: 'Striking group memory right under the iconic Cathedral Passu Cones peak.'
+    },
+    {
+      id: 'photo-10',
+      title: 'Shangrila Resort Skardu Lake View Group',
+      location: 'Lower Kachura Lake',
+      category: 'group',
+      date: 'May 2026',
+      travelersCount: 26,
+      image: '/images/safarnama/safarnama_15.jpg',
+      caption: 'Iconic group photo at Shangrila Resort in front of red roof Pagodas.'
+    },
+    {
+      id: 'photo-11',
+      title: 'Malam Jabba Ski Resort Friends Squad',
+      location: 'Malam Jabba, Swat',
+      category: 'friends',
+      date: 'January 2026',
+      travelersCount: 15,
+      image: '/images/safarnama/safarnama_16.jpg',
+      caption: 'Winter snow games, zip-lining, and chairlift rides with our friends squad.'
+    },
+    {
+      id: 'photo-12',
+      title: 'Naran Saiful Malook Lake Group Tour',
+      location: 'Lake Saiful Malook',
+      category: 'family',
+      date: 'July 2026',
+      travelersCount: 20,
+      image: '/images/safarnama/safarnama_17.jpg',
+      caption: 'Unforgettable boat ride and glacier view at Lake Saiful Malook with family members.'
     }
   ];
 
@@ -168,7 +198,7 @@ export const PastTripsGallery: React.FC = () => {
                 <img
                   src={photo.image}
                   alt={photo.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover object-[center_25%] group-hover:scale-110 transition-transform duration-700"
                   onError={(e: any) => {
                     e.target.onerror = null;
                     e.target.src = '/images/destinations/hunza_attabad.jpg';
@@ -198,7 +228,7 @@ export const PastTripsGallery: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-5 flex-1 flex flex-col justify-between space-y-2">
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-2 bg-[#04070d]">
                 <div>
                   <div className="flex items-center justify-between text-[11px] text-slate-400 mb-1">
                     <span className="uppercase font-bold text-[#E5983A]">{photo.category} Trip</span>
@@ -216,28 +246,28 @@ export const PastTripsGallery: React.FC = () => {
           ))}
         </div>
 
-        {/* Lightbox Modal */}
+        {/* Lightbox Modal - Uncropped High-Res Viewer */}
         {selectedPhoto && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-md animate-in fade-in">
-            <div className="relative max-w-4xl w-full bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md animate-in fade-in">
+            <div className="relative max-w-4xl w-full bg-[#04070d] border border-slate-700 rounded-3xl overflow-hidden shadow-2xl">
               <button
                 onClick={() => setSelectedPhoto(null)}
                 className="absolute top-4 right-4 z-10 p-3 bg-slate-950/80 text-white rounded-full border border-slate-700 hover:bg-slate-950"
               >
                 <X className="w-5 h-5" />
               </button>
-              <div className="h-96 sm:h-[500px] w-full bg-slate-950">
+              <div className="max-h-[70vh] sm:max-h-[75vh] w-full bg-slate-950 flex items-center justify-center p-2">
                 <img
                   src={selectedPhoto.image}
                   alt={selectedPhoto.title}
-                  className="w-full h-full object-cover"
+                  className="max-h-full max-w-full object-contain rounded-xl"
                   onError={(e: any) => {
                     e.target.onerror = null;
                     e.target.src = '/images/destinations/hunza_attabad.jpg';
                   }}
                 />
               </div>
-              <div className="p-6 bg-slate-950">
+              <div className="p-6 bg-[#04070d] border-t border-slate-800">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="px-3 py-1 bg-[#E5983A] text-slate-950 text-xs font-black rounded-full">
                     {selectedPhoto.location}

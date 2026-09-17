@@ -47,73 +47,82 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({ onFilt
         </div>
 
         {/* Active Destination Card Details */}
-        <div className="glass-panel-card rounded-3xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-2xl">
+        <div className="glass-panel-card rounded-3xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-2xl min-h-[520px]">
           
-          {/* Image Side */}
-          <div className="lg:col-span-6 relative h-80 lg:h-auto min-h-[350px]">
+          {/* Image Side - Fixed Uniform Height & Aspect Ratio for All Destinations */}
+          <div className="lg:col-span-6 relative h-72 sm:h-80 lg:h-auto w-full overflow-hidden bg-slate-900">
             <img
               src={activeDest.image}
               alt={activeDest.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+              onError={(e: any) => {
+                e.target.onerror = null;
+                e.target.src = '/images/destinations/hunza_attabad.jpg';
+              }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-slate-950" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#04070d]" />
 
             <div className="absolute top-6 left-6">
-              <span className="px-3 py-1 bg-slate-950/80 backdrop-blur-md text-amber-400 text-xs font-bold rounded-full border border-amber-500/30">
+              <span className="px-3 py-1 bg-slate-950/90 backdrop-blur-md text-[#E5983A] text-xs font-black rounded-full border border-[#E5983A]/40 shadow-lg">
                 {activeDest.regionTag}
               </span>
             </div>
           </div>
 
-          {/* Details Content Side */}
-          <div className="lg:col-span-6 p-8 sm:p-12 flex flex-col justify-between space-y-6">
+          {/* Details Content Side - Fixed Height Container */}
+          <div className="lg:col-span-6 p-6 sm:p-10 flex flex-col justify-between space-y-6 bg-[#04070d]">
             <div>
-              <h3 className="text-3xl font-black text-white">{activeDest.name}</h3>
-              <p className="mt-3 text-slate-300 text-xs sm:text-sm leading-relaxed">
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <h3 className="text-2xl sm:text-3xl font-black text-white">{activeDest.name}</h3>
+                <span className="text-[11px] font-bold text-slate-400 bg-slate-900 px-2.5 py-1 rounded-full border border-slate-800">
+                  {activeDest.regionTag}
+                </span>
+              </div>
+              <p className="mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed min-h-[44px] line-clamp-2">
                 {activeDest.shortDesc}
               </p>
 
-              {/* Metrics Grid */}
-              <div className="grid grid-cols-2 gap-4 mt-6">
-                <div className="p-3.5 bg-slate-900/80 rounded-2xl border border-slate-800">
-                  <div className="flex items-center gap-2 text-emerald-400 mb-1">
-                    <Mountain className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase text-slate-400">Altitude</span>
+              {/* Metrics Grid - Fixed Uniform Sizing */}
+              <div className="grid grid-cols-2 gap-3 mt-5">
+                <div className="p-3 bg-slate-900/90 rounded-2xl border border-slate-800 flex flex-col justify-center">
+                  <div className="flex items-center gap-1.5 text-[#E5983A] mb-1">
+                    <Mountain className="w-3.5 h-3.5" />
+                    <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">Altitude</span>
                   </div>
                   <span className="text-xs font-black text-white">{activeDest.altitude}</span>
                 </div>
 
-                <div className="p-3.5 bg-slate-900/80 rounded-2xl border border-slate-800">
-                  <div className="flex items-center gap-2 text-amber-400 mb-1">
-                    <Calendar className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase text-slate-400">Best Season</span>
+                <div className="p-3 bg-slate-900/90 rounded-2xl border border-slate-800 flex flex-col justify-center">
+                  <div className="flex items-center gap-1.5 text-amber-400 mb-1">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">Best Season</span>
                   </div>
                   <span className="text-xs font-black text-white">{activeDest.bestMonths}</span>
                 </div>
 
-                <div className="p-3.5 bg-slate-900/80 rounded-2xl border border-slate-800">
-                  <div className="flex items-center gap-2 text-cyan-400 mb-1">
-                    <Thermometer className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase text-slate-400">Temperature</span>
+                <div className="p-3 bg-slate-900/90 rounded-2xl border border-slate-800 flex flex-col justify-center">
+                  <div className="flex items-center gap-1.5 text-cyan-400 mb-1">
+                    <Thermometer className="w-3.5 h-3.5" />
+                    <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">Temperature</span>
                   </div>
                   <span className="text-xs font-black text-white">{activeDest.temperature}</span>
                 </div>
 
-                <div className="p-3.5 bg-slate-900/80 rounded-2xl border border-slate-800">
-                  <div className="flex items-center gap-2 text-indigo-400 mb-1">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-[11px] font-bold uppercase text-slate-400">From Islamabad</span>
+                <div className="p-3 bg-slate-900/90 rounded-2xl border border-slate-800 flex flex-col justify-center">
+                  <div className="flex items-center gap-1.5 text-indigo-400 mb-1">
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">From Islamabad</span>
                   </div>
                   <span className="text-xs font-black text-white">{activeDest.distanceFromIslamabad}</span>
                 </div>
               </div>
 
               {/* Top Attractions Tags */}
-              <div className="mt-6">
-                <span className="text-xs font-bold text-slate-400 block mb-2">Key Attractions to Visit:</span>
-                <div className="flex flex-wrap gap-2">
+              <div className="mt-5">
+                <span className="text-[11px] font-extrabold text-slate-400 block mb-2 uppercase tracking-wider">Key Attractions to Visit:</span>
+                <div className="flex flex-wrap gap-1.5 max-h-[72px] overflow-y-auto scrollbar-none">
                   {activeDest.topAttractions.map((spot, i) => (
-                    <span key={i} className="px-3 py-1 bg-slate-900 text-emerald-300 text-[11px] font-semibold rounded-lg border border-slate-800">
+                    <span key={i} className="px-2.5 py-1 bg-slate-900 text-amber-300 text-[11px] font-bold rounded-lg border border-slate-800 flex items-center gap-1">
                       ✨ {spot}
                     </span>
                   ))}
@@ -122,17 +131,17 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({ onFilt
             </div>
 
             {/* Filter Tours Button */}
-            <div className="pt-4 border-t border-slate-800/80">
+            <div className="pt-4 border-t border-slate-800">
               <button
                 onClick={() => {
                   onFilterByRegion(activeDest.id);
                   const el = document.getElementById('tours');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="w-full py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 text-white font-extrabold text-xs rounded-xl shadow-lg flex items-center justify-center gap-2 transition hover:scale-[1.01]"
+                className="w-full py-3.5 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-xl shadow-lg flex items-center justify-center gap-2 transition hover:scale-[1.01]"
               >
                 <span>View All {activeDest.name} Packages</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 text-slate-950" />
               </button>
             </div>
 

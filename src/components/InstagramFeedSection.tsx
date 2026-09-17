@@ -1,42 +1,46 @@
 import React from 'react';
-import { Instagram, Heart, MessageCircle, ExternalLink, Play, Sparkles, Award } from 'lucide-react';
+import { Instagram, Heart, MessageCircle, ExternalLink, Play, Eye, Flame } from 'lucide-react';
 
 export const InstagramFeedSection: React.FC = () => {
   const instaPosts = [
     {
       id: 'post-1',
-      title: 'Attabad Lake emerald waters boating with Safar Nama Hangama group! 🚤✨',
-      image: 'https://images.unsplash.com/photo-1586351012965-861624544334?auto=format&fit=crop&w=800&q=85',
-      likes: '4.8k',
-      comments: 240,
-      tag: 'Hunza Valley',
+      title: 'Attabad Lake emerald waters boating with our 24-member Hunza group! 🚤✨',
+      image: '/images/safarnama/safarnama_21.jpg',
+      views: '345K Views',
+      likes: '28.4k',
+      comments: 1240,
+      tag: '🔥 Top Viral Reel • Hunza Group',
       url: 'https://www.instagram.com/safarnamahangama/'
     },
     {
       id: 'post-2',
-      title: 'Stargazing & campfire vibes under a million stars at Deosai Plains 🌌🏕️',
-      image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=85',
-      likes: '6.2k',
-      comments: 380,
-      tag: 'Skardu Deosai',
+      title: 'Stargazing & campfire musical night at Katpana Cold Desert Skardu 🌌🏕️',
+      image: '/images/safarnama/safarnama_22.jpg',
+      views: '280K Views',
+      likes: '22.1k',
+      comments: 890,
+      tag: '⭐ 280K Views • Skardu Safari',
       url: 'https://www.instagram.com/safarnamahangama/'
     },
     {
       id: 'post-3',
-      title: 'Riverside acoustic music & bonfire with our group in Kalam Swat 🎸🔥',
-      image: 'https://images.unsplash.com/photo-1548777123-e216912df7d8?auto=format&fit=crop&w=800&q=85',
-      likes: '4.1k',
-      comments: 195,
-      tag: 'Kalam Swat',
+      title: 'Riverside acoustic music & bonfire with our group squad in Kalam Swat 🎸🔥',
+      image: '/images/safarnama/safarnama_23.jpg',
+      views: '210K Views',
+      likes: '18.6k',
+      comments: 650,
+      tag: '🎵 Group Vibes • Swat Valley',
       url: 'https://www.instagram.com/safarnamahangama/'
     },
     {
       id: 'post-4',
-      title: 'Cable car ride up to the fairy hilltop village of Arang Kel Kashmir 🚠',
-      image: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=85',
-      likes: '7.5k',
-      comments: 510,
-      tag: 'Neelum Kashmir',
+      title: 'Group cable car ride & meadow trek up to Arang Kel Neelum Kashmir 🚠🌲',
+      image: '/images/safarnama/safarnama_24.jpg',
+      views: '195K Views',
+      likes: '16.9k',
+      comments: 540,
+      tag: '🌿 Group Retreat • Kashmir',
       url: 'https://www.instagram.com/safarnamahangama/'
     }
   ];
@@ -56,7 +60,7 @@ export const InstagramFeedSection: React.FC = () => {
               Live from Our <span className="text-[#E5983A]">Instagram Page</span>
             </h2>
             <p className="mt-2 text-slate-400 text-xs sm:text-sm max-w-lg">
-              Explore recent tour reels, traveler stories, and trip updates straight from our official Instagram feed.
+              Explore recent tour reels, traveler stories, and group trip updates straight from our official Instagram feed (@safarnamahangama).
             </p>
           </div>
 
@@ -82,40 +86,53 @@ export const InstagramFeedSection: React.FC = () => {
               rel="noopener noreferrer"
               className="glass-panel-card rounded-2xl overflow-hidden group border border-slate-800 hover:border-[#E5983A]/50 transition-all duration-300 flex flex-col"
             >
-              <div className="relative h-72 overflow-hidden">
+              <div className="relative h-80 overflow-hidden bg-slate-900">
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover object-[center_25%] group-hover:scale-110 transition-transform duration-500"
+                  onError={(e: any) => {
+                    e.target.onerror = null;
+                    e.target.src = '/images/destinations/hunza_attabad.jpg';
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/20 to-transparent" />
 
-                {/* Play Icon Badge */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-12 h-12 rounded-full bg-[#E5983A] text-slate-950 flex items-center justify-center shadow-2xl">
-                    <Play className="w-5 h-5 fill-slate-950 ml-0.5" />
-                  </div>
-                </div>
-
-                <div className="absolute top-3 left-3 flex items-center gap-2">
+                {/* Top Tags */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                   <span className="px-2.5 py-1 bg-slate-950/90 backdrop-blur-md text-[#E5983A] text-[10px] font-extrabold rounded-full border border-[#E5983A]/40 flex items-center gap-1">
                     <Instagram className="w-3 h-3" />
                     @safarnamahangama
                   </span>
+                  <span className="px-2 py-0.5 bg-rose-500 text-white text-[9px] font-black rounded-full flex items-center gap-1">
+                    <Flame className="w-3 h-3" />
+                    Reel
+                  </span>
+                </div>
+
+                {/* Play Icon & View Count Badge Overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-90 group-hover:opacity-100 transition-opacity">
+                  <div className="w-12 h-12 rounded-full bg-[#E5983A] text-slate-950 flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                    <Play className="w-5 h-5 fill-slate-950 ml-0.5" />
+                  </div>
+                  <span className="mt-2 px-3 py-1 bg-slate-950/90 text-amber-300 text-[10px] font-black rounded-full border border-amber-500/30 flex items-center gap-1">
+                    <Eye className="w-3 h-3" />
+                    {post.views}
+                  </span>
                 </div>
               </div>
 
-              <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
-                <p className="text-xs font-medium text-slate-200 line-clamp-2 leading-relaxed">
+              <div className="p-4 flex-1 flex flex-col justify-between space-y-3 bg-[#04070d]">
+                <p className="text-xs font-semibold text-slate-200 line-clamp-2 leading-relaxed">
                   {post.title}
                 </p>
 
                 <div className="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-800">
-                  <div className="flex items-center gap-1 text-[#E5983A] font-bold">
+                  <div className="flex items-center gap-1 text-[#E5983A] font-extrabold">
                     <Heart className="w-3.5 h-3.5 fill-[#E5983A]" />
                     <span>{post.likes}</span>
                   </div>
-                  <div className="flex items-center gap-1 text-slate-400">
+                  <div className="flex items-center gap-1 text-slate-400 text-[11px] font-bold">
                     <MessageCircle className="w-3.5 h-3.5" />
                     <span>{post.comments} comments</span>
                   </div>
@@ -129,3 +146,4 @@ export const InstagramFeedSection: React.FC = () => {
     </section>
   );
 };
+
