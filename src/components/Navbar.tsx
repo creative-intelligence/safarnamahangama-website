@@ -104,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
                   href={link.href}
                   className={`rounded-full text-xs font-bold transition-all duration-300 inline-block ${
                     isActive
-                      ? 'bg-white text-black px-4 py-1.5 shadow-[0_0_18px_rgba(255,255,255,0.7)] scale-105 font-extrabold'
+                      ? 'bg-white text-black px-4 py-1.5 font-extrabold'
                       : 'px-3.5 py-1.5 text-slate-300 hover:text-white hover:bg-emerald-500/20 hover:text-emerald-300 font-semibold'
                   }`}
                 >
