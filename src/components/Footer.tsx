@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
             </a>
 
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              {siteConfig.agencyTagline}. Founded by {siteConfig.founderName}. Done-for-you YouTube channel production, scriptwriting, 4K video editing, high-CTR thumbnails, and 90-day monetization management.
+              {siteConfig.agencyTagline}. Done-for-you YouTube channel production, scriptwriting, 4K video editing, high-CTR thumbnails, and 90-day monetization management.
             </p>
 
             <div className="flex items-center gap-2 text-xs text-emerald-400 font-bold">
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-3 space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-display">Quick Navigation</h4>
             <ul className="space-y-2 text-xs text-slate-400">
-              <li><a href="#about" className="hover:text-emerald-400 transition-colors">About Usama Khursheed</a></li>
+              <li><a href="#about" className="hover:text-emerald-400 transition-colors">About TubeScale</a></li>
               <li><a href="#services" className="hover:text-emerald-400 transition-colors">Done-For-You Services</a></li>
               <li><a href="#process" className="hover:text-emerald-400 transition-colors">4-Step Production System</a></li>
               <li><a href="#portfolio" className="hover:text-emerald-400 transition-colors">Track Record Case Studies</a></li>
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
           {/* Social & Community */}
           <div className="md:col-span-4 space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider font-display">Connect & Community</h4>
-            <p className="text-xs text-slate-400">Join our creator ecosystem or reach out directly to Usama Khursheed.</p>
+            <p className="text-xs text-slate-400">Join our creator ecosystem or reach out directly to the TubeScale team.</p>
             
             <div className="flex flex-wrap gap-2 pt-1">
               <a
@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} {siteConfig.agencyName} ({siteConfig.founderName}). All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {siteConfig.agencyName}. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="hover:text-slate-200 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-slate-200 transition-colors">Terms of Service</a>

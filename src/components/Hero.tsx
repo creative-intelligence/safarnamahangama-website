@@ -37,7 +37,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             <ScrollReveal animation="fade-up" delay={150}>
               <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-semibold backdrop-blur-md shadow-glow-emerald">
                 <Sparkles className="w-4 h-4 text-emerald-400 animate-pulse" />
-                <span>Founded by {siteConfig.founderName}</span>
+                <span>Premier YouTube Growth Agency</span>
               </div>
             </ScrollReveal>
 
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 </div>
                 <div className="flex items-center gap-3 text-slate-200 text-sm font-medium">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span>Dedicated production team managed by Usama Khursheed</span>
+                  <span>Dedicated done-for-you production team & channel strategists</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-200 text-sm font-medium">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />

@@ -17,7 +17,7 @@ export const AboutFounder: React.FC = () => {
             <ScrollReveal animation="fade-right">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider">
                 <UserCheck className="w-3.5 h-3.5" />
-                <span>Meet The Founder</span>
+                <span>Agency Leadership & Vision</span>
               </div>
             </ScrollReveal>
 
@@ -46,7 +46,7 @@ export const AboutFounder: React.FC = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-colors" />
                 "{siteConfig.aboutFounder.quote}"
                 <div className="text-xs font-bold text-emerald-400 not-italic mt-2 font-sans">
-                  — {siteConfig.founderName}, Founder of {siteConfig.agencyName}
+                  — The TubeScale Team
                 </div>
               </div>
             </ScrollReveal>

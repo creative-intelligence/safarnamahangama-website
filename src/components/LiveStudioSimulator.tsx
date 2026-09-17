@@ -32,7 +32,7 @@ export const LiveStudioSimulator: React.FC = () => {
             <span>Interactive Agency Technology</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
-            Inside Usama Khursheed's <br />
+            Inside TubeScale's <br />
             <span className="gradient-text">Live Production Terminal</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg font-sans">
@@ -49,7 +49,7 @@ export const LiveStudioSimulator: React.FC = () => {
               <span className="w-3 h-3 rounded-full bg-red-500/80" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
               <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-              <span className="text-xs font-mono text-slate-400 ml-2">usama-khursheed-production-engine.v2</span>
+              <span className="text-xs font-mono text-slate-400 ml-2">tubescale-production-engine.v2</span>
             </div>
 
             {/* Navigation Tabs */}
@@ -228,7 +228,7 @@ export const LiveStudioSimulator: React.FC = () => {
           <div className="bg-[#030C07] px-6 py-3 border-t border-emerald-900/60 flex items-center justify-between text-xs text-slate-400">
             <span className="flex items-center gap-2 font-semibold">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Usama Khursheed Automated Quality SLA</span>
+              <span>TubeScale Automated Quality SLA</span>
             </span>
             <span className="text-emerald-400 font-bold">100% Monetizable</span>
           </div>

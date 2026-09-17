@@ -204,7 +204,7 @@ export const VideoShowcaseSection: React.FC = () => {
           </h2>
 
           <p className="text-slate-300 text-base sm:text-lg font-sans">
-            Watch Usama Khursheed’s done-for-you YouTube automation service video breaking down all 6 stages of channel scaling.
+            Watch TubeScale’s done-for-you YouTube automation service video breaking down all 6 stages of channel scaling.
           </p>
         </div>
 
@@ -216,7 +216,7 @@ export const VideoShowcaseSection: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#10B981]" />
               <span className="font-bold text-white tracking-wider">
-                USAMA KHURSHEED STUDIO — ANIMATED SERVICE EXPLAINER VIDEO
+                TUBESCALE STUDIO — ANIMATED SERVICE EXPLAINER VIDEO
               </span>
             </div>
 
@@ -286,7 +286,7 @@ export const VideoShowcaseSection: React.FC = () => {
 
                 <div className="hidden sm:flex items-center gap-2 text-emerald-400 font-bold">
                   <Activity className="w-4 h-4 animate-pulse" />
-                  <span>USAMA KHURSHEED 4K ENGINE</span>
+                  <span>TUBESCALE 4K ENGINE</span>
                 </div>
               </div>
 
@@ -355,7 +355,7 @@ export const VideoShowcaseSection: React.FC = () => {
           <div className="mt-6 pt-4 border-t border-emerald-900/60 flex items-center justify-between text-xs text-slate-300 font-sans">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span>Full Done-For-You YouTube Channel Automation by Usama Khursheed</span>
+              <span>Full Done-For-You YouTube Channel Automation by TubeScale</span>
             </div>
             <span className="text-cyan-400 font-bold font-mono">90-DAY MONETIZATION SLA</span>
           </div>

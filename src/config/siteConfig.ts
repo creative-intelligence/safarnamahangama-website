@@ -1,15 +1,15 @@
 export const siteConfig = {
   agencyName: "TubeScale",
   agencyTagline: "YouTube Automation & Growth Agency",
-  founderName: "Usama Khursheed",
-  founderRole: "Founder & YouTube Automation Strategist",
+  founderName: "TubeScale Team",
+  founderRole: "YouTube Automation & Growth Strategists",
   
   heroHeading: "Build Your YouTube Empire On Autopilot.",
-  description: "Founded by Usama Khursheed. We handle scripts, voiceover, 4K video editing, high-CTR thumbnails, and 360° channel management. You keep 100% channel ownership and all revenue.",
+  description: "TubeScale is the premier YouTube Automation agency. We handle scripts, voiceover, 4K video editing, high-CTR thumbnails, and 360° channel management. You keep 100% channel ownership and all revenue.",
   
-  // Featured Agency Video Showcase (Usama Khursheed Studio Production Video)
+  // Featured Agency Video Showcase
   featuredVideo: {
-    title: "Usama Khursheed Studio — Official 4K Production Showcase",
+    title: "TubeScale Studio — Official 4K Production Showcase",
     subtitle: "See Our Motion Graphics, Editing & Voiceover Brilliance In Action",
     youtubeId: "", // Add your own YouTube Video ID here (e.g. "YOUR_VIDEO_ID")
     videoUrl: ""  // Or add your own direct MP4 video link here
@@ -24,11 +24,11 @@ export const siteConfig = {
 
   // Contact links
   contact: {
-    email: "usama@tubescale.com",
+    email: "support@tubescale.com",
     whatsapp: "+92 300 1234567",
     calendlyUrl: "#contact-modal",
     skoolCommunity: "https://www.skool.com",
-    instagram: "https://instagram.com/usamakhursheed",
+    instagram: "https://instagram.com/tubescale",
     youtube: "https://youtube.com",
     discord: "https://discord.gg"
   },
@@ -44,7 +44,7 @@ export const siteConfig = {
   // About Founder Section
   aboutFounder: {
     headline: "5+ Years Building YouTube Channels at Global Scale",
-    bioParagraph1: "Hi, I'm Usama Khursheed. I started in YouTube automation when faceless channels were barely a concept. After years of testing, building viral script hooks, and testing editing styles — I founded TubeScale to give creators and investors a true done-for-you growth engine.",
+    bioParagraph1: "At TubeScale, we started in YouTube automation when faceless channels were barely a concept. After years of testing, building viral script hooks, and perfecting editing styles — we engineered TubeScale to give creators and investors a true done-for-you growth engine.",
     bioParagraph2: "We don't rely on cheap automated spam. Every channel we manage runs on human-reviewed storytelling, custom motion graphics, and high-CTR visual psychology that YouTube's algorithm loves.",
     quote: "We don't just teach YouTube automation. We run and monetize channels every single day."
   },
@@ -119,7 +119,7 @@ export const siteConfig = {
       id: "management",
       title: "Full Done-For-You Management",
       subtitle: "Hands-off operations from niche audit to monetization payout",
-      description: "Complete hands-free channel management. Usama & team handle topic research, scheduling, tags, descriptions, community posts, and optimization.",
+      description: "Complete hands-free channel management. The TubeScale team handles topic research, scheduling, tags, descriptions, community posts, and optimization.",
       icon: "LayoutDashboard",
       features: [
         "Niche selection & competitor breakdown",
@@ -138,7 +138,7 @@ export const siteConfig = {
     {
       step: "01",
       title: "Niche & Strategy Blueprint",
-      description: "Usama audits high-CPM niches (Finance, Tech, AI, Luxury, Crime, History) and maps out a 90-day content calendar built for rapid viral reach."
+      description: "TubeScale audits high-CPM niches (Finance, Tech, AI, Luxury, Crime, History) and maps out a 90-day content calendar built for rapid viral reach."
     },
     {
       step: "02",
@@ -248,7 +248,7 @@ export const siteConfig = {
         "Dedicated Team (Writer, Editor, Designer, Manager)",
         "Custom Channel Branding & Art Setup",
         "Priority 24-48 Hour Turnaround",
-        "Weekly Strategy Call with Usama Khursheed",
+        "Weekly Strategy Call with TubeScale Lead Strategists",
         "90-Day Guarantee or We Work Free"
       ],
       ctaText: "Build Your Empire",
@@ -263,7 +263,7 @@ export const siteConfig = {
       answer: "Every video includes a researched viral script, studio voiceover (human or hyper-natural AI based on your preference), 4K cinematic video editing with motion graphics, sound design, dynamic captions, high-CTR custom thumbnail, and YouTube SEO title/tags/description."
     },
     {
-      question: "How does Usama Khursheed's 90-Day Guarantee work?",
+      question: "How does TubeScale's 90-Day Guarantee work?",
       answer: "If your new channel does not reach 500+ subscribers and YouTube Monetization criteria within 90 days of launching with our production on our monthly plans, we continue creating videos and managing your channel 100% free of charge until it does. No fine print!"
     },
     {
@@ -276,11 +276,11 @@ export const siteConfig = {
     },
     {
       question: "Do I need to record my face or voice?",
-      answer: "Not at all. We specialize in faceless YouTube channels ('cash cow' channels). Usama and his team handle all voiceover work, visual editing, and metadata so you can run the channel completely anonymously from anywhere in the world."
+      answer: "Not at all. We specialize in faceless YouTube channels ('cash cow' channels). The TubeScale team handles all voiceover work, visual editing, and metadata so you can run the channel completely anonymously from anywhere in the world."
     },
     {
       question: "Can I choose my niche or do you recommend one?",
-      answer: "Both! If you already have a niche in mind, we build within your vision. If you're starting fresh, Usama conducts in-depth data audits to recommend top high-CPM niches (Finance, Tech, Luxury, Geo-politics, AI, Crime) with proven high AdSense RPM ($10 to $30+ per 1,000 views)."
+      answer: "Both! If you already have a niche in mind, we build within your vision. If you're starting fresh, TubeScale conducts in-depth data audits to recommend top high-CPM niches (Finance, Tech, Luxury, Geo-politics, AI, Crime) with proven high AdSense RPM ($10 to $30+ per 1,000 views)."
     }
   ]
 };
