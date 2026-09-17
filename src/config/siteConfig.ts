@@ -1,5 +1,5 @@
 export const siteConfig = {
-  agencyName: "TubeUstads",
+  agencyName: "TubeScale",
   agencyTagline: "YouTube Automation & Growth Agency",
   founderName: "Usama Khursheed",
   founderRole: "Founder & YouTube Automation Strategist",
@@ -24,7 +24,7 @@ export const siteConfig = {
 
   // Contact links
   contact: {
-    email: "usama@tubeustads.com",
+    email: "usama@tubescale.com",
     whatsapp: "+92 300 1234567",
     calendlyUrl: "#contact-modal",
     skoolCommunity: "https://www.skool.com",
@@ -44,7 +44,7 @@ export const siteConfig = {
   // About Founder Section
   aboutFounder: {
     headline: "5+ Years Building YouTube Channels at Global Scale",
-    bioParagraph1: "Hi, I'm Usama Khursheed. I started in YouTube automation when faceless channels were barely a concept. After years of testing, building viral script hooks, and testing editing styles — I founded TubeUstads to give creators and investors a true done-for-you growth engine.",
+    bioParagraph1: "Hi, I'm Usama Khursheed. I started in YouTube automation when faceless channels were barely a concept. After years of testing, building viral script hooks, and testing editing styles — I founded TubeScale to give creators and investors a true done-for-you growth engine.",
     bioParagraph2: "We don't rely on cheap automated spam. Every channel we manage runs on human-reviewed storytelling, custom motion graphics, and high-CTR visual psychology that YouTube's algorithm loves.",
     quote: "We don't just teach YouTube automation. We run and monetize channels every single day."
   },

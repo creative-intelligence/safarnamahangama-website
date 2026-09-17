@@ -61,15 +61,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-0.5 shadow-glow-emerald transition-transform duration-300 group-hover:scale-105">
-            <div className="w-full h-full bg-[#030C07] rounded-[10px] flex items-center justify-center">
-              <Youtube className="w-5 h-5 text-red-500 fill-red-500 transition-transform group-hover:scale-110" />
-            </div>
-          </div>
+          <img 
+            src="/favicon.svg" 
+            alt="TubeScale Logo" 
+            className="w-10 h-10 transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)]" 
+          />
           <div>
-            <span className="font-extrabold text-xl tracking-tight text-white flex items-center gap-1 font-display">
-              {siteConfig.agencyName.split(' ')[0]}
-              <span className="gradient-text">{siteConfig.agencyName.split(' ')[1] || ''}</span>
+            <span className="font-extrabold text-2xl tracking-tight text-white flex items-center font-display">
+              Tube<span className="gradient-text">Scale</span>
             </span>
             <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 block -mt-1">
               By Usama Khursheed

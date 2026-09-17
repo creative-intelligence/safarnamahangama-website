@@ -12,13 +12,13 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <a href="#" className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 p-0.5 shadow-glow-emerald">
-                <div className="w-full h-full bg-[#030C07] rounded-[10px] flex items-center justify-center">
-                  <Youtube className="w-5 h-5 text-red-500 fill-red-500" />
-                </div>
-              </div>
-              <span className="font-extrabold text-xl text-white font-display">
-                {siteConfig.agencyName.split(' ')[0]} <span className="gradient-text">{siteConfig.agencyName.split(' ')[1] || ''}</span>
+              <img 
+                src="/favicon.svg" 
+                alt="TubeScale Logo" 
+                className="w-9 h-9 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)]" 
+              />
+              <span className="font-extrabold text-2xl text-white font-display">
+                Tube<span className="gradient-text">Scale</span>
               </span>
             </a>
 
