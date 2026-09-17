@@ -34,17 +34,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
   return (
     <section className="relative min-h-[95vh] pt-36 pb-24 flex items-center justify-center overflow-hidden bg-[#04070d]">
-      {/* Enhanced Authentic Background Image with Layered Vignette Overlays */}
+      {/* Enhanced Background Image - Shifted down a bit (object-[center_28%]) & slightly clearer (brightness-85) */}
       <div className="absolute inset-0 z-0">
         <img
           src="/hero-bg.jpg"
           alt="Safar Nama Hangama Travelers Pointing at Snow Peaks"
-          className="w-full h-full object-cover object-[center_18%] filter brightness-[0.75] contrast-[1.08] saturate-[1.1] scale-[1.02] transition-transform duration-10000"
+          className="w-full h-full object-cover object-[center_28%] filter brightness-[0.84] contrast-[1.06] saturate-[1.08] transition-all duration-500"
         />
-        {/* Layered Gradient Overlays for Elegant Dark Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/60 to-[#04070d]/40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#04070d]/90 via-[#04070d]/30 to-[#04070d]/90" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#04070d]/75 via-transparent to-[#04070d]" />
+        {/* Layered Gradient Overlays - Lightened for subtle clarity */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/45 to-[#04070d]/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#04070d]/85 via-[#04070d]/20 to-[#04070d]/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#04070d]/65 via-transparent to-[#04070d]" />
       </div>
 
       {/* Dynamic Glowing Aurora Orbs matching logo color #E5983A */}
