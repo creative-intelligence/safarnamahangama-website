@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Play, CheckCircle2, Heart, Instagram, ExternalLink, X, MessageSquareQuote, Video } from 'lucide-react';
+import { Star, Play, CheckCircle2, Heart, Instagram, ExternalLink, X, Video } from 'lucide-react';
 
 interface CustomerVideoReview {
   id: string;
@@ -11,7 +11,7 @@ interface CustomerVideoReview {
   tourTaken: string;
   reviewSnippet: string;
   videoThumbnail: string;
-  instagramEmbedId: string;
+  videoUrl: string;
   instagramUrl: string;
   duration: string;
   verified: boolean;
@@ -23,15 +23,15 @@ export const TestimonialsSection: React.FC = () => {
   const videoReviews: CustomerVideoReview[] = [
     {
       id: 'video-1',
-      author: 'Hamza & Family',
+      author: 'Hamza & Family Squad',
       location: 'Lahore',
-      avatar: '/images/safarnama/safarnama_29.jpg',
+      avatar: '/images/safarnama/safarnama_1.jpg',
       rating: 5,
       date: 'August 2026',
       tourTaken: '5-Day Hunza Family Expedition',
-      reviewSnippet: 'Safarnama Hangama arranged the most memorable family trip to Karimabad and Attabad Lake! Everything from luxury transport to family resorts was top-notch.',
-      videoThumbnail: '/images/safarnama/safarnama_29.jpg',
-      instagramEmbedId: 'C_mN0uNog2O',
+      reviewSnippet: 'Safarnama Hangama arranged the most memorable family trip to Karimabad & Attabad Lake! Transport, resorts, and tour escort were incredible.',
+      videoThumbnail: '/images/safarnama/safarnama_1.jpg',
+      videoUrl: '/videos/happyclients/happy_client_1.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '0:45',
       verified: true
@@ -40,28 +40,28 @@ export const TestimonialsSection: React.FC = () => {
       id: 'video-2',
       author: 'Dr. Zeeshan & Corporate Team',
       location: 'Islamabad',
-      avatar: '/images/safarnama/safarnama_30.jpg',
+      avatar: '/images/safarnama/safarnama_2.jpg',
       rating: 5,
       date: 'July 2026',
       tourTaken: '7-Day Skardu & Deosai Safari',
-      reviewSnippet: 'Our 24-member corporate team spent 7 days exploring Deosai Plains, Cold Desert, and Shangrila with 4x4 Prado Jeeps. 100% recommended!',
-      videoThumbnail: '/images/safarnama/safarnama_30.jpg',
-      instagramEmbedId: 'C-xY4M0M1zR',
+      reviewSnippet: 'Our corporate group spent 7 days exploring Deosai Plains, Cold Desert, and Shangrila with 4x4 Prado Jeeps. 100% recommended!',
+      videoThumbnail: '/images/safarnama/safarnama_2.jpg',
+      videoUrl: '/videos/happyclients/happy_client_2.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '1:12',
       verified: true
     },
     {
       id: 'video-3',
-      author: 'Fatima Noor & Squad',
+      author: 'Fatima Noor & Friends Squad',
       location: 'Karachi',
-      avatar: '/images/safarnama/safarnama_31.jpg',
+      avatar: '/images/safarnama/safarnama_3.jpg',
       rating: 5,
       date: 'September 2026',
       tourTaken: '3-Day Swat & Kalam Retreat',
-      reviewSnippet: 'As female travelers joining a group tour, safety was our top priority. Safarnama Escort team treated us like family. Kalam and Malam Jabba were incredible!',
-      videoThumbnail: '/images/safarnama/safarnama_31.jpg',
-      instagramEmbedId: 'C7rP_L1s_0A',
+      reviewSnippet: 'As female travelers joining a group tour, safety was our top priority. Safarnama team treated us like family. Kalam was incredible!',
+      videoThumbnail: '/images/safarnama/safarnama_3.jpg',
+      videoUrl: '/videos/happyclients/happy_client_3.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '0:58',
       verified: true
@@ -70,15 +70,75 @@ export const TestimonialsSection: React.FC = () => {
       id: 'video-4',
       author: 'Usman Chaudhry & Group',
       location: 'Rawalpindi',
-      avatar: '/images/safarnama/safarnama_32.jpg',
+      avatar: '/images/safarnama/safarnama_4.jpg',
       rating: 5,
       date: 'June 2026',
       tourTaken: 'Fairy Meadows & Nanga Parbat Trek',
-      reviewSnippet: 'The trek up to Beyal Camp and Nanga Parbat base with Safar Nama was the best adventure ever! Unforgettable campfire nights under the Milky Way.',
-      videoThumbnail: '/images/safarnama/safarnama_32.jpg',
-      instagramEmbedId: 'C6pZ_90x_8M',
+      reviewSnippet: 'The trek up to Beyal Camp and Nanga Parbat base with Safar Nama was the best adventure ever! Unforgettable campfire nights under stars.',
+      videoThumbnail: '/images/safarnama/safarnama_4.jpg',
+      videoUrl: '/videos/happyclients/happy_client_4.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '1:05',
+      verified: true
+    },
+    {
+      id: 'video-5',
+      author: 'Malam Jabba Snow Explorers',
+      location: 'Peshawar',
+      avatar: '/images/safarnama/safarnama_5.jpg',
+      rating: 5,
+      date: 'January 2026',
+      tourTaken: '3-Day Winter Snow Swat Tour',
+      reviewSnippet: 'Chairlift, ski slopes, and mountain resort stays! Safarnama team made our winter getaway super smooth and fun.',
+      videoThumbnail: '/images/safarnama/safarnama_5.jpg',
+      videoUrl: '/videos/happyclients/happy_client_5.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '0:50',
+      verified: true
+    },
+    {
+      id: 'video-6',
+      author: 'Shogran Siri Paye Group',
+      location: 'Faisalabad',
+      avatar: '/images/safarnama/safarnama_6.jpg',
+      rating: 5,
+      date: 'May 2026',
+      tourTaken: '3-Day Shogran & Siri Paye Tour',
+      reviewSnippet: 'Lush green meadows and 4x4 Jeep rides up to Siri Paye Lake! Safar Nama Hangama is truly the best tour operator.',
+      videoThumbnail: '/images/safarnama/safarnama_6.jpg',
+      videoUrl: '/videos/happyclients/happy_client_6.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '1:15',
+      verified: true
+    },
+    {
+      id: 'video-7',
+      author: 'Naran Roof Top Jeep Explorers',
+      location: 'Multan',
+      avatar: '/images/safarnama/safarnama_7.jpg',
+      rating: 5,
+      date: 'August 2026',
+      tourTaken: '5-Day Naran Saiful Malook Safari',
+      reviewSnippet: 'Amazing Jeep safari to Lake Saiful Malook, Babusar Top, and Lulusar Lake with high-energy group vibes.',
+      videoThumbnail: '/images/safarnama/safarnama_7.jpg',
+      videoUrl: '/videos/happyclients/happy_client_7.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '1:02',
+      verified: true
+    },
+    {
+      id: 'video-8',
+      author: 'Arang Kel Neelum Valley Travelers',
+      location: 'Sialkot',
+      avatar: '/images/safarnama/safarnama_8.jpg',
+      rating: 5,
+      date: 'July 2026',
+      tourTaken: '4-Day Neelum Valley Kashmir Tour',
+      reviewSnippet: 'Cable car ride, green pine forests, and riverside glamping in Kashmir! 10/10 service from Safar Nama team.',
+      videoThumbnail: '/images/safarnama/safarnama_8.jpg',
+      videoUrl: '/videos/happyclients/happy_client_8.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '0:48',
       verified: true
     }
   ];
@@ -94,10 +154,10 @@ export const TestimonialsSection: React.FC = () => {
             Loved by 5,000+ Explorers
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-            Happy Clients <span className="text-[#E5983A]">Instagram Video Reviews</span>
+            Happy Clients <span className="text-[#E5983A]">Video Reviews</span>
           </h2>
           <p className="mt-3 text-slate-400 text-xs sm:text-sm">
-            Watch real Instagram video reels and reviews shared by happy clients, families, and group squads who traveled with @safarnamahangama!
+            Watch real video reviews directly downloaded from @safarnamahangama happy clients, families, and group squads!
           </p>
         </div>
 
@@ -130,11 +190,11 @@ export const TestimonialsSection: React.FC = () => {
                   </span>
                 </div>
 
-                {/* Instagram Badge */}
+                {/* Duration Tag */}
                 <div className="absolute top-3 right-3">
                   <span className="px-2 py-0.5 bg-slate-950/90 text-[#E5983A] text-[10px] font-black rounded-md border border-[#E5983A]/40 flex items-center gap-1">
-                    <Instagram className="w-3 h-3" />
-                    Reel
+                    <Video className="w-3 h-3" />
+                    {rev.duration}
                   </span>
                 </div>
 
@@ -167,7 +227,7 @@ export const TestimonialsSection: React.FC = () => {
                   </div>
 
                   <span className="p-2 bg-slate-900 text-[#E5983A] rounded-full border border-slate-800 flex items-center justify-center">
-                    <Video className="w-3.5 h-3.5" />
+                    <Play className="w-3.5 h-3.5 fill-[#E5983A]" />
                   </span>
                 </div>
               </div>
@@ -176,10 +236,10 @@ export const TestimonialsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Embedded Instagram Reel Modal */}
+        {/* Playable Video Reel Modal */}
         {activeReviewVideo && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md animate-in fade-in">
-            <div className="relative max-w-lg w-full bg-[#04070d] border border-slate-700 rounded-3xl overflow-hidden shadow-2xl text-white">
+            <div className="relative max-w-md w-full bg-[#04070d] border border-slate-700 rounded-3xl overflow-hidden shadow-2xl text-white">
               <button
                 onClick={() => setActiveReviewVideo(null)}
                 className="absolute top-4 right-4 z-20 p-3 bg-slate-950/90 text-white rounded-full border border-slate-700 hover:bg-slate-950 shadow-xl"
@@ -187,20 +247,15 @@ export const TestimonialsSection: React.FC = () => {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="p-4 bg-slate-900/80 border-b border-slate-800 flex items-center gap-2">
-                <Instagram className="w-4 h-4 text-[#E5983A]" />
-                <span className="text-xs font-bold text-white">@safarnamahangama Client Review Reel</span>
-              </div>
-
-              {/* Embedded Native Instagram Reel Player */}
-              <div className="w-full h-[520px] bg-slate-950 relative overflow-hidden">
-                <iframe
-                  src={`https://www.instagram.com/p/${activeReviewVideo.instagramEmbedId}/embed`}
-                  className="w-full h-full border-0"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowTransparency={true}
-                  title={`${activeReviewVideo.author} Instagram Review`}
+              <div className="relative h-[480px] w-full bg-slate-950 overflow-hidden">
+                <video
+                  src={activeReviewVideo.videoUrl}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  poster={activeReviewVideo.videoThumbnail}
+                  className="w-full h-full object-cover"
                 />
               </div>
 
@@ -224,7 +279,7 @@ export const TestimonialsSection: React.FC = () => {
                     className="flex-1 py-2.5 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] text-slate-950 font-black text-xs rounded-xl flex items-center justify-center gap-2 hover:scale-[1.02] transition"
                   >
                     <Instagram className="w-4 h-4" />
-                    <span>Watch on Instagram Page</span>
+                    <span>Watch on Instagram</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                   <button

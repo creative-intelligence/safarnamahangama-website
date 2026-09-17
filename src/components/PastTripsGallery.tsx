@@ -19,123 +19,123 @@ export const PastTripsGallery: React.FC = () => {
   const groupPhotos: GroupPhoto[] = [
     {
       id: 'photo-1',
-      title: 'Hunza Group Expedition at Attabad Lake',
-      location: 'Attabad Lake, Hunza',
+      title: 'Safar Nama Group Expedition with Banner',
+      location: 'Shogran & Siri Paye Meadows',
       category: 'group',
       date: 'Autumn 2026',
-      travelersCount: 24,
-      image: '/images/safarnama/safarnama_6.jpg',
-      caption: 'Our amazing 24-member group tour enjoying blue waters and boat rides in Attabad Lake!'
+      travelersCount: 16,
+      image: '/images/safarnama/safarnama_1.jpg',
+      caption: 'Official Safar Nama Hangama group holding our banner during the Shogran Siri Paye expedition!'
     },
     {
       id: 'photo-2',
-      title: 'Campfire & Musical Night in Kalam',
-      location: 'Kalam Valley, Swat',
-      category: 'friends',
+      title: 'Neelum Valley Kel Group Arrival Photo',
+      location: 'Kel, Neelum Valley Kashmir',
+      category: 'group',
       date: 'Summer 2026',
-      travelersCount: 18,
-      image: '/images/safarnama/safarnama_7.jpg',
-      caption: 'Riverside bonfire with live acoustic guitar music under the stars in Kalam.'
+      travelersCount: 14,
+      image: '/images/safarnama/safarnama_2.jpg',
+      caption: 'Group arrival memory at Oriental View Guest House in Kel after cable car trek.'
     },
     {
       id: 'photo-3',
-      title: 'Romantic Couple Escape at Eagle’s Nest',
-      location: 'Duikar, Hunza',
-      category: 'honeymoon',
+      title: 'Safar Nama Friends Squad Retreat',
+      location: 'Swat Valley',
+      category: 'friends',
       date: 'Spring 2026',
-      travelersCount: 2,
-      image: '/images/safarnama/safarnama_8.jpg',
-      caption: 'Exclusive honeymoon trip couple witnessing 360-degree sunset over Rakaposhi and Ladyfinger peak.'
+      travelersCount: 12,
+      image: '/images/safarnama/safarnama_3.jpg',
+      caption: 'Sunlit group photo of our friends squad relaxing at the valley resort.'
     },
     {
       id: 'photo-4',
-      title: 'Skardu & Deosai Jeep Safari Group',
-      location: 'Deosai National Park',
+      title: 'Safar Nama Group Dinner & Celebration Night',
+      location: 'Islamabad / Resort',
       category: 'group',
       date: 'July 2026',
-      travelersCount: 30,
-      image: '/images/safarnama/safarnama_9.jpg',
-      caption: 'Conquering the 2nd highest plateau in the world with 5 Prado Jeeps!'
+      travelersCount: 20,
+      image: '/images/safarnama/safarnama_4.jpg',
+      caption: 'Group members holding Safar Nama custom fans during our tour farewell dinner.'
     },
     {
       id: 'photo-5',
-      title: 'Family Vacation in Neelum Valley',
-      location: 'Arang Kel, Kashmir',
-      category: 'family',
-      date: 'August 2026',
-      travelersCount: 12,
-      image: '/images/safarnama/safarnama_10.jpg',
-      caption: 'Multigenerational family group enjoying cable car ride and green meadows in Arang Kel.'
-    },
-    {
-      id: 'photo-6',
-      title: 'Fairy Meadows Summit Group Photo',
-      location: 'Nanga Parbat Base',
-      category: 'friends',
-      date: 'September 2026',
-      travelersCount: 16,
-      image: '/images/safarnama/safarnama_11.jpg',
-      caption: 'Group photo right in front of Nanga Parbat killer mountain (8,126m) at Beyal Camp.'
-    },
-    {
-      id: 'photo-7',
-      title: 'Katpana Cold Desert Stargazing Group',
-      location: 'Katpana Desert, Skardu',
-      category: 'group',
-      date: 'August 2026',
-      travelersCount: 28,
-      image: '/images/safarnama/safarnama_12.jpg',
-      caption: 'High-altitude cold desert camping and starlight photography with Safar Nama group.'
-    },
-    {
-      id: 'photo-8',
-      title: 'Ushu Pine Forest Family Trek',
-      location: 'Ushu Forest, Kalam',
-      category: 'family',
-      date: 'July 2026',
-      travelersCount: 14,
-      image: '/images/safarnama/safarnama_13.jpg',
-      caption: 'Dense pine forest nature walk with family group members.'
-    },
-    {
-      id: 'photo-9',
-      title: 'Passu Cones Group Expedition',
-      location: 'Passu, Upper Hunza',
-      category: 'group',
-      date: 'June 2026',
-      travelersCount: 22,
-      image: '/images/safarnama/safarnama_14.jpg',
-      caption: 'Striking group memory right under the iconic Cathedral Passu Cones peak.'
-    },
-    {
-      id: 'photo-10',
-      title: 'Shangrila Resort Skardu Lake View Group',
-      location: 'Lower Kachura Lake',
-      category: 'group',
-      date: 'May 2026',
-      travelersCount: 26,
-      image: '/images/safarnama/safarnama_15.jpg',
-      caption: 'Iconic group photo at Shangrila Resort in front of red roof Pagodas.'
-    },
-    {
-      id: 'photo-11',
-      title: 'Malam Jabba Ski Resort Friends Squad',
+      title: 'Malam Jabba Winter Snow Group Tour',
       location: 'Malam Jabba, Swat',
       category: 'friends',
       date: 'January 2026',
+      travelersCount: 8,
+      image: '/images/safarnama/safarnama_5.jpg',
+      caption: 'Winter snow fun and group picture at the Malam Jabba I-Love sign.'
+    },
+    {
+      id: 'photo-6',
+      title: 'Siri Paye Meadows Group Assembly',
+      location: 'Siri Paye, Shogran',
+      category: 'group',
+      date: 'August 2026',
+      travelersCount: 18,
+      image: '/images/safarnama/safarnama_6.jpg',
+      caption: 'Group sitting together on the lush green alpine slopes with Safar Nama banner.'
+    },
+    {
+      id: 'photo-7',
+      title: 'Jeep Roof Top Friends Squad Adventure',
+      location: 'Naran Valley Safari',
+      category: 'friends',
+      date: 'July 2026',
+      travelersCount: 7,
+      image: '/images/safarnama/safarnama_7.jpg',
+      caption: 'Friends squad enjoying scenic views while sitting on top of 4x4 Jeep roof.'
+    },
+    {
+      id: 'photo-8',
+      title: 'Safar Nama Grand Tour Group Family Photo',
+      location: 'Northern Expeditions Hub',
+      category: 'family',
+      date: 'June 2026',
+      travelersCount: 22,
+      image: '/images/safarnama/safarnama_8.jpg',
+      caption: '22-member group and family photo celebration during evening resort gathering.'
+    },
+    {
+      id: 'photo-9',
+      title: 'Mountain Trail Banner Trekking Group',
+      location: 'Hunza & Nagar Trail',
+      category: 'group',
+      date: 'September 2026',
       travelersCount: 15,
-      image: '/images/safarnama/safarnama_16.jpg',
-      caption: 'Winter snow games, zip-lining, and chairlift rides with our friends squad.'
+      image: '/images/safarnama/safarnama_9.jpg',
+      caption: 'Trekking group proudly displaying Safar Nama banner along the mountain trail.'
+    },
+    {
+      id: 'photo-10',
+      title: 'Pine Meadows Friends Squad Selfie',
+      location: 'Arang Kel, Kashmir',
+      category: 'friends',
+      date: 'May 2026',
+      travelersCount: 3,
+      image: '/images/safarnama/safarnama_10.jpg',
+      caption: 'Sunny selfie memory of female travelers enjoying pine forest views.'
+    },
+    {
+      id: 'photo-11',
+      title: 'Attabad Lake Emerald Waters Group Photo',
+      location: 'Attabad Lake, Hunza',
+      category: 'group',
+      date: 'August 2026',
+      travelersCount: 24,
+      image: '/images/safarnama/safarnama_11.jpg',
+      caption: 'Our amazing 24-member group tour enjoying blue waters and boat rides in Attabad Lake!'
     },
     {
       id: 'photo-12',
-      title: 'Naran Saiful Malook Lake Group Tour',
-      location: 'Lake Saiful Malook',
-      category: 'family',
+      title: 'Katpana Cold Desert Skardu Stargazing Group',
+      location: 'Katpana Desert, Skardu',
+      category: 'group',
       date: 'July 2026',
-      travelersCount: 20,
-      image: '/images/safarnama/safarnama_17.jpg',
-      caption: 'Unforgettable boat ride and glacier view at Lake Saiful Malook with family members.'
+      travelersCount: 28,
+      image: '/images/safarnama/safarnama_12.jpg',
+      caption: 'High-altitude cold desert camping and group photography with Safar Nama family.'
     }
   ];
 

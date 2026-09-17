@@ -5,7 +5,7 @@ interface InstaReel {
   id: string;
   title: string;
   image: string;
-  instagramEmbedId: string;
+  videoUrl: string;
   views: string;
   likes: string;
   comments: number;
@@ -20,8 +20,8 @@ export const InstagramFeedSection: React.FC = () => {
     {
       id: 'post-1',
       title: 'Attabad Lake emerald waters boating with our 24-member Hunza group! 🚤✨',
-      image: '/images/safarnama/safarnama_21.jpg',
-      instagramEmbedId: 'C_mN0uNog2O',
+      image: '/images/safarnama/safarnama_6.jpg',
+      videoUrl: '/videos/happyclients/happy_client_9.mp4',
       views: '345K Views',
       likes: '28.4k',
       comments: 1240,
@@ -31,8 +31,8 @@ export const InstagramFeedSection: React.FC = () => {
     {
       id: 'post-2',
       title: 'Stargazing & campfire musical night at Katpana Cold Desert Skardu 🌌🏕️',
-      image: '/images/safarnama/safarnama_22.jpg',
-      instagramEmbedId: 'C-xY4M0M1zR',
+      image: '/images/safarnama/safarnama_7.jpg',
+      videoUrl: '/videos/happyclients/happy_client_10.mp4',
       views: '280K Views',
       likes: '22.1k',
       comments: 890,
@@ -42,8 +42,8 @@ export const InstagramFeedSection: React.FC = () => {
     {
       id: 'post-3',
       title: 'Riverside acoustic music & bonfire with our group squad in Kalam Swat 🎸🔥',
-      image: '/images/safarnama/safarnama_23.jpg',
-      instagramEmbedId: 'C7rP_L1s_0A',
+      image: '/images/safarnama/safarnama_8.jpg',
+      videoUrl: '/videos/happyclients/happy_client_11.mp4',
       views: '210K Views',
       likes: '18.6k',
       comments: 650,
@@ -53,8 +53,8 @@ export const InstagramFeedSection: React.FC = () => {
     {
       id: 'post-4',
       title: 'Group cable car ride & meadow trek up to Arang Kel Neelum Kashmir 🚠🌲',
-      image: '/images/safarnama/safarnama_24.jpg',
-      instagramEmbedId: 'C6pZ_90x_8M',
+      image: '/images/safarnama/safarnama_9.jpg',
+      videoUrl: '/videos/reels/client_reel_1.mp4',
       views: '195K Views',
       likes: '16.9k',
       comments: 540,
@@ -169,14 +169,15 @@ export const InstagramFeedSection: React.FC = () => {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="relative h-[520px] w-full bg-slate-950 overflow-hidden">
-                <iframe
-                  src={`https://www.instagram.com/p/${activeReel.instagramEmbedId}/embed`}
-                  className="w-full h-full border-0"
-                  frameBorder="0"
-                  scrolling="no"
-                  allowTransparency={true}
-                  title={activeReel.title}
+              <div className="relative h-[480px] w-full bg-slate-950 overflow-hidden">
+                <video
+                  src={activeReel.videoUrl}
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  poster={activeReel.image}
+                  className="w-full h-full object-cover"
                 />
               </div>
 
