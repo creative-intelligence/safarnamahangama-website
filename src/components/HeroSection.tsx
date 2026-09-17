@@ -33,28 +33,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   ];
 
   return (
-    <section className="relative min-h-[92vh] pt-32 pb-24 flex items-center justify-center overflow-hidden bg-[#04070d]">
-      {/* Background Image with Dark Vignette & Gold Overlays */}
+    <section className="relative min-h-[95vh] pt-36 pb-24 flex items-center justify-center overflow-hidden bg-[#04070d]">
+      {/* Enhanced Authentic Background Image with Layered Vignette Overlays */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1586351012965-861624544334?auto=format&fit=crop&w=2000&q=90"
-          alt="Hunza Valley Mountain Peak - Safar Nama Hangama"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.65] contrast-110"
+          src="/hero-bg.jpg"
+          alt="Safar Nama Hangama Travelers Pointing at Snow Peaks"
+          className="w-full h-full object-cover object-[center_18%] filter brightness-[0.75] contrast-[1.08] saturate-[1.1] scale-[1.02] transition-transform duration-10000"
         />
-        {/* Layered Color Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/75 to-[#04070d]/50" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#04070d]/95 via-transparent to-[#04070d]/95" />
-        <div className="absolute inset-0 bg-gradient-to-b from-amber-950/20 via-transparent to-[#04070d]" />
+        {/* Layered Gradient Overlays for Elegant Dark Vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/60 to-[#04070d]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#04070d]/90 via-[#04070d]/30 to-[#04070d]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#04070d]/75 via-transparent to-[#04070d]" />
       </div>
 
       {/* Dynamic Glowing Aurora Orbs matching logo color #E5983A */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#E5983A]/15 rounded-full blur-[160px] pointer-events-none z-0" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-4">
         
-        {/* Shimmer Badge matching Official Logo - Symmetrical Padding Fix (px-6 py-2.5) */}
-        <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-slate-900/95 border border-[#E5983A]/50 backdrop-blur-xl mb-6 shadow-2xl shadow-amber-950/80 animate-pulse-subtle">
+        {/* Shimmer Badge matching Official Logo */}
+        <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#04070d]/90 border border-[#E5983A]/50 backdrop-blur-xl mb-6 shadow-2xl shadow-amber-950/80 animate-pulse-subtle">
           <span className="flex h-2.5 w-2.5 rounded-full bg-[#E5983A] flex-shrink-0 animate-ping" />
           <Award className="w-4 h-4 text-[#E5983A] flex-shrink-0" />
           <span className="text-xs font-black tracking-wider text-white uppercase whitespace-nowrap">
