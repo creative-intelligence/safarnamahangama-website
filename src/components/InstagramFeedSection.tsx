@@ -5,7 +5,7 @@ interface InstaReel {
   id: string;
   title: string;
   image: string;
-  videoUrl: string;
+  instagramEmbedId: string;
   views: string;
   likes: string;
   comments: number;
@@ -21,7 +21,7 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-1',
       title: 'Attabad Lake emerald waters boating with our 24-member Hunza group! 🚤✨',
       image: '/images/safarnama/safarnama_21.jpg',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-traveling-over-the-mountains-in-a-helicopter-41246-large.mp4',
+      instagramEmbedId: 'C_mN0uNog2O',
       views: '345K Views',
       likes: '28.4k',
       comments: 1240,
@@ -32,7 +32,7 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-2',
       title: 'Stargazing & campfire musical night at Katpana Cold Desert Skardu 🌌🏕️',
       image: '/images/safarnama/safarnama_22.jpg',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-camper-van-driving-on-a-road-surrounded-by-trees-41484-large.mp4',
+      instagramEmbedId: 'C-xY4M0M1zR',
       views: '280K Views',
       likes: '22.1k',
       comments: 890,
@@ -43,7 +43,7 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-3',
       title: 'Riverside acoustic music & bonfire with our group squad in Kalam Swat 🎸🔥',
       image: '/images/safarnama/safarnama_23.jpg',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-winding-road-in-the-mountains-41243-large.mp4',
+      instagramEmbedId: 'C7rP_L1s_0A',
       views: '210K Views',
       likes: '18.6k',
       comments: 650,
@@ -54,7 +54,7 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-4',
       title: 'Group cable car ride & meadow trek up to Arang Kel Neelum Kashmir 🚠🌲',
       image: '/images/safarnama/safarnama_24.jpg',
-      videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-snowy-mountains-41245-large.mp4',
+      instagramEmbedId: 'C6pZ_90x_8M',
       views: '195K Views',
       likes: '16.9k',
       comments: 540,
@@ -169,15 +169,14 @@ export const InstagramFeedSection: React.FC = () => {
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="relative h-[480px] w-full bg-slate-950">
-                <video
-                  src={activeReel.videoUrl}
-                  controls
-                  autoPlay
-                  loop
-                  playsInline
-                  poster={activeReel.image}
-                  className="w-full h-full object-cover"
+              <div className="relative h-[520px] w-full bg-slate-950 overflow-hidden">
+                <iframe
+                  src={`https://www.instagram.com/p/${activeReel.instagramEmbedId}/embed`}
+                  className="w-full h-full border-0"
+                  frameBorder="0"
+                  scrolling="no"
+                  allowTransparency={true}
+                  title={activeReel.title}
                 />
               </div>
 
