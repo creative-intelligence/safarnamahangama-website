@@ -68,16 +68,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="hidden md:flex items-center gap-2.5 h-full">
             
             {/* Currency Selector */}
-            <div className="flex items-center bg-[#0f1523]/90 rounded-xl p-1 border border-amber-500/20 h-9">
+            <div className="flex items-center bg-[#0f1523]/90 rounded-xl p-1 border border-amber-500/25 h-9">
               <Globe className="w-3.5 h-3.5 text-[#E5983A] ml-1.5 mr-1 flex-shrink-0" />
               {(['PKR', 'USD', 'AED'] as const).map((curr) => (
                 <button
                   key={curr}
                   onClick={() => onCurrencyChange(curr)}
-                  className={`px-2 py-0.5 rounded-lg font-bold transition-all text-[11px] whitespace-nowrap h-7 ${
+                  className={`px-2.5 py-0.5 rounded-lg font-black transition-all text-[11px] whitespace-nowrap h-7 ${
                     activeCurrency === curr
-                      ? 'bg-[#E5983A] text-slate-950 font-black shadow'
-                      : 'text-slate-400 hover:text-white'
+                      ? 'bg-[#E5983A] text-slate-950 shadow'
+                      : 'text-slate-300 hover:text-[#E5983A]'
                   }`}
                 >
                   {curr}
@@ -88,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Helpline Phone Button */}
             <a
               href="tel:+923331588959"
-              className="flex items-center gap-1.5 text-xs font-bold text-slate-200 hover:text-white px-3 h-9 rounded-xl bg-[#0f1523]/90 border border-amber-500/20 hover:border-amber-400/50 transition whitespace-nowrap"
+              className="flex items-center gap-1.5 text-xs font-bold text-slate-200 hover:text-white px-3 h-9 rounded-xl bg-[#0f1523]/90 border border-amber-500/25 hover:border-amber-400/50 transition whitespace-nowrap"
               title="Call Helpline: 0333 1588959"
             >
               <Phone className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
@@ -125,7 +125,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   key={curr}
                   onClick={() => onCurrencyChange(curr)}
-                  className={`py-1.5 text-center text-xs font-bold rounded-lg transition ${
+                  className={`py-1.5 text-center text-xs font-black rounded-lg transition ${
                     activeCurrency === curr ? 'bg-[#E5983A] text-slate-950' : 'text-slate-400'
                   }`}
                 >
@@ -141,7 +141,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 px-3.5 py-2.5 text-sm font-semibold text-slate-200 hover:text-amber-400 hover:bg-slate-900 rounded-xl"
+                  className="flex items-center gap-3 px-3.5 py-2.5 text-sm font-semibold text-slate-200 hover:text-[#E5983A] hover:bg-slate-900 rounded-xl"
                 >
                   {link.name}
                 </a>
