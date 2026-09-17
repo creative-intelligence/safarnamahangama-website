@@ -28,7 +28,7 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenContact })
               <span className="gradient-text">YouTube Cashflow Asset</span>
             </h2>
             <p className="text-slate-300 text-base sm:text-lg font-sans">
-              No hidden setup fees. No long-term contracts. Backed by Usama Khursheed's 90-day guarantee.
+              No hidden setup fees. No long-term contracts. Backed by TubeScale's 90-day guarantee.
             </p>
 
             {/* Billing Toggle Switch */}

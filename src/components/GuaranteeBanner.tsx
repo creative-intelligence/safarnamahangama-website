@@ -17,11 +17,11 @@ export const GuaranteeBanner: React.FC = () => {
             <div className="space-y-3">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Usama Khursheed Risk-Free Commitment</span>
+                <span>TubeScale Risk-Free Commitment</span>
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
                 Channel Monetized in 90 Days. <br />
-                <span className="gradient-text">Or Production is 100% Free.</span>
+                <span className="gradient-text">Or We Manage & Produce 100% Free Until You Do.</span>
               </h2>
             </div>
 
@@ -38,7 +38,7 @@ export const GuaranteeBanner: React.FC = () => {
             <div className="p-5 rounded-2xl bg-[#030C07] border border-emerald-900/60 space-y-2">
               <div className="flex items-center gap-2 text-emerald-400 font-bold text-sm">
                 <Zap className="w-4 h-4" />
-                <span>500+ Subscribers SLA</span>
+                <span>1,000+ Subscribers SLA</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
                 We push your channel to YouTube Partner Program eligibility within 90 days.
