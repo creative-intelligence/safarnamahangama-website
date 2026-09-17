@@ -70,9 +70,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
             <span className="font-extrabold text-2xl tracking-tight text-white flex items-center font-display">
               Tube<span className="gradient-text">Scale</span>
             </span>
-            <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-400 block -mt-1">
-              By Usama Khursheed
-            </span>
           </div>
         </a>
 
