@@ -24,7 +24,7 @@ export const PastTripsGallery: React.FC = () => {
       category: 'group',
       date: 'Autumn 2026',
       travelersCount: 24,
-      image: '/images/hunza.jpg',
+      image: '/images/safarnama/safarnama_6.jpg',
       caption: 'Our amazing 24-member group tour enjoying blue waters and boat rides in Attabad Lake!'
     },
     {
@@ -34,7 +34,7 @@ export const PastTripsGallery: React.FC = () => {
       category: 'friends',
       date: 'Summer 2026',
       travelersCount: 18,
-      image: '/images/swat.jpg',
+      image: '/images/safarnama/safarnama_7.jpg',
       caption: 'Riverside bonfire with live guitar acoustic music under the stars in Kalam.'
     },
     {
@@ -44,7 +44,7 @@ export const PastTripsGallery: React.FC = () => {
       category: 'honeymoon',
       date: 'Spring 2026',
       travelersCount: 2,
-      image: '/images/honeymoon.jpg',
+      image: '/images/safarnama/safarnama_8.jpg',
       caption: 'Exclusive honeymoon trip couple witnessing 360-degree sunset over Rakaposhi and Ladyfinger peak.'
     },
     {
@@ -54,7 +54,7 @@ export const PastTripsGallery: React.FC = () => {
       category: 'group',
       date: 'July 2026',
       travelersCount: 30,
-      image: '/images/skardu.jpg',
+      image: '/images/safarnama/safarnama_9.jpg',
       caption: 'Conquering the 2nd highest plateau in the world with 5 Prado Jeeps!'
     },
     {
@@ -64,7 +64,7 @@ export const PastTripsGallery: React.FC = () => {
       category: 'family',
       date: 'August 2026',
       travelersCount: 12,
-      image: '/images/kashmir.jpg',
+      image: '/images/safarnama/safarnama_10.jpg',
       caption: 'Multigenerational family group enjoying cable car ride and green meadows in Arang Kel.'
     },
     {
@@ -74,8 +74,38 @@ export const PastTripsGallery: React.FC = () => {
       category: 'friends',
       date: 'September 2026',
       travelersCount: 16,
-      image: '/images/fairy.jpg',
+      image: '/images/safarnama/safarnama_11.jpg',
       caption: 'Group photo right in front of Nanga Parbat killer mountain (8,126m) at Beyal Camp.'
+    },
+    {
+      id: 'photo-7',
+      title: 'Katpana Cold Desert Stargazing Night',
+      location: 'Katpana Desert, Skardu',
+      category: 'group',
+      date: 'August 2026',
+      travelersCount: 28,
+      image: '/images/safarnama/safarnama_12.jpg',
+      caption: 'High-altitude cold desert camping and starlight photography with Safar Nama group.'
+    },
+    {
+      id: 'photo-8',
+      title: 'Ushu Pine Forest Family Trek',
+      location: 'Ushu Forest, Kalam',
+      category: 'family',
+      date: 'July 2026',
+      travelersCount: 14,
+      image: '/images/safarnama/safarnama_13.jpg',
+      caption: 'Dense pine forest nature walk with family group members.'
+    },
+    {
+      id: 'photo-9',
+      title: 'Passu Cones Group Expedition',
+      location: 'Passu, Upper Hunza',
+      category: 'group',
+      date: 'June 2026',
+      travelersCount: 22,
+      image: '/images/safarnama/safarnama_14.jpg',
+      caption: 'Striking group memory right under the iconic Cathedral Passu Cones peak.'
     }
   ];
 
@@ -141,7 +171,7 @@ export const PastTripsGallery: React.FC = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   onError={(e: any) => {
                     e.target.onerror = null;
-                    e.target.src = '/images/hunza.jpg';
+                    e.target.src = '/images/destinations/hunza_attabad.jpg';
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/20 to-transparent" />
@@ -203,7 +233,7 @@ export const PastTripsGallery: React.FC = () => {
                   className="w-full h-full object-cover"
                   onError={(e: any) => {
                     e.target.onerror = null;
-                    e.target.src = '/images/hunza.jpg';
+                    e.target.src = '/images/destinations/hunza_attabad.jpg';
                   }}
                 />
               </div>

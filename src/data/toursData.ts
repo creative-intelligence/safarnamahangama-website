@@ -47,12 +47,12 @@ export const TOURS_DATA: Tour[] = [
     reviewsCount: 142,
     nextDeparture: 'Every Thursday Night',
     pickupCities: ['Islamabad', 'Lahore', 'Rawalpindi'],
-    image: 'https://images.unsplash.com/photo-1586351012965-861624544334?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/destinations/hunza_attabad.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1586351012965-861624544334?auto=format&fit=crop&w=900&q=85',
-      'https://images.unsplash.com/photo-1627894483216-2138af692e32?auto=format&fit=crop&w=900&q=85',
-      'https://images.unsplash.com/photo-1596707323605-650a25695026?auto=format&fit=crop&w=900&q=85',
-      'https://images.unsplash.com/photo-1609825488888-3a766db05542?auto=format&fit=crop&w=900&q=85'
+      '/images/destinations/hunza_attabad.jpg',
+      '/images/destinations/hunza_passu.jpg',
+      '/images/safarnama/safarnama_1.jpg',
+      '/images/safarnama/safarnama_2.jpg'
     ],
     highlights: [
       'Boating in turquoise waters of Attabad Lake',
@@ -76,41 +76,11 @@ export const TOURS_DATA: Tour[] = [
       'Anything not mentioned in inclusions'
     ],
     itinerary: [
-      {
-        day: 1,
-        title: 'Departure & Scenic Journey via KKH',
-        description: 'Overnight journey starting from Islamabad/Lahore. Breakfast at Besham/Naran road, photography stops along Karakoram Highway.',
-        activities: ['Departure at 10:00 PM', 'Night travel across Hazara Motorway', 'Short tea break at Abbottabad'],
-        overnight: 'Hotel stay at Chilas / Naran'
-      },
-      {
-        day: 2,
-        title: 'Chilas to Karimabad, Hunza',
-        description: 'Drive along Indus river. View point of 3 world-greatest mountain ranges (Himalayas, Karakoram, Hindu Kush) & Nanga Parbat viewpoint.',
-        activities: ['Stop at 3-Mountain Junction', 'Rakaposhi Viewpoint lunch break', 'Arrival in Karimabad'],
-        overnight: 'Hotel stay in Karimabad, Hunza'
-      },
-      {
-        day: 3,
-        title: 'Attabad Lake, Passu Cones & Hussaini Bridge',
-        description: 'Full day adventure to Upper Hunza. Cruise on Attabad Lake, walk the thrilling Hussaini Bridge, and gaze at majestic Passu Cathedral.',
-        activities: ['Boating at Attabad Lake', 'Crossing Hussaini Suspension Bridge', 'Passu Cones photography', 'Sost Border market visit'],
-        overnight: 'Hotel stay in Karimabad, Hunza'
-      },
-      {
-        day: 4,
-        title: 'Altit Fort, Royal Garden & Eagle’s Nest Sunset',
-        description: 'Explore ancient architecture, walk through Altit village, and witness breathtaking sunset over Hunza valley from Eagle’s Nest.',
-        activities: ['Guided tour of Altit & Baltit Forts', 'Walnut garden walk', 'Sunset at Eagle’s Nest Duikar', 'Hangama Cultural Musical Night'],
-        overnight: 'Hotel stay in Karimabad'
-      },
-      {
-        day: 5,
-        title: 'Return Journey to Islamabad/Lahore',
-        description: 'Early departure back to Islamabad with memories of Hunza Valley.',
-        activities: ['Breakfast in Hunza', 'Souvenir shopping', 'Arrival in Islamabad around 11:00 PM'],
-        overnight: 'Home'
-      }
+      { day: 1, title: 'Departure & Scenic Journey via KKH', description: 'Overnight journey starting from Islamabad/Lahore via Hazara Motorway.', activities: ['Departure at 10:00 PM', 'Night travel across Hazara Motorway', 'Short tea break at Abbottabad'], overnight: 'Hotel stay at Chilas / Naran' },
+      { day: 2, title: 'Chilas to Karimabad, Hunza', description: 'Drive along Indus river gorge with stops at 3-Mountain Junction & Rakaposhi Viewpoint.', activities: ['Stop at 3-Mountain Junction', 'Rakaposhi Viewpoint lunch break', 'Arrival in Karimabad'], overnight: 'Hotel stay in Karimabad, Hunza' },
+      { day: 3, title: 'Attabad Lake, Passu Cones & Hussaini Bridge', description: 'Full day adventure to Upper Hunza. Cruise on Attabad Lake and walk Hussaini Bridge.', activities: ['Boating at Attabad Lake', 'Crossing Hussaini Suspension Bridge', 'Passu Cones photography', 'Sost Border market visit'], overnight: 'Hotel stay in Karimabad, Hunza' },
+      { day: 4, title: 'Altit Fort, Royal Garden & Eagle’s Nest Sunset', description: 'Explore ancient architecture of Altit & Baltit Forts, and watch sunset from Eagle’s Nest.', activities: ['Guided tour of Altit & Baltit Forts', 'Walnut garden walk', 'Sunset at Eagle’s Nest Duikar', 'Hangama Cultural Musical Night'], overnight: 'Hotel stay in Karimabad' },
+      { day: 5, title: 'Return Journey to Islamabad/Lahore', description: 'Early departure back to Islamabad with sweet memories of Hunza Valley.', activities: ['Breakfast in Hunza', 'Souvenir shopping', 'Arrival in Islamabad around 11:00 PM'], overnight: 'Home' }
     ]
   },
   {
@@ -129,11 +99,12 @@ export const TOURS_DATA: Tour[] = [
     reviewsCount: 198,
     nextDeparture: 'Every Friday Night',
     pickupCities: ['Islamabad', 'Lahore'],
-    image: 'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/destinations/skardu_shangrila.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=900&q=85',
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=85',
-      'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85'
+      '/images/destinations/skardu_shangrila.jpg',
+      '/images/destinations/skardu_deosai.jpg',
+      '/images/safarnama/safarnama_3.jpg',
+      '/images/safarnama/safarnama_4.jpg'
     ],
     highlights: [
       '4x4 Prado Jeep Safari to Deosai National Park & Sheosar Lake',
@@ -155,8 +126,8 @@ export const TOURS_DATA: Tour[] = [
       'Lunch meals'
     ],
     itinerary: [
-      { day: 1, title: 'Islamabad to Chilas', description: 'Depart from Islamabad via Hazara Motorway and Babusar Top / KKH.', activities: ['Departure 11 PM', 'Babusar Top photo break'], overnight: 'Hotel in Chilas' },
-      { day: 2, title: 'Chilas to Skardu Valley', description: 'Drive along breathtaking Indus river gorge to reach Skardu city.', activities: ['Alam Bridge stop', 'Arrival in Skardu'], overnight: 'Hotel in Skardu' },
+      { day: 1, title: 'Islamabad to Chilas', description: 'Depart from Islamabad via Hazara Motorway and KKH.', activities: ['Departure 11 PM', 'Babusar Top photo break'], overnight: 'Hotel in Chilas' },
+      { day: 2, title: 'Chilas to Skardu Valley', description: 'Drive along Indus river gorge to reach Skardu city.', activities: ['Alam Bridge stop', 'Arrival in Skardu'], overnight: 'Hotel in Skardu' },
       { day: 3, title: 'Shangrila Lake & Upper Kachura Lake', description: 'Visit famous heart-shaped lake & tranquil Upper Kachura Lake.', activities: ['Boating', 'Short hike to Upper Kachura'], overnight: 'Hotel in Skardu' },
       { day: 4, title: 'Deosai National Park & Sheosar Lake Safari', description: 'Full day jeep safari across land of giants (2nd highest plateau in the world).', activities: ['Bara Pani bridge crossing', 'Sheosar Lake view', 'Wild bear spotting'], overnight: 'Hotel in Skardu' },
       { day: 5, title: 'Shigar Valley & Katpana Cold Desert', description: 'Explore historic Shigar Fort and sunset at high-altitude sand dunes.', activities: ['Shigar Fort tour', 'Katpana desert quad biking'], overnight: 'Hotel in Skardu' },
@@ -180,10 +151,11 @@ export const TOURS_DATA: Tour[] = [
     reviewsCount: 230,
     nextDeparture: 'Every Friday Night',
     pickupCities: ['Islamabad', 'Lahore', 'Peshawar'],
-    image: 'https://images.unsplash.com/photo-1548777123-e216912df7d8?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/destinations/swat_malamjabba.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1548777123-e216912df7d8?auto=format&fit=crop&w=900&q=85',
-      'https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=85'
+      '/images/destinations/swat_malamjabba.jpg',
+      '/images/destinations/swat_kalam.jpg',
+      '/images/safarnama/safarnama_5.jpg'
     ],
     highlights: [
       'Ski Resort & Chairlift ride at Malam Jabba',
@@ -203,9 +175,9 @@ export const TOURS_DATA: Tour[] = [
       'Malam Jabba Chairlift & Zipline tickets'
     ],
     itinerary: [
-      { day: 1, title: 'Islamabad to Kalam Valley', description: 'Drive through Swat Motorway, visit Fizaghat and trek along Swat River to Kalam.', activities: ['Swat Expressway drive', 'Kalam arrival'], overnight: 'Hotel stay in Kalam' },
-      { day: 2, title: 'Ushu Forest & Mahodand Lake Jeep Safari', description: 'Jeep ride through dense pine forest of Ushu, Matiltan waterfall, and blue alpine Mahodand Lake.', activities: ['Ushu Forest trek', 'Mahodand boating', 'Kalam Bonfire Night'], overnight: 'Hotel stay in Kalam' },
-      { day: 3, title: 'Malam Jabba Ski Resort & Return', description: 'Visit Malam Jabba for chairlift and zipline, then head back to Islamabad.', activities: ['Chairlift ride', 'Zipline', 'Return to Islamabad'], overnight: 'Home' }
+      { day: 1, title: 'Islamabad to Kalam Valley', description: 'Drive through Swat Motorway, visit Fizaghat and reach Kalam.', activities: ['Swat Expressway drive', 'Kalam arrival'], overnight: 'Hotel stay in Kalam' },
+      { day: 2, title: 'Ushu Forest & Mahodand Lake Jeep Safari', description: 'Jeep ride through dense pine forest of Ushu and Mahodand Lake.', activities: ['Ushu Forest trek', 'Mahodand boating', 'Kalam Bonfire Night'], overnight: 'Hotel stay in Kalam' },
+      { day: 3, title: 'Malam Jabba Ski Resort & Return', description: 'Visit Malam Jabba for chairlift and zipline, then return back.', activities: ['Chairlift ride', 'Zipline', 'Return to Islamabad'], overnight: 'Home' }
     ]
   },
   {
@@ -224,9 +196,10 @@ export const TOURS_DATA: Tour[] = [
     reviewsCount: 115,
     nextDeparture: 'Every Thursday Night',
     pickupCities: ['Islamabad', 'Lahore', 'Rawalpindi'],
-    image: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/destinations/kashmir_arangkel.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=900&q=85'
+      '/images/destinations/kashmir_arangkel.jpg',
+      '/images/safarnama/safarnama_6.jpg'
     ],
     highlights: [
       'Cable car ride & trek to magical hilltop village Arang Kel',
@@ -267,10 +240,10 @@ export const TOURS_DATA: Tour[] = [
     reviewsCount: 87,
     nextDeparture: 'Every Thursday Night',
     pickupCities: ['Islamabad', 'Lahore'],
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/destinations/fairy_meadows.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=900&q=85',
-      'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85'
+      '/images/destinations/fairy_meadows.jpg',
+      '/images/safarnama/safarnama_7.jpg'
     ],
     highlights: [
       'World famous thrill jeep track from Raikot Bridge to Tatto village',
@@ -313,9 +286,10 @@ export const TOURS_DATA: Tour[] = [
     reviewsCount: 310,
     nextDeparture: 'Every Friday Night',
     pickupCities: ['Islamabad', 'Lahore', 'Rawalpindi'],
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/destinations/naran_saifulmalook.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85'
+      '/images/destinations/naran_saifulmalook.jpg',
+      '/images/safarnama/safarnama_8.jpg'
     ],
     highlights: [
       'Jeep excursion to legendary Saif-ul-Malook Lake',
@@ -355,9 +329,10 @@ export const TOURS_DATA: Tour[] = [
     reviewsCount: 76,
     nextDeparture: 'Every Wednesday Night',
     pickupCities: ['Islamabad', 'Lahore', 'Peshawar'],
-    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=85',
+    image: '/images/destinations/kumrat_katora.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85'
+      '/images/destinations/kumrat_katora.jpg',
+      '/images/safarnama/safarnama_9.jpg'
     ],
     highlights: [
       'Dense Deodar tree forest walk in Kumrat',

@@ -19,7 +19,7 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
         'Flexible stops & child care comfort',
         'Islamabad / Lahore door-step pickup'
       ],
-      image: '/images/family.jpg'
+      image: '/images/safarnama/safarnama_1.jpg'
     },
     {
       id: 'honeymoon',
@@ -33,7 +33,7 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
         'Candlelight Dinner & Flower Decor Setup',
         'Complimentary Honeymoon Cake & Fruit Basket'
       ],
-      image: '/images/honeymoon.jpg'
+      image: '/images/safarnama/safarnama_2.jpg'
     },
     {
       id: 'friends',
@@ -47,7 +47,7 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
         'Drone & DSLR Photography Lead',
         'Jeep Safari & Water Sports Vouchers'
       ],
-      image: '/images/friends.jpg'
+      image: '/images/safarnama/safarnama_3.jpg'
     },
     {
       id: 'corporate',
@@ -61,7 +61,7 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
         'Sound System & Campfire Entertainment',
         'NTN / FBR Registered Invoice & GST Support'
       ],
-      image: '/images/corporate.jpg'
+      image: '/images/safarnama/safarnama_4.jpg'
     },
     {
       id: 'solo',
@@ -75,7 +75,7 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
         'Professional Tour Escort & 24/7 Support',
         'Welcoming & Respectful Group Environment'
       ],
-      image: '/images/solo.jpg'
+      image: '/images/safarnama/safarnama_5.jpg'
     }
   ];
 
@@ -113,7 +113,7 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     onError={(e: any) => {
                       e.target.onerror = null;
-                      e.target.src = 'https://images.unsplash.com/photo-1539635273304-0e8723e07256?auto=format&fit=crop&w=800&q=80';
+                      e.target.src = '/images/destinations/hunza_attabad.jpg';
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/30 to-transparent" />
