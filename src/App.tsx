@@ -16,7 +16,7 @@ import { Footer } from './components/Footer';
 
 export function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [preloaderOption, setPreloaderOption] = useState<1 | 2 | 3 | 4 | 5>(3);
+  const [preloaderOption, setPreloaderOption] = useState<1 | 2 | 3 | 4 | 5>(4);
 
   const handleOpenContact = () => setIsContactOpen(true);
   const handleCloseContact = () => setIsContactOpen(false);
