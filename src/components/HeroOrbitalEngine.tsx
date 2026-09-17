@@ -271,7 +271,7 @@ export const HeroOrbitalEngine: React.FC = () => {
             <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-6 space-y-3">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-[11px] font-mono font-extrabold text-emerald-300 uppercase tracking-widest shadow-[0_0_20px_rgba(16,185,129,0.4)] animate-pulse">
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-                ⚙ SYSTEM GEAR ENGINE #01
+                LIVE REVENUE METRICS
               </div>
 
               <div className="text-3xl sm:text-5xl font-black font-display text-transparent bg-clip-text bg-gradient-to-r from-emerald-200 via-white to-cyan-300 tracking-tight leading-tight max-w-xs drop-shadow-[0_0_35px_rgba(16,185,129,0.95)]">
