@@ -53,11 +53,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         
-        {/* Shimmer Badge matching Official Logo */}
-        <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-slate-900/90 border border-[#E5983A]/50 backdrop-blur-xl mb-6 shadow-2xl shadow-amber-950/80 animate-pulse-subtle">
-          <span className="flex h-2.5 w-2.5 rounded-full bg-[#E5983A] animate-ping" />
-          <Award className="w-4 h-4 text-[#E5983A]" />
-          <span className="text-xs font-black tracking-wider text-white uppercase">
+        {/* Shimmer Badge matching Official Logo - Symmetrical Padding Fix (px-6 py-2.5) */}
+        <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-slate-900/95 border border-[#E5983A]/50 backdrop-blur-xl mb-6 shadow-2xl shadow-amber-950/80 animate-pulse-subtle">
+          <span className="flex h-2.5 w-2.5 rounded-full bg-[#E5983A] flex-shrink-0 animate-ping" />
+          <Award className="w-4 h-4 text-[#E5983A] flex-shrink-0" />
+          <span className="text-xs font-black tracking-wider text-white uppercase whitespace-nowrap">
             #1 Rated Pakistan Travel Operator • @safarnamahangama
           </span>
         </div>
