@@ -1,67 +1,186 @@
 import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { YouTubeEngineVisualizer } from './components/YouTubeEngineVisualizer';
-import { LiveStudioSimulator } from './components/LiveStudioSimulator';
-import { AboutFounder } from './components/AboutFounder';
-import { GuaranteeBanner } from './components/GuaranteeBanner';
-import { ServicesSection } from './components/ServicesSection';
-import { ProcessSection } from './components/ProcessSection';
-import { PortfolioProof } from './components/PortfolioProof';
-import { PricingSection } from './components/PricingSection';
+import { HeroSection } from './components/HeroSection';
+import { TourCatalog } from './components/TourCatalog';
+import { TourDetailModal } from './components/TourDetailModal';
+import { PrivateTripsSection } from './components/PrivateTripsSection';
+import { CustomTripBuilder } from './components/CustomTripBuilder';
+import { PastTripsGallery } from './components/PastTripsGallery';
+import { DestinationExplorer } from './components/DestinationExplorer';
+import { InstagramFeedSection } from './components/InstagramFeedSection';
+import { PackingChecklist } from './components/PackingChecklist';
+import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
-import { ContactModal } from './components/ContactModal';
+import { BookingModal } from './components/BookingModal';
 import { Footer } from './components/Footer';
+import { Tour } from './data/toursData';
+import { MessageCircle, Phone, ArrowUp } from 'lucide-react';
 
 export function App() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [activeCurrency, setActiveCurrency] = useState<'PKR' | 'USD' | 'AED'>('PKR');
+  const [searchFilter, setSearchFilter] = useState<string>('');
+  const [regionFilter, setRegionFilter] = useState<string>('all');
+  
+  // Modals
+  const [detailTour, setDetailTour] = useState<Tour | null>(null);
+  const [bookingTour, setBookingTour] = useState<Tour | null>(null);
+  const [customBookingDetails, setCustomBookingDetails] = useState<any>(null);
+  const [isBookingOpen, setIsBookingOpen] = useState<boolean>(false);
 
-  const handleOpenContact = () => setIsContactOpen(true);
-  const handleCloseContact = () => setIsContactOpen(false);
+  // Currency Conversion Rates (Base: PKR)
+  const USD_RATE = 278;
+  const AED_RATE = 75.6;
+
+  const formatPrice = (pricePKR: number): string => {
+    if (activeCurrency === 'USD') {
+      const usd = Math.round(pricePKR / USD_RATE);
+      return `$${usd.toLocaleString()}`;
+    }
+    if (activeCurrency === 'AED') {
+      const aed = Math.round(pricePKR / AED_RATE);
+      return `${aed.toLocaleString()} AED`;
+    }
+    return `PKR ${pricePKR.toLocaleString()}`;
+  };
+
+  const handleHeroSearch = (query: string, region: string) => {
+    setSearchFilter(query);
+    setRegionFilter(region);
+  };
+
+  const handleOpenBookingModal = (tour?: Tour, details?: any) => {
+    if (tour) {
+      setBookingTour(tour);
+    }
+    if (details) {
+      setCustomBookingDetails(details);
+    }
+    setIsBookingOpen(true);
+  };
+
+  const handlePrivateCategoryBooking = (categoryType: string) => {
+    const el = document.getElementById('custom-trip');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <div className="min-h-screen bg-[#030C07] text-slate-100 selection:bg-emerald-500 selection:text-black font-sans">
-      {/* Header Navigation */}
-      <Navbar onOpenContact={handleOpenContact} />
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+      
+      {/* Sticky Header Navigation */}
+      <Navbar
+        activeCurrency={activeCurrency}
+        onCurrencyChange={setActiveCurrency}
+        onOpenCustomBuilder={() => {
+          const el = document.getElementById('custom-trip');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
+        onOpenBooking={() => handleOpenBookingModal()}
+      />
 
-      {/* Main Content Flow */}
-      <main>
-        {/* 1. Hero Section */}
-        <Hero onOpenContact={handleOpenContact} />
+      {/* Hero Section */}
+      <HeroSection
+        onSearch={handleHeroSearch}
+        onOpenCustomBuilder={() => {
+          const el = document.getElementById('custom-trip');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }}
+        onOpenBooking={() => handleOpenBookingModal()}
+      />
 
-        {/* 2. 24/7 Animated YouTube Production Engine */}
-        <YouTubeEngineVisualizer />
+      {/* Main Tour Catalog Explorer */}
+      <TourCatalog
+        activeCurrency={activeCurrency}
+        formatPrice={formatPrice}
+        onSelectTour={(tour) => setDetailTour(tour)}
+        onBookTour={(tour) => handleOpenBookingModal(tour)}
+        searchFilter={searchFilter}
+        regionFilter={regionFilter}
+      />
 
-        {/* 4. Interactive Live Studio Simulator */}
-        <LiveStudioSimulator />
+      {/* Dedicated Private & Custom Trips Hub */}
+      <PrivateTripsSection
+        onSelectCategoryBooking={handlePrivateCategoryBooking}
+      />
 
-        {/* 4. Founder Story & Authority */}
-        <AboutFounder />
+      {/* Interactive Custom Trip Builder Wizard */}
+      <CustomTripBuilder formatPrice={formatPrice} />
 
-        {/* 5. Zero Risk 90-Day Guarantee Banner */}
-        <GuaranteeBanner />
+      {/* Past Group Trips Photo Gallery & Memories */}
+      <PastTripsGallery />
 
-        {/* 6. Done-For-You Services Showcase */}
-        <ServicesSection onOpenContact={handleOpenContact} />
+      {/* Destination Guides */}
+      <DestinationExplorer
+        onFilterByRegion={(regionId) => setRegionFilter(regionId)}
+      />
 
-        {/* 7. 4-Stage Production System */}
-        <ProcessSection />
+      {/* Instagram Wall & Social Proof */}
+      <InstagramFeedSection />
 
-        {/* 9. Client Case Studies & Proof Grid */}
-        <PortfolioProof />
+      {/* Interactive Packing Checklist */}
+      <PackingChecklist />
 
-        {/* 10. Transparent Pricing Packages */}
-        <PricingSection onOpenContact={handleOpenContact} />
+      {/* Customer Reviews & Testimonials */}
+      <TestimonialsSection />
 
-        {/* 11. Monetization FAQs */}
-        <FaqSection />
-      </main>
+      {/* Frequently Asked Questions */}
+      <FaqSection />
 
       {/* Footer */}
       <Footer />
 
-      {/* Strategy Call Booking Modal */}
-      <ContactModal isOpen={isContactOpen} onClose={handleCloseContact} />
+      {/* Floating Action Buttons (WhatsApp & Scroll To Top) */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <a
+          href="https://wa.me/923331588959?text=Hello%20Safar%20Nama%20Hangama!%20I%20have%20an%20inquiry%20about%20a%20tour."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full shadow-2xl shadow-emerald-950 hover:scale-110 transition-all flex items-center justify-center group"
+          title="Instant WhatsApp Support (+92 333 1588959)"
+        >
+          <MessageCircle className="w-6 h-6 fill-slate-950" />
+        </a>
+
+        <button
+          onClick={scrollToTop}
+          className="p-3 bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white rounded-full border border-slate-700 shadow-xl transition"
+          title="Scroll to Top"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Modals */}
+      {detailTour && (
+        <TourDetailModal
+          tour={detailTour}
+          onClose={() => setDetailTour(null)}
+          formatPrice={formatPrice}
+          onBookNow={(tour, details) => {
+            setDetailTour(null);
+            handleOpenBookingModal(tour, details);
+          }}
+        />
+      )}
+
+      {isBookingOpen && (
+        <BookingModal
+          selectedTour={bookingTour}
+          customDetails={customBookingDetails}
+          onClose={() => {
+            setIsBookingOpen(false);
+            setBookingTour(null);
+            setCustomBookingDetails(null);
+          }}
+          formatPrice={formatPrice}
+        />
+      )}
+
     </div>
   );
 }

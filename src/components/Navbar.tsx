@@ -1,178 +1,174 @@
 import React, { useState, useEffect } from 'react';
-import { siteConfig } from '../config/siteConfig';
-import { Youtube, Menu, X, ArrowRight } from 'lucide-react';
+import { Logo } from './Logo';
+import { Phone, Compass, Calendar, MapPin, CheckSquare, MessageCircle, Menu, X, Globe, Sparkles, Camera, Users } from 'lucide-react';
 
 interface NavbarProps {
-  onOpenContact: () => void;
+  activeCurrency: 'PKR' | 'USD' | 'AED';
+  onCurrencyChange: (currency: 'PKR' | 'USD' | 'AED') => void;
+  onOpenCustomBuilder: () => void;
+  onOpenBooking: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenContact }) => {
-  const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+export const Navbar: React.FC<NavbarProps> = ({
+  activeCurrency,
+  onCurrencyChange,
+  onOpenCustomBuilder,
+  onOpenBooking
+}) => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>('');
-
-  useEffect(() => {
-    const timer = setTimeout(() => setMounted(true), 60);
-    return () => clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setScrolled(scrollY > 20);
-
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        setScrollProgress(Math.min(100, (scrollY / totalHeight) * 100));
-      }
-
-      // Scroll Spy: Determine active section as user scrolls up and down
-      const sectionIds = ['about', 'services', 'process', 'portfolio', 'pricing', 'faq'];
-      const scrollPosition = scrollY + 220;
-
-      let found = '';
-      for (const id of sectionIds) {
-        const element = document.getElementById(id);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            found = id;
-            break;
-          }
-        }
-      }
-
-      setActiveSection(found);
+      setIsScrolled(window.scrollY > 20);
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'Services', href: '#services', id: 'services' },
-    { name: 'Process', href: '#process', id: 'process' },
-    { name: 'TrackRecord', href: '#portfolio', id: 'portfolio' },
-    { name: 'Pricing', href: '#pricing', id: 'pricing' },
-    { name: 'FAQ', href: '#faq', id: 'faq' },
+    { name: 'Tours', href: '#tours' },
+    { name: 'Private Trips', href: '#private-trips' },
+    { name: 'Custom Builder', href: '#custom-trip' },
+    { name: 'Group Gallery', href: '#gallery' },
+    { name: 'Destinations', href: '#destinations' },
+    { name: 'Checklist', href: '#checklist' },
   ];
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-700 ease-out ${
-        mounted ? 'translate-y-0 opacity-100' : '-translate-y-6 opacity-0'
-      } ${
-        scrolled
-          ? 'bg-[#030C07]/90 backdrop-blur-md py-4 border-b border-emerald-900/40 shadow-lg shadow-black/60'
-          : 'bg-transparent py-6'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-[#04070d]/95 backdrop-blur-xl border-b border-amber-500/20 py-3 shadow-2xl shadow-amber-950/20'
+          : 'bg-gradient-to-b from-[#04070d]/95 via-[#04070d]/60 to-transparent py-4'
       }`}
     >
-      {/* Dynamic Cyber Laser Progress Beam */}
-      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-emerald-950/60 overflow-hidden pointer-events-none">
-        <div
-          className="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 transition-all duration-150 shadow-[0_0_12px_#10B981]"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-3 group">
-          <img 
-            src="/favicon.svg" 
-            alt="TubeScale Logo" 
-            className="w-10 h-10 transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_12px_rgba(16,185,129,0.5)]" 
-          />
-          <div>
-            <span className="font-extrabold text-2xl tracking-tight text-white flex items-center font-display">
-              Tube<span className="gradient-text">Scale</span>
-            </span>
-          </div>
-        </a>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between gap-4">
+          
+          {/* Brand Official Logo */}
+          <a href="#" className="flex-shrink-0">
+            <Logo size="md" />
+          </a>
 
-        {/* Desktop Links with Animated White Rounded Active Button */}
-        <ul className="hidden md:flex items-center gap-1.5 bg-[#081610]/80 border border-emerald-900/40 px-3 py-1.5 rounded-full backdrop-blur-md">
-          {navLinks.map((link) => {
-            const isActive = activeSection === link.id;
-            return (
-              <li key={link.name}>
-                <a
-                  href={link.href}
-                  className={`rounded-full text-xs font-bold transition-all duration-300 inline-block ${
-                    isActive
-                      ? 'bg-white text-black px-4 py-1.5 font-extrabold'
-                      : 'px-3.5 py-1.5 text-slate-300 hover:text-white hover:bg-emerald-500/20 hover:text-emerald-300 font-semibold'
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-1 bg-slate-900/90 p-1.5 rounded-full border border-amber-500/25">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="px-3.5 py-1.5 text-xs font-semibold text-slate-300 hover:text-amber-400 hover:bg-slate-800 rounded-full transition-all duration-200"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* Right Action Controls */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Currency Selector */}
+            <div className="flex items-center bg-slate-900 rounded-xl p-1 border border-amber-500/20 text-xs">
+              <Globe className="w-3.5 h-3.5 text-amber-400 ml-1.5 mr-1" />
+              {(['PKR', 'USD', 'AED'] as const).map((curr) => (
+                <button
+                  key={curr}
+                  onClick={() => onCurrencyChange(curr)}
+                  className={`px-2 py-1 rounded-lg font-bold transition-all text-[11px] ${
+                    activeCurrency === curr
+                      ? 'bg-[#E5983A] text-slate-950 shadow font-extrabold'
+                      : 'text-slate-400 hover:text-white'
                   }`}
                 >
-                  {link.name}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+                  {curr}
+                </button>
+              ))}
+            </div>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center gap-3">
-          <button
-            onClick={onOpenContact}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-600 text-black font-extrabold text-sm hover:from-emerald-400 hover:to-teal-400 transition-all duration-300 shadow-glow-emerald hover:scale-105 active:scale-95 border border-emerald-300/30"
-          >
-            <span>Book Strategy Call</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-emerald-950/60 transition-colors"
-          aria-label="Toggle navigation menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </nav>
-
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-[#081610] border-b border-emerald-900/50 px-4 pt-3 pb-6 space-y-3">
-          <ul className="space-y-1 text-left">
-            {navLinks.map((link) => {
-              const isActive = activeSection === link.id;
-              return (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-4 py-2.5 rounded-xl text-sm transition-all duration-300 ${
-                      isActive
-                        ? 'bg-white text-black font-black shadow-lg'
-                        : 'font-medium text-slate-200 hover:bg-emerald-600/20 hover:text-emerald-400'
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-          <div className="pt-2">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenContact();
-              }}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 text-black font-extrabold text-sm shadow-glow-emerald"
+            {/* Quick Call Link */}
+            <a
+              href="tel:+923331588959"
+              className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-xl bg-slate-900 border border-amber-500/20 hover:border-amber-400/50 transition"
             >
-              <span>Book Strategy Call</span>
-              <ArrowRight className="w-4 h-4" />
+              <Phone className="w-3.5 h-3.5 text-[#E5983A]" />
+              <span className="hidden xl:inline">0333 1588959</span>
+            </a>
+
+            {/* WhatsApp Booking CTA */}
+            <button
+              onClick={onOpenBooking}
+              className="flex items-center gap-2 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 text-xs font-black px-4.5 py-2.5 rounded-xl shadow-lg shadow-amber-950/60 transition-all hover:scale-105 active:scale-95"
+            >
+              <MessageCircle className="w-4 h-4 fill-slate-950" />
+              <span>Book Trip</span>
+            </button>
+          </div>
+
+          {/* Mobile Menu Toggle Button */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2.5 rounded-xl bg-slate-900 text-slate-200 border border-amber-500/30 hover:text-white"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
-      )}
+
+        {/* Mobile Dropdown Drawer */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden mt-3 p-5 bg-[#04070d]/98 border border-amber-500/30 rounded-3xl backdrop-blur-2xl shadow-2xl space-y-4 animate-in slide-in-from-top duration-200">
+            {/* Currency Selector Mobile */}
+            <div className="grid grid-cols-3 gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
+              {(['PKR', 'USD', 'AED'] as const).map((curr) => (
+                <button
+                  key={curr}
+                  onClick={() => onCurrencyChange(curr)}
+                  className={`py-1.5 text-center text-xs font-bold rounded-lg transition ${
+                    activeCurrency === curr ? 'bg-[#E5983A] text-slate-950' : 'text-slate-400'
+                  }`}
+                >
+                  {curr}
+                </button>
+              ))}
+            </div>
+
+            {/* Nav Links */}
+            <div className="space-y-1 pt-2 border-t border-slate-800">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 px-3.5 py-2.5 text-sm font-semibold text-slate-200 hover:text-amber-400 hover:bg-slate-900 rounded-xl"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <div className="pt-3 border-t border-slate-800 space-y-2">
+              <a
+                href="tel:+923331588959"
+                className="w-full flex items-center justify-center gap-2 py-3 bg-slate-900 border border-slate-800 rounded-xl text-xs font-bold text-white"
+              >
+                <Phone className="w-4 h-4 text-[#E5983A]" />
+                Call Helpline: 0333 1588959
+              </a>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenBooking();
+                }}
+                className="w-full flex items-center justify-center gap-2 py-3.5 bg-gradient-to-r from-[#E5983A] to-amber-500 text-slate-950 text-xs font-black rounded-xl shadow-lg shadow-amber-950"
+              >
+                <MessageCircle className="w-4 h-4 fill-slate-950" />
+                Book via WhatsApp
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </header>
   );
 };
