@@ -39,7 +39,7 @@ export const InstagramFeedSection: React.FC = () => {
             Fun & Hangama with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E5983A] via-amber-400 to-[#D97706]">Safar Nama</span>
           </h2>
           <p className="mt-2.5 text-slate-400 text-xs sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed text-center">
-            Real vibes, music, dance & unforgettable memories from our live trips. Hover to pause & click any reel to watch in full screen!
+            Real vibes, music, dance & unforgettable energy captured live on our journeys across Pakistan.
           </p>
         </div>
 
