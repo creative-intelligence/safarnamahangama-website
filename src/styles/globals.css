@@ -99,13 +99,13 @@
 .animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: marquee-left 50s linear infinite;
+  animation: marquee-left 75s linear infinite;
 }
 
 .animate-marquee-right {
   display: flex;
   width: max-content;
-  animation: marquee-right 50s linear infinite;
+  animation: marquee-right 75s linear infinite;
 }
 
 .animate-marquee-left:hover,
