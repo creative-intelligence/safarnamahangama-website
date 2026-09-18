@@ -153,8 +153,8 @@ export const TestimonialsSection: React.FC = () => {
             <Heart className="w-3.5 h-3.5 fill-[#E5983A] flex-shrink-0" />
             <span className="whitespace-nowrap">Loved by 5,000+ Explorers</span>
           </div>
-          <h2 className="text-2xl xs:text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            Happy Clients <span className="text-[#E5983A] block xs:inline mt-0.5 sm:mt-0">Video Reviews</span>
+          <h2 className="text-[19px] xs:text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
+            Happy Clients <span className="text-[#E5983A]">Video Reviews</span>
           </h2>
           <p className="mt-2.5 sm:mt-3 text-slate-400 text-xs sm:text-sm px-2">
             Watch real video reviews directly downloaded from @safarnamahangama happy clients, families, and group squads!

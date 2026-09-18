@@ -12,17 +12,17 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({ onFilt
   const activeDest = DESTINATIONS_DATA.find((d) => d.id === activeDestId) || DESTINATIONS_DATA[0];
 
   return (
-    <section id="destinations" className="py-16 sm:py-24 bg-slate-950 text-white relative w-full max-w-full overflow-hidden">
+    <section id="destinations" className="py-12 sm:py-20 lg:py-24 bg-slate-950 text-white relative w-full max-w-full overflow-hidden">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-3 max-w-full">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
             <Compass className="w-3.5 h-3.5 text-emerald-300 flex-shrink-0" />
             <span className="whitespace-nowrap">Northern Pakistan Destination Guides</span>
           </div>
-          <h2 className="text-2xl xs:text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            Discover the World's Most <span className="text-amber-400 block xs:inline mt-0.5 sm:mt-0">Majestic Valleys</span>
+          <h2 className="text-[19px] xs:text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
+            Discover Majestic <span className="text-amber-400">Valleys</span>
           </h2>
           <p className="mt-2.5 sm:mt-3 text-slate-400 text-xs sm:text-sm px-2">
             Explore elevation details, best visiting seasons, climate insights, and distance metrics for your next Safar Nama Hangama expedition!

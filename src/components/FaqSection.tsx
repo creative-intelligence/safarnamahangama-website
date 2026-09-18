@@ -32,46 +32,46 @@ export const FaqSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-slate-900 text-white relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-12 sm:py-20 lg:py-24 bg-slate-900 text-white relative w-full max-w-full overflow-hidden">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <HelpCircle className="w-3.5 h-3.5" />
-            Got Questions? We Have Answers
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
+            <HelpCircle className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+            <span className="whitespace-nowrap">Got Questions? We Have Answers</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
             Frequently Asked <span className="text-emerald-400">Questions</span>
           </h2>
-          <p className="mt-2 text-slate-400 text-xs sm:text-sm">
+          <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-1 text-center">
             Everything you need to know about booking, safety, and traveling with Safar Nama Hangama.
           </p>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
                 key={idx}
-                className="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden transition-all duration-200"
+                className="bg-slate-950 border border-slate-800 rounded-xl sm:rounded-2xl overflow-hidden transition-all duration-200"
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full p-5 text-left font-bold text-sm sm:text-base text-white flex items-center justify-between gap-4 hover:text-emerald-400 transition"
+                  className="w-full p-3.5 sm:p-5 text-left font-bold text-xs sm:text-sm md:text-base text-white flex items-center justify-between gap-3 hover:text-emerald-400 transition"
                 >
-                  <span className="flex items-center gap-3">
-                    <span className="text-emerald-400 text-xs font-black">Q{idx + 1}.</span>
-                    {faq.q}
+                  <span className="flex items-start sm:items-center gap-2.5">
+                    <span className="text-emerald-400 text-[11px] sm:text-xs font-black flex-shrink-0 mt-0.5 sm:mt-0">Q{idx + 1}.</span>
+                    <span className="leading-snug">{faq.q}</span>
                   </span>
-                  <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${
+                  <ChevronDown className={`w-4 h-4 sm:w-5 sm:h-5 text-slate-400 flex-shrink-0 transition-transform duration-300 ${
                     isOpen ? 'rotate-180 text-emerald-400' : ''
                   }`} />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-900 pt-3">
+                  <div className="px-3.5 sm:px-5 pb-4 sm:pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-900 pt-2.5 sm:pt-3">
                     {faq.a}
                   </div>
                 )}

@@ -58,13 +58,13 @@ export const PackingChecklist: React.FC = () => {
       <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 px-2">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
             <CheckSquare className="w-3.5 h-3.5 text-emerald-300 flex-shrink-0" />
             <span className="whitespace-nowrap">Essential Traveler Utility</span>
           </div>
-          <h2 className="text-2xl xs:text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
-            Northern Pakistan <span className="text-amber-400 block xs:inline mt-0.5 sm:mt-0">Packing Checklist</span>
+          <h2 className="text-[16px] xs:text-[19px] sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
+            Northern Pakistan <span className="text-amber-400">Packing Checklist</span>
           </h2>
           <p className="mt-2 text-slate-400 text-xs sm:text-sm">
             Make sure you never forget any essential gear before embarking on your Safar Nama Hangama adventure!

@@ -149,11 +149,11 @@ export const PastTripsGallery: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
-          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-[#E5983A]/40 text-[#E5983A] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-[#E5983A]/40 text-[#E5983A] text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
             <Camera className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
-            <span>Real Memories & Group Vibes</span>
+            <span className="whitespace-nowrap">Real Memories & Group Vibes</span>
           </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15] text-center">
+          <h2 className="text-[18px] xs:text-[21px] sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
             Past Expeditions & <span className="text-[#E5983A]">Group Photos</span>
           </h2>
           <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-1 text-center">

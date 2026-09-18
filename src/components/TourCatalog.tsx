@@ -76,7 +76,7 @@ export const TourCatalog: React.FC<TourCatalogProps> = ({
             <Sparkles className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
             <span>Official Safar Nama Hangama Expeditions</span>
           </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15] text-center">
+          <h2 className="text-[19px] xs:text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
             Upcoming Tour <span className="text-[#E5983A]">Packages</span>
           </h2>
           <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-1 text-center">

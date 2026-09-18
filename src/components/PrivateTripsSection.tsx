@@ -89,7 +89,7 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
             <Sparkles className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
             <span>Tailored For Every Traveler</span>
           </div>
-          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
+          <h2 className="text-[18px] xs:text-[21px] sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
             Private & Customized <span className="text-[#E5983A]">Trip Hub</span>
           </h2>
           <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-1">
