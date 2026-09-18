@@ -51,7 +51,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[600px] h-[280px] sm:h-[600px] bg-[#E5983A]/15 rounded-full blur-[80px] sm:blur-[160px] pointer-events-none z-0" />
       <div className="absolute bottom-10 right-10 w-[200px] sm:w-[450px] h-[200px] sm:h-[450px] bg-amber-500/10 rounded-full blur-[70px] sm:blur-[140px] pointer-events-none z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 text-center mt-1 sm:mt-4 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-2.5 sm:px-4 lg:px-8 flex flex-col items-center text-center mt-1 sm:mt-4 w-full">
         
         {/* Shimmer Badge matching Official Logo */}
         <div className="inline-flex items-center justify-center gap-1 sm:gap-2 px-2.5 sm:px-5 py-1 sm:py-2 rounded-full bg-[#04070d]/95 border border-[#E5983A]/50 backdrop-blur-xl mb-3 sm:mb-6 shadow-2xl shadow-amber-950/80 max-w-full mx-auto">
@@ -63,21 +63,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Hero Title & Subtitle */}
-        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.15] sm:leading-[1.08] max-w-4xl mx-auto drop-shadow-2xl font-sans break-words px-1">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-tight leading-[1.15] sm:leading-[1.08] max-w-4xl mx-auto drop-shadow-2xl font-sans break-words px-1 text-center">
           Safar, Stories & <br className="hidden sm:block" />
           <span className="bg-gradient-to-r from-white via-[#E5983A] to-amber-400 bg-clip-text text-transparent block sm:inline mt-0.5 sm:mt-0">
             Unforgettable Hangama
           </span>
         </h1>
 
-        {/* Prominent Large Urdu Slogan */}
-        <div className="mt-3.5 sm:mt-5 mb-1 max-w-3xl mx-auto px-2">
-          <p dir="rtl" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-[#E5983A] to-amber-500 drop-shadow-[0_4px_25px_rgba(229,152,58,0.65)] tracking-wider leading-relaxed">
-            ✨ سفر، سفرنامہ کے سنگ ✨
-          </p>
-        </div>
-
-        <p className="mt-3 sm:mt-4 text-xs sm:text-base md:text-lg lg:text-xl text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow px-2">
+        <p className="mt-3 sm:mt-5 text-xs sm:text-base md:text-lg lg:text-xl text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow px-2 text-center">
           Join Pakistan’s top-rated travel club for group tours, family getaways, and customized luxury expeditions across Hunza, Skardu, Swat, and Kashmir.
         </p>
 
