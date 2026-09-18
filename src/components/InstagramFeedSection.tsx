@@ -179,39 +179,39 @@ export const InstagramFeedSection: React.FC = () => {
 
         {/* Large Immersive Cinema Video Lightbox Modal with Slider Navigation */}
         {activeReel && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-slate-950/95 backdrop-blur-xl animate-in fade-in">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/95 backdrop-blur-xl animate-in fade-in">
             
             {/* Modal Box */}
             <div
               onTouchStart={handleTouchStart}
               onTouchEnd={handleTouchEnd}
-              className="relative max-w-3xl sm:max-w-4xl w-full h-[85vh] max-h-[880px] bg-[#04070d] border border-slate-700/80 rounded-3xl overflow-hidden shadow-2xl flex flex-col text-white select-none"
+              className="relative max-w-sm sm:max-w-3xl md:max-w-4xl w-full h-[75vh] sm:h-[82vh] md:h-[85vh] max-h-[680px] sm:max-h-[880px] bg-[#04070d] border border-slate-700/80 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl flex flex-col text-white select-none my-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setActiveReel(null)}
-                className="absolute top-4 right-4 z-40 p-3 bg-slate-950/90 text-white rounded-full border border-slate-700 hover:bg-amber-500 hover:text-slate-950 shadow-2xl transition hover:scale-110"
+                className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 z-40 p-2 sm:p-3 bg-slate-950/90 text-white rounded-full border border-slate-700 hover:bg-amber-500 hover:text-slate-950 shadow-2xl transition hover:scale-110"
                 title="Close"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
 
               {/* Prev Navigation Arrow */}
               <button
                 onClick={handlePrevModalReel}
-                className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-40 p-3 sm:p-4 rounded-full bg-slate-950/80 hover:bg-[#E5983A] text-white hover:text-slate-950 border border-slate-700/80 hover:border-[#E5983A] shadow-2xl transition hover:scale-110 flex items-center justify-center"
+                className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 z-40 p-2 sm:p-4 rounded-full bg-slate-950/75 sm:bg-slate-950/80 hover:bg-[#E5983A] text-white hover:text-slate-950 border border-slate-700/80 hover:border-[#E5983A] shadow-2xl transition hover:scale-110 flex items-center justify-center"
                 title="Previous Reel (Left Arrow)"
               >
-                <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7" />
+                <ChevronLeft className="w-5 h-5 sm:w-7 sm:h-7" />
               </button>
 
               {/* Next Navigation Arrow */}
               <button
                 onClick={handleNextModalReel}
-                className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-40 p-3 sm:p-4 rounded-full bg-slate-950/80 hover:bg-[#E5983A] text-white hover:text-slate-950 border border-slate-700/80 hover:border-[#E5983A] shadow-2xl transition hover:scale-110 flex items-center justify-center"
+                className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 z-40 p-2 sm:p-4 rounded-full bg-slate-950/75 sm:bg-slate-950/80 hover:bg-[#E5983A] text-white hover:text-slate-950 border border-slate-700/80 hover:border-[#E5983A] shadow-2xl transition hover:scale-110 flex items-center justify-center"
                 title="Next Reel (Right Arrow)"
               >
-                <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7" />
+                <ChevronRight className="w-5 h-5 sm:w-7 sm:h-7" />
               </button>
 
               {/* Video Player */}
@@ -229,25 +229,25 @@ export const InstagramFeedSection: React.FC = () => {
               </div>
 
               {/* Modal Footer Controls & Info */}
-              <div className="p-4 sm:p-5 bg-[#04070d] border-t border-slate-800 flex items-center justify-between gap-3">
-                <span className="text-xs sm:text-sm font-bold text-amber-400 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#E5983A]" />
-                  Reel {activeIndex + 1} of {funReels.length} • @safarnamahangama
+              <div className="p-3 sm:p-5 bg-[#04070d] border-t border-slate-800 flex items-center justify-between gap-2 sm:gap-3">
+                <span className="text-[11px] sm:text-sm font-bold text-amber-400 flex items-center gap-1.5 sm:gap-2 truncate">
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E5983A] flex-shrink-0" />
+                  <span>Reel {activeIndex + 1} of {funReels.length}</span>
+                  <span className="hidden xs:inline">• @safarnamahangama</span>
                 </span>
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                   <a
                     href={activeReel.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="py-2.5 px-4 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] text-slate-950 font-black text-xs sm:text-sm rounded-xl flex items-center gap-1.5 hover:scale-105 transition shadow-lg"
+                    className="py-1.5 sm:py-2.5 px-3 sm:px-4 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] text-slate-950 font-black text-[11px] sm:text-sm rounded-xl flex items-center gap-1.5 hover:scale-105 transition shadow-lg whitespace-nowrap"
                   >
-                    <Instagram className="w-4 h-4" />
-                    <span className="hidden sm:inline">Watch on Instagram</span>
-                    <span className="sm:hidden">Instagram</span>
+                    <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4 flex-shrink-0" />
+                    <span className="hidden xs:inline">Instagram</span>
                   </a>
                   <button
                     onClick={() => setActiveReel(null)}
-                    className="py-2.5 px-4 bg-slate-900 text-slate-300 font-bold text-xs sm:text-sm rounded-xl border border-slate-800 hover:bg-slate-800 transition"
+                    className="py-1.5 sm:py-2.5 px-3 sm:px-4 bg-slate-900 text-slate-300 font-bold text-[11px] sm:text-sm rounded-xl border border-slate-800 hover:bg-slate-800 transition"
                   >
                     Close
                   </button>
