@@ -33,8 +33,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   ];
 
   return (
-    <section className="relative min-h-[92vh] pt-32 pb-24 flex items-center justify-center overflow-hidden bg-[#04070d]">
-      {/* Reverted Back to Preferred Previous Styling & Positioning (object-[center_18%]) */}
+    <section className="relative min-h-[85vh] sm:min-h-[92vh] pt-24 sm:pt-32 pb-16 sm:pb-24 flex items-center justify-center overflow-hidden bg-[#04070d]">
+      {/* Background Image with Framing */}
       <div className="absolute inset-0 z-0">
         <img
           src="/hero-bg.jpg"
@@ -48,53 +48,53 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       </div>
 
       {/* Dynamic Glowing Aurora Orbs matching logo color #E5983A */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#E5983A]/15 rounded-full blur-[160px] pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px] pointer-events-none z-0" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[700px] h-[320px] sm:h-[700px] bg-[#E5983A]/15 rounded-full blur-[100px] sm:blur-[160px] pointer-events-none z-0" />
+      <div className="absolute bottom-10 right-10 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] bg-amber-500/10 rounded-full blur-[90px] sm:blur-[140px] pointer-events-none z-0" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-2 sm:mt-4">
         
         {/* Shimmer Badge matching Official Logo */}
-        <div className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-full bg-[#04070d]/90 border border-[#E5983A]/50 backdrop-blur-xl mb-6 shadow-2xl shadow-amber-950/80 animate-pulse-subtle">
-          <span className="flex h-2.5 w-2.5 rounded-full bg-[#E5983A] flex-shrink-0 animate-ping" />
-          <Award className="w-4 h-4 text-[#E5983A] flex-shrink-0" />
-          <span className="text-xs font-black tracking-wider text-white uppercase whitespace-nowrap">
+        <div className="inline-flex items-center gap-2 sm:gap-2.5 px-4 sm:px-6 py-2 sm:py-2.5 rounded-full bg-[#04070d]/90 border border-[#E5983A]/50 backdrop-blur-xl mb-4 sm:mb-6 shadow-2xl shadow-amber-950/80 max-w-full">
+          <span className="flex h-2 sm:h-2.5 w-2 sm:w-2.5 rounded-full bg-[#E5983A] flex-shrink-0 animate-ping" />
+          <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E5983A] flex-shrink-0" />
+          <span className="text-[10px] sm:text-xs font-black tracking-wider text-white uppercase truncate sm:whitespace-nowrap">
             #1 Rated Pakistan Travel Operator • @safarnamahangama
           </span>
         </div>
 
         {/* Hero Title & Subtitle */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.08] max-w-4xl mx-auto drop-shadow-2xl font-sans">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12] sm:leading-[1.08] max-w-4xl mx-auto drop-shadow-2xl font-sans">
           Safar, Stories & <br className="hidden sm:block" />
           <span className="bg-gradient-to-r from-white via-[#E5983A] to-amber-400 bg-clip-text text-transparent">
             Unforgettable Hangama
           </span>
         </h1>
 
-        <p className="mt-6 text-base sm:text-xl text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow">
+        <p className="mt-4 sm:mt-6 text-xs sm:text-base md:text-xl text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow px-2">
           Join Pakistan’s top-rated travel club for group tours, family getaways, and customized luxury expeditions across Hunza, Skardu, Swat, and Kashmir.
         </p>
 
         {/* Interactive Tour Search Box */}
-        <div className="mt-10 max-w-3xl mx-auto">
+        <div className="mt-8 sm:mt-10 max-w-3xl mx-auto">
           <form
             onSubmit={handleSearchSubmit}
-            className="p-3 bg-slate-900/95 border border-[#E5983A]/40 rounded-2xl sm:rounded-full backdrop-blur-2xl shadow-2xl glow-amber flex flex-col sm:flex-row items-center gap-2"
+            className="p-2 sm:p-3 bg-slate-900/95 border border-[#E5983A]/40 rounded-2xl sm:rounded-full backdrop-blur-2xl shadow-2xl glow-amber flex flex-col sm:flex-row items-center gap-2"
           >
             {/* Search Input */}
-            <div className="flex items-center gap-2 flex-1 w-full px-4 py-2.5 bg-slate-950/80 rounded-xl sm:rounded-full border border-slate-800">
-              <Search className="w-5 h-5 text-[#E5983A] flex-shrink-0" />
+            <div className="flex items-center gap-2 flex-1 w-full px-3.5 sm:px-4 py-2 sm:py-2.5 bg-slate-950/80 rounded-xl sm:rounded-full border border-slate-800">
+              <Search className="w-4 h-4 sm:w-5 sm:h-5 text-[#E5983A] flex-shrink-0" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Where to? (e.g. Hunza, Skardu, Kalam, Deosai...)"
-                className="w-full bg-transparent text-sm text-white placeholder-slate-400 focus:outline-none font-medium"
+                placeholder="Where to? (e.g. Hunza, Skardu, Kalam...)"
+                className="w-full bg-transparent text-xs sm:text-sm text-white placeholder-slate-400 focus:outline-none font-medium"
               />
             </div>
 
             {/* Region Dropdown */}
-            <div className="w-full sm:w-48 px-4 py-2.5 bg-slate-950/80 rounded-xl sm:rounded-full border border-slate-800 flex items-center">
-              <MapPin className="w-4 h-4 text-[#E5983A] mr-2 flex-shrink-0" />
+            <div className="w-full sm:w-48 px-3.5 sm:px-4 py-2 sm:py-2.5 bg-slate-950/80 rounded-xl sm:rounded-full border border-slate-800 flex items-center">
+              <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E5983A] mr-2 flex-shrink-0" />
               <select
                 value={selectedRegion}
                 onChange={(e) => setSelectedRegion(e.target.value)}
@@ -112,7 +112,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-xl sm:rounded-full shadow-lg shadow-amber-950 transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-105"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-xl sm:rounded-full shadow-lg shadow-amber-950 transition-all duration-300 flex items-center justify-center gap-2 group hover:scale-105"
             >
               <span>Search Expeditions</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -120,8 +120,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </form>
 
           {/* Quick Destination Chips */}
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-            <span className="text-xs font-semibold text-slate-400">Popular:</span>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+            <span className="text-[11px] sm:text-xs font-semibold text-slate-400">Popular:</span>
             {quickChips.map((chip) => (
               <button
                 key={chip.region}
@@ -131,7 +131,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                   const element = document.getElementById('tours');
                   if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="px-3.5 py-1.5 text-xs font-bold text-slate-300 bg-slate-900/90 hover:bg-amber-950 hover:text-[#E5983A] border border-slate-800 hover:border-[#E5983A]/50 rounded-full transition-all duration-200"
+                className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[11px] sm:text-xs font-bold text-slate-300 bg-slate-900/90 hover:bg-amber-950 hover:text-[#E5983A] border border-slate-800 hover:border-[#E5983A]/50 rounded-full transition-all duration-200"
               >
                 {chip.label}
               </button>
@@ -140,56 +140,56 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Primary CTA Buttons */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <a
             href="#tours"
-            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#E5983A] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm rounded-2xl shadow-2xl shadow-amber-950/80 transition-all flex items-center justify-center gap-2.5 hover:scale-105"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-[#E5983A] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs sm:text-sm rounded-2xl shadow-2xl shadow-amber-950/80 transition-all flex items-center justify-center gap-2 sm:gap-2.5 hover:scale-105"
           >
-            <Compass className="w-5 h-5 text-slate-950" />
+            <Compass className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950" />
             <span>Explore All Group Tours</span>
           </a>
 
           <button
             onClick={onOpenCustomBuilder}
-            className="w-full sm:w-auto px-8 py-4 bg-slate-900/95 hover:bg-slate-850 text-white font-black text-sm rounded-2xl border border-amber-500/40 hover:border-[#E5983A] shadow-2xl transition-all flex items-center justify-center gap-2.5 group hover:scale-105"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-slate-900/95 hover:bg-slate-850 text-white font-black text-xs sm:text-sm rounded-2xl border border-amber-500/40 hover:border-[#E5983A] shadow-2xl transition-all flex items-center justify-center gap-2 sm:gap-2.5 group hover:scale-105"
           >
-            <Sparkles className="w-5 h-5 text-[#E5983A] group-hover:rotate-12 transition-transform" />
+            <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#E5983A] group-hover:rotate-12 transition-transform" />
             <span>Design Custom Private Trip</span>
           </button>
         </div>
 
         {/* Trust Badges & Stats Strip */}
-        <div className="mt-16 pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          <div className="flex flex-col items-center p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-slate-800/80 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6 max-w-5xl mx-auto">
+          <div className="flex flex-col items-center p-3 sm:p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
             <div className="flex items-center gap-1.5 text-[#E5983A] mb-1">
-              <Users className="w-5 h-5" />
-              <span className="text-2xl font-black text-white">5,000+</span>
+              <Users className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xl sm:text-2xl font-black text-white">5,000+</span>
             </div>
-            <p className="text-xs text-slate-300 font-semibold">Happy Travelers</p>
+            <p className="text-[11px] sm:text-xs text-slate-300 font-semibold">Happy Travelers</p>
           </div>
 
-          <div className="flex flex-col items-center p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
+          <div className="flex flex-col items-center p-3 sm:p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
             <div className="flex items-center gap-1.5 text-[#E5983A] mb-1">
-              <Mountain className="w-5 h-5" />
-              <span className="text-2xl font-black text-white">180+</span>
+              <Mountain className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xl sm:text-2xl font-black text-white">180+</span>
             </div>
-            <p className="text-xs text-slate-300 font-semibold">Successful Expeditions</p>
+            <p className="text-[11px] sm:text-xs text-slate-300 font-semibold">Successful Expeditions</p>
           </div>
 
-          <div className="flex flex-col items-center p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
+          <div className="flex flex-col items-center p-3 sm:p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
             <div className="flex items-center gap-1.5 text-[#E5983A] mb-1">
-              <Star className="w-5 h-5 fill-[#E5983A]" />
-              <span className="text-2xl font-black text-white">4.9 / 5</span>
+              <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-[#E5983A]" />
+              <span className="text-xl sm:text-2xl font-black text-white">4.9 / 5</span>
             </div>
-            <p className="text-xs text-slate-300 font-semibold">Rating on Social Media</p>
+            <p className="text-[11px] sm:text-xs text-slate-300 font-semibold">Rating on Social Media</p>
           </div>
 
-          <div className="flex flex-col items-center p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
+          <div className="flex flex-col items-center p-3 sm:p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md hover:border-[#E5983A]/40 transition">
             <div className="flex items-center gap-1.5 text-[#E5983A] mb-1">
-              <ShieldCheck className="w-5 h-5" />
-              <span className="text-2xl font-black text-white">100%</span>
+              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xl sm:text-2xl font-black text-white">100%</span>
             </div>
-            <p className="text-xs text-slate-300 font-semibold">Safe & Family Verified</p>
+            <p className="text-[11px] sm:text-xs text-slate-300 font-semibold">Safe & Family Verified</p>
           </div>
         </div>
 
