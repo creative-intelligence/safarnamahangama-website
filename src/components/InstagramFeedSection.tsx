@@ -21,7 +21,7 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-1',
       title: 'Attabad Lake emerald waters boating with our 24-member Hunza group! 🚤✨',
       image: '/images/safarnama/safarnama_6.jpg',
-      videoUrl: '/videos/happyclients/happy_client_9.mp4',
+      videoUrl: '/videos/reels/client_reel_1.mp4',
       views: '345K Views',
       likes: '28.4k',
       comments: 1240,
@@ -32,7 +32,7 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-2',
       title: 'Stargazing & campfire musical night at Katpana Cold Desert Skardu 🌌🏕️',
       image: '/images/safarnama/safarnama_7.jpg',
-      videoUrl: '/videos/happyclients/happy_client_10.mp4',
+      videoUrl: '/videos/reels/client_reel_2.mp4',
       views: '280K Views',
       likes: '22.1k',
       comments: 890,
@@ -43,7 +43,7 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-3',
       title: 'Riverside acoustic music & bonfire with our group squad in Kalam Swat 🎸🔥',
       image: '/images/safarnama/safarnama_8.jpg',
-      videoUrl: '/videos/happyclients/happy_client_11.mp4',
+      videoUrl: '/videos/reels/client_reel_3.mp4',
       views: '210K Views',
       likes: '18.6k',
       comments: 650,
@@ -54,11 +54,55 @@ export const InstagramFeedSection: React.FC = () => {
       id: 'post-4',
       title: 'Group cable car ride & meadow trek up to Arang Kel Neelum Kashmir 🚠🌲',
       image: '/images/safarnama/safarnama_9.jpg',
-      videoUrl: '/videos/reels/client_reel_1.mp4',
+      videoUrl: '/videos/reels/client_reel_4.mp4',
       views: '195K Views',
       likes: '16.9k',
       comments: 540,
       tag: '🌿 Group Retreat • Kashmir',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
+    },
+    {
+      id: 'post-5',
+      title: 'Snowball fights & chairlift adventure at Malam Jabba Ski Resort ❄️⛷️',
+      image: '/images/safarnama/safarnama_2.jpg',
+      videoUrl: '/videos/reels/client_reel_5.mp4',
+      views: '310K Views',
+      likes: '25.8k',
+      comments: 980,
+      tag: '❄️ Winter Magic • Swat',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
+    },
+    {
+      id: 'post-6',
+      title: '4x4 Jeep Safari ride through Naran Valley to Saiful Malook Lake 🚘🏞️',
+      image: '/images/safarnama/safarnama_3.jpg',
+      videoUrl: '/videos/reels/client_reel_6.mp4',
+      views: '240K Views',
+      likes: '19.4k',
+      comments: 720,
+      tag: '🏔️ Jeep Safari • Naran',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
+    },
+    {
+      id: 'post-7',
+      title: 'Breathtaking sunrise views over Rakaposhi from Karimabad Hunza 🌄',
+      image: '/images/safarnama/safarnama_4.jpg',
+      videoUrl: '/videos/reels/client_reel_7.mp4',
+      views: '185K Views',
+      likes: '15.2k',
+      comments: 490,
+      tag: '✨ Hunza Sunrise • Rakaposhi',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
+    },
+    {
+      id: 'post-8',
+      title: 'Camping under a starry sky at Fairy Meadows Basecamp Nanga Parbat ⛺✨',
+      image: '/images/safarnama/safarnama_5.jpg',
+      videoUrl: '/videos/reels/client_reel_8.mp4',
+      views: '410K Views',
+      likes: '34.1k',
+      comments: 1580,
+      tag: '🔥 Fairy Meadows Camping',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/'
     }
   ];
@@ -70,14 +114,14 @@ export const InstagramFeedSection: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
           <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-[#E5983A]/40 text-[#E5983A] text-[9px] xs:text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
-            <Instagram className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
-            <span className="whitespace-nowrap">Instagram Feed • @safarnamahangama</span>
+            <Sparkles className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
+            <span className="whitespace-nowrap">FUN & VIBES • @SAFARNAMAHANGAMA</span>
           </div>
           <h2 className="text-[19px] xs:text-[22px] sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight text-center whitespace-nowrap">
-            Live from Our <span className="text-[#E5983A]">Instagram Page</span>
+            Fun & Hangama with <span className="text-[#E5983A]">Safar Nama</span>
           </h2>
           <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed px-1 text-center">
-            Watch recent tour reels and group trip updates directly here without leaving the site!
+            Watch raw group trip atmosphere, bonfires, boating, dance sessions & fun reels directly here!
           </p>
 
           <div className="mt-4 flex justify-center">
@@ -88,7 +132,7 @@ export const InstagramFeedSection: React.FC = () => {
               className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-xl sm:rounded-2xl shadow-xl shadow-amber-950 transition hover:scale-105 whitespace-nowrap"
             >
               <Instagram className="w-4 h-4 text-slate-950 flex-shrink-0" />
-              <span className="whitespace-nowrap">Follow @safarnamahangama</span>
+              <span className="whitespace-nowrap">Follow @safarnamahangama on Instagram</span>
               <ExternalLink className="w-3.5 h-3.5 text-slate-950 flex-shrink-0" />
             </a>
           </div>

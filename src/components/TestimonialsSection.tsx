@@ -140,6 +140,51 @@ export const TestimonialsSection: React.FC = () => {
       instagramUrl: 'https://www.instagram.com/safarnamahangama/',
       duration: '0:48',
       verified: true
+    },
+    {
+      id: 'video-9',
+      author: 'Bilal & Hunza Group Squad',
+      location: 'Gujranwala',
+      avatar: '/images/safarnama/safarnama_9.jpg',
+      rating: 5,
+      date: 'August 2026',
+      tourTaken: '5-Day Hunza & Attabad Lake Tour',
+      reviewSnippet: 'Speed boating on Attabad Lake and exploring Passu Cones with awesome group mates. Unbeatable trip experience!',
+      videoThumbnail: '/images/safarnama/safarnama_9.jpg',
+      videoUrl: '/videos/happyclients/happy_client_9.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '0:55',
+      verified: true
+    },
+    {
+      id: 'video-10',
+      author: 'Ayesha & Family Group',
+      location: 'Lahore',
+      avatar: '/images/safarnama/safarnama_1.jpg',
+      rating: 5,
+      date: 'August 2026',
+      tourTaken: '6-Day Skardu Cold Desert Expedition',
+      reviewSnippet: ' ATV Quad biking across Katpana Cold Desert and sunset at Shangrila Resort. Highly professional staff and comfortable luxury coaster.',
+      videoThumbnail: '/images/safarnama/safarnama_1.jpg',
+      videoUrl: '/videos/happyclients/happy_client_10.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '1:10',
+      verified: true
+    },
+    {
+      id: 'video-11',
+      author: 'Saad & Swat Explorer Squad',
+      location: 'Islamabad',
+      avatar: '/images/safarnama/safarnama_2.jpg',
+      rating: 5,
+      date: 'September 2026',
+      tourTaken: '3-Day Swat Valley Group Tour',
+      reviewSnippet: 'Bonfire dance party and river rafting in Kalam! The energy of Safarnama team is next level. Loved every minute of it!',
+      videoThumbnail: '/images/safarnama/safarnama_2.jpg',
+      videoUrl: '/videos/happyclients/happy_client_11.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/',
+      duration: '0:42',
+      verified: true
     }
   ];
 
