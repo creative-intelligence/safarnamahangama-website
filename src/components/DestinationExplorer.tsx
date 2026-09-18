@@ -46,15 +46,16 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({ onFilt
           ))}
         </div>
 
-        {/* Active Destination Card Details */}
+        {/* Active Destination Card Details - Locked Fixed Height to prevent div resizing when switching tabs */}
         <div className="glass-panel-card rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-0 shadow-2xl">
           
           {/* Image Side - Fixed Uniform Height & Aspect Ratio for All Destinations */}
-          <div className="lg:col-span-6 relative h-60 sm:h-80 lg:h-auto w-full overflow-hidden bg-slate-900">
+          <div className="lg:col-span-6 relative h-64 sm:h-80 lg:h-[540px] xl:h-[560px] w-full overflow-hidden bg-slate-900 flex-shrink-0">
             <img
+              key={`img-${activeDest.id}`}
               src={activeDest.image}
               alt={activeDest.name}
-              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+              className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105 animate-in fade-in"
               onError={(e: any) => {
                 e.target.onerror = null;
                 e.target.src = '/images/destinations/hunza_attabad.jpg';
@@ -62,65 +63,69 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({ onFilt
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#04070d] via-[#04070d]/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-[#04070d]" />
 
-            <div className="absolute top-4 left-4">
+            <div className="absolute top-4 left-4 z-10">
               <span className="px-3 py-1 bg-slate-950/90 backdrop-blur-md text-[#E5983A] text-xs font-black rounded-full border border-[#E5983A]/40 shadow-lg whitespace-nowrap">
                 {activeDest.regionTag}
               </span>
             </div>
           </div>
 
-          {/* Details Content Side - Fixed Height Container */}
-          <div className="lg:col-span-6 p-4 sm:p-8 lg:p-10 flex flex-col justify-between space-y-4 sm:space-y-6 bg-[#04070d]">
-            <div>
+          {/* Details Content Side - Fixed Uniform Height Container */}
+          <div
+            key={`content-${activeDest.id}`}
+            className="lg:col-span-6 p-5 sm:p-8 lg:p-9 flex flex-col justify-between h-auto lg:h-[540px] xl:h-[560px] bg-[#04070d] animate-in fade-in"
+          >
+            <div className="space-y-3.5 sm:space-y-4">
               <div className="flex flex-col xs:flex-row xs:items-center justify-between gap-1.5 sm:gap-2 mb-1">
-                <h3 className="text-xl sm:text-3xl font-black text-white leading-tight">{activeDest.name}</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight">{activeDest.name}</h3>
                 <span className="text-[10px] sm:text-[11px] font-bold text-slate-400 bg-slate-900 px-2.5 py-0.5 rounded-full border border-slate-800 self-start xs:self-auto whitespace-nowrap flex-shrink-0">
                   {activeDest.regionTag}
                 </span>
               </div>
-              <p className="mt-1.5 sm:mt-2 text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
+              
+              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-2 h-10 sm:h-11">
                 {activeDest.shortDesc}
               </p>
 
               {/* Metrics Grid - Fixed Uniform Sizing */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 mt-4 sm:mt-5">
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 pt-1">
                 <div className="p-2.5 sm:p-3 bg-slate-900/90 rounded-xl sm:rounded-2xl border border-slate-800 flex flex-col justify-center min-w-0">
-                  <div className="flex items-center gap-1.5 text-[#E5983A] mb-0.5 sm:mb-1">
+                  <div className="flex items-center gap-1.5 text-[#E5983A] mb-0.5">
                     <Mountain className="w-3.5 h-3.5 flex-shrink-0" />
                     <span className="text-[9px] sm:text-[10px] font-extrabold uppercase text-slate-400 tracking-wider truncate">Altitude</span>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-black text-white break-words">{activeDest.altitude}</span>
+                  <span className="text-[11px] sm:text-xs font-black text-white truncate">{activeDest.altitude}</span>
                 </div>
 
                 <div className="p-2.5 sm:p-3 bg-slate-900/90 rounded-xl sm:rounded-2xl border border-slate-800 flex flex-col justify-center min-w-0">
-                  <div className="flex items-center gap-1.5 text-amber-400 mb-0.5 sm:mb-1">
+                  <div className="flex items-center gap-1.5 text-amber-400 mb-0.5">
                     <Calendar className="w-3.5 h-3.5 flex-shrink-0" />
                     <span className="text-[9px] sm:text-[10px] font-extrabold uppercase text-slate-400 tracking-wider truncate">Best Season</span>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-black text-white break-words">{activeDest.bestMonths}</span>
+                  <span className="text-[11px] sm:text-xs font-black text-white truncate">{activeDest.bestMonths}</span>
                 </div>
 
                 <div className="p-2.5 sm:p-3 bg-slate-900/90 rounded-xl sm:rounded-2xl border border-slate-800 flex flex-col justify-center min-w-0">
-                  <div className="flex items-center gap-1.5 text-cyan-400 mb-0.5 sm:mb-1">
+                  <div className="flex items-center gap-1.5 text-cyan-400 mb-0.5">
                     <Thermometer className="w-3.5 h-3.5 flex-shrink-0" />
                     <span className="text-[9px] sm:text-[10px] font-extrabold uppercase text-slate-400 tracking-wider truncate">Temperature</span>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-black text-white break-words">{activeDest.temperature}</span>
+                  <span className="text-[11px] sm:text-xs font-black text-white truncate">{activeDest.temperature}</span>
                 </div>
 
                 <div className="p-2.5 sm:p-3 bg-slate-900/90 rounded-xl sm:rounded-2xl border border-slate-800 flex flex-col justify-center min-w-0">
-                  <div className="flex items-center gap-1.5 text-indigo-400 mb-0.5 sm:mb-1">
+                  <div className="flex items-center gap-1.5 text-indigo-400 mb-0.5">
                     <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
                     <span className="text-[9px] sm:text-[10px] font-extrabold uppercase text-slate-400 tracking-wider truncate">From Islamabad</span>
                   </div>
-                  <span className="text-[11px] sm:text-xs font-black text-white break-words">{activeDest.distanceFromIslamabad}</span>
+                  <span className="text-[11px] sm:text-xs font-black text-white truncate">{activeDest.distanceFromIslamabad}</span>
                 </div>
               </div>
 
-              {/* Top Attractions Tags */}
-              <div className="mt-4 sm:mt-5">
-                <span className="text-[10px] sm:text-[11px] font-extrabold text-slate-400 block mb-1.5 sm:mb-2 uppercase tracking-wider">Key Attractions to Visit:</span>
-                <div className="flex flex-wrap gap-1.5 max-h-[72px] overflow-y-auto no-scrollbar">
+              {/* Top Attractions Tags - Fixed Uniform Height Container */}
+              <div className="pt-1">
+                <span className="text-[10px] sm:text-[11px] font-extrabold text-slate-400 block mb-1.5 uppercase tracking-wider">Key Attractions to Visit:</span>
+                <div className="flex flex-wrap gap-1.5 h-16 overflow-y-auto no-scrollbar content-start">
                   {activeDest.topAttractions.map((spot, i) => (
                     <span key={i} className="px-2.5 py-1 bg-slate-900 text-amber-300 text-[10px] sm:text-[11px] font-bold rounded-lg border border-slate-800 flex items-center gap-1 whitespace-nowrap">
                       ✨ {spot}
@@ -131,7 +136,7 @@ export const DestinationExplorer: React.FC<DestinationExplorerProps> = ({ onFilt
             </div>
 
             {/* Filter Tours Button */}
-            <div className="pt-3 sm:pt-4 border-t border-slate-800">
+            <div className="pt-3 sm:pt-4 border-t border-slate-800/80 mt-auto">
               <button
                 onClick={() => {
                   onFilterByRegion(activeDest.id);
