@@ -97,13 +97,7 @@ export const TestimonialsSection: React.FC = () => {
                   }}
                 />
 
-                {/* Top Badge: Verified Client Glass Pill */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="px-3 py-1.5 bg-slate-950/85 backdrop-blur-md text-emerald-400 text-[11px] font-bold rounded-full border border-emerald-500/40 flex items-center gap-1.5 shadow-xl">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Verified Client
-                  </span>
-                </div>
+
 
                 {/* Bottom Right Floating Play CTA Button */}
                 <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2">
