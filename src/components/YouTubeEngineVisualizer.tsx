@@ -335,7 +335,7 @@ export const YouTubeEngineVisualizer: React.FC = () => {
           <div className="mt-8 pt-6 border-t border-emerald-900/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans">
             <div className="flex items-center gap-2 text-slate-300">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
-              <span className="font-semibold text-white">Usama Khursheed Automated YouTube Engine</span>
+              <span className="font-semibold text-white">Tube Scale Automated YouTube Engine</span>
             </div>
 
             <div className="flex items-center gap-3 w-full sm:w-auto">
