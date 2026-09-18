@@ -11,8 +11,8 @@ interface FunReel {
 export const InstagramFeedSection: React.FC = () => {
   const [activeReel, setActiveReel] = useState<FunReel | null>(null);
 
-  // All 29 Fun & Hangama video reels
-  const funReels: FunReel[] = Array.from({ length: 29 }, (_, i) => ({
+  // All 30 Fun & Hangama video reels
+  const funReels: FunReel[] = Array.from({ length: 30 }, (_, i) => ({
     id: `fun-${i + 1}`,
     image: `/images/fun/fun_thumb_${i + 1}.jpg`,
     videoUrl: `/videos/fun/fun_reel_${i + 1}.mp4`,

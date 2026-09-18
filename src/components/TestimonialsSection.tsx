@@ -53,6 +53,12 @@ export const TestimonialsSection: React.FC = () => {
       videoThumbnail: '/images/happyclients/happy_client_thumb_7.jpg',
       videoUrl: '/videos/happyclients/happy_client_7.mp4',
       instagramUrl: 'https://www.instagram.com/safarnamahangama/'
+    },
+    {
+      id: 'video-8',
+      videoThumbnail: '/images/happyclients/happy_client_thumb_8.jpg',
+      videoUrl: '/videos/happyclients/happy_client_8.mp4',
+      instagramUrl: 'https://www.instagram.com/safarnamahangama/'
     }
   ];
 
