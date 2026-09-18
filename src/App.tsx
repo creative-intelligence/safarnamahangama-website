@@ -70,7 +70,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950 overflow-x-hidden w-full max-w-full">
       
       {/* Sticky Header Navigation */}
       <Navbar
@@ -135,23 +135,23 @@ export function App() {
       <Footer />
 
       {/* Floating Action Buttons (WhatsApp & Scroll To Top) */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+      <div className="fixed bottom-4 right-3 sm:bottom-6 sm:right-6 z-40 flex flex-col gap-2 sm:gap-3">
         <a
           href="https://wa.me/923331588959?text=Hello%20Safar%20Nama%20Hangama!%20I%20have%20an%20inquiry%20about%20a%20tour."
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full shadow-2xl shadow-emerald-950 hover:scale-110 transition-all flex items-center justify-center group"
+          className="p-2.5 sm:p-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-full shadow-2xl shadow-emerald-950 hover:scale-110 transition-all flex items-center justify-center group"
           title="Instant WhatsApp Support (+92 333 1588959)"
         >
-          <MessageCircle className="w-6 h-6 fill-slate-950" />
+          <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 fill-slate-950" />
         </a>
 
         <button
           onClick={scrollToTop}
-          className="p-3 bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white rounded-full border border-slate-700 shadow-xl transition"
+          className="p-2 sm:p-3 bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white rounded-full border border-slate-700 shadow-xl transition"
           title="Scroll to Top"
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-4 h-4 sm:w-5 sm:h-5" />
         </button>
       </div>
 

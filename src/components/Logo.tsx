@@ -8,19 +8,19 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showText = true }) => {
   const iconSizes = {
-    sm: 'w-8 h-8',
-    md: 'w-11 h-11',
-    lg: 'w-16 h-16',
+    sm: 'w-7 h-7 sm:w-8 sm:h-8',
+    md: 'w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11',
+    lg: 'w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16',
   };
 
   const textSizes = {
-    sm: 'text-sm',
-    md: 'text-xl',
-    lg: 'text-2xl',
+    sm: 'text-xs sm:text-sm',
+    md: 'text-xs sm:text-base md:text-xl',
+    lg: 'text-lg sm:text-xl md:text-2xl',
   };
 
   return (
-    <div className={`flex items-center gap-3 select-none ${className}`}>
+    <div className={`flex items-center gap-1.5 sm:gap-2.5 select-none ${className}`}>
       {/* Official Circular Logo Image */}
       <div className={`${iconSizes[size]} relative flex-shrink-0 group cursor-pointer`}>
         <div className="absolute inset-0 bg-amber-500/20 rounded-full blur-[6px] group-hover:bg-amber-500/40 transition-all" />
@@ -33,11 +33,11 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
 
       {/* Typography */}
       {showText && (
-        <div className="flex flex-col">
-          <span className={`font-black tracking-tight text-white ${textSizes[size]} font-sans leading-none`}>
+        <div className="flex flex-col min-w-0">
+          <span className={`font-black tracking-tight text-white ${textSizes[size]} font-sans leading-none whitespace-nowrap`}>
             SAFARNAMA <span className="text-[#E5983A]">HANGAMA</span>
           </span>
-          <span className="text-[10px] font-bold tracking-widest text-slate-300 uppercase mt-0.5">
+          <span className="text-[8px] sm:text-[10px] font-bold tracking-wider sm:tracking-widest text-slate-300 uppercase mt-0.5 truncate hidden xs:block">
             Explore Pakistan
           </span>
         </div>
