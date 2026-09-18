@@ -100,40 +100,40 @@ Please share full itinerary & final price quote!`;
   };
 
   return (
-    <section id="custom-trip" className="py-24 bg-slate-900 text-white relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="custom-trip" className="py-12 sm:py-20 lg:py-24 bg-slate-900 text-white relative w-full max-w-full overflow-hidden">
+      <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            Tailor-Made Expeditions
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
+            <Sparkles className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+            <span>Tailor-Made Expeditions</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
             Build Your <span className="text-emerald-400">Customized Trip</span>
           </h2>
-          <p className="mt-3 text-slate-400 text-xs sm:text-sm">
+          <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-1">
             Designing a private family trip, honeymoon, or corporate getaway? Configure your destinations, vehicle, and hotel tier for instant price calculation!
           </p>
         </div>
 
         {/* Wizard Card Container */}
-        <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div className="bg-slate-950 border border-slate-800 rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-10 shadow-2xl relative overflow-hidden">
           
           {/* Step Progress Bar */}
-          <div className="flex items-center justify-between mb-8 pb-6 border-b border-slate-800">
+          <div className="flex items-center justify-between mb-5 pb-4 border-b border-slate-800">
             {[1, 2, 3, 4].map((step) => (
-              <div key={step} className="flex items-center gap-2">
-                <div className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs transition-all ${
+              <div key={step} className="flex items-center gap-1.5 sm:gap-2">
+                <div className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-bold text-[11px] sm:text-xs transition-all ${
                   currentStep === step
-                    ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/30 ring-4 ring-emerald-500/20'
+                    ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/30 ring-2 sm:ring-4 ring-emerald-500/20'
                     : currentStep > step
                     ? 'bg-emerald-950 text-emerald-300 border border-emerald-500/40'
                     : 'bg-slate-900 text-slate-500 border border-slate-800'
                 }`}>
-                  {currentStep > step ? <Check className="w-4 h-4" /> : step}
+                  {currentStep > step ? <Check className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : step}
                 </div>
-                <span className="hidden sm:inline text-xs font-semibold text-slate-400">
+                <span className="hidden sm:inline text-xs font-semibold text-slate-400 whitespace-nowrap">
                   {step === 1 && 'Destinations'}
                   {step === 2 && 'Dates & Group'}
                   {step === 3 && 'Vehicle & Hotel'}

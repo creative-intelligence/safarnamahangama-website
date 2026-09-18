@@ -80,19 +80,19 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
   ];
 
   return (
-    <section id="private-trips" className="py-24 bg-[#04070d] text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="private-trips" className="py-12 sm:py-20 lg:py-24 bg-[#04070d] text-white relative w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-[#E5983A]/40 text-[#E5983A] text-xs font-bold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5" />
-            Tailored For Every Traveler
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-[#E5983A]/40 text-[#E5983A] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
+            <Sparkles className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
+            <span>Tailored For Every Traveler</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15]">
             Private & Customized <span className="text-[#E5983A]">Trip Hub</span>
           </h2>
-          <p className="mt-3 text-slate-400 text-xs sm:text-sm">
+          <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-1">
             Whether you are planning a family vacation, a romantic honeymoon getaway, a corporate retreat, or joining as a solo traveler—we have a tailored solution for you!
           </p>
         </div>

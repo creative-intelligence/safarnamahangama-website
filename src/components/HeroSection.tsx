@@ -33,7 +33,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   ];
 
   return (
-    <section className="relative min-h-[85vh] sm:min-h-[90vh] pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-20 flex items-center justify-center overflow-hidden bg-[#04070d] w-full max-w-full">
+    <section className="relative min-h-[80vh] sm:min-h-[90vh] pt-16 sm:pt-28 md:pt-32 pb-10 sm:pb-16 lg:pb-20 flex items-center justify-center overflow-hidden bg-[#04070d] w-full max-w-full">
       {/* Background Image with Framing */}
       <div className="absolute inset-0 z-0">
         <img

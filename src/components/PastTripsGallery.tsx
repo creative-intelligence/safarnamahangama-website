@@ -144,26 +144,24 @@ export const PastTripsGallery: React.FC = () => {
     : groupPhotos.filter(p => p.category === activeCategory);
 
   return (
-    <section id="gallery" className="py-24 bg-[#04070d] text-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="gallery" className="py-16 sm:py-24 bg-[#04070d] text-white relative w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-[#E5983A]/40 text-[#E5983A] text-xs font-bold uppercase tracking-wider mb-3">
-              <Camera className="w-3.5 h-3.5" />
-              Real Memories & Group Vibes
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-              Past Expeditions & <span className="text-[#E5983A]">Group Photos</span>
-            </h2>
-            <p className="mt-2 text-slate-400 text-xs sm:text-sm max-w-xl">
-              Take a look at real trip moments captured during our past Hunza, Skardu, Swat, and Kashmir tours with Safar Nama Hangama family!
-            </p>
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 px-2">
+          <div className="inline-flex items-center justify-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-amber-950/60 border border-[#E5983A]/40 text-[#E5983A] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3 max-w-full">
+            <Camera className="w-3.5 h-3.5 text-[#E5983A] flex-shrink-0" />
+            <span>Real Memories & Group Vibes</span>
           </div>
+          <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight leading-[1.15] text-center">
+            Past Expeditions & <span className="text-[#E5983A]">Group Photos</span>
+          </h2>
+          <p className="mt-2 text-slate-300 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed px-1 text-center">
+            Take a look at real trip moments captured during our past Hunza, Skardu, Swat, and Kashmir tours with Safar Nama Hangama family!
+          </p>
 
           {/* Category Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="mt-4 flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-2 no-scrollbar max-w-full">
             {[
               { id: 'all', label: 'All Past Photos' },
               { id: 'group', label: 'Group Tours' },
@@ -174,7 +172,7 @@ export const PastTripsGallery: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveCategory(tab.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
+                className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold whitespace-nowrap transition flex-shrink-0 ${
                   activeCategory === tab.id
                     ? 'bg-[#E5983A] text-slate-950 shadow-lg shadow-amber-950 font-black'
                     : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
