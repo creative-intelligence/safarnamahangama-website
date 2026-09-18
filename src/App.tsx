@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { TourCatalog } from './components/TourCatalog';
@@ -20,25 +20,6 @@ export function App() {
   const [activeCurrency, setActiveCurrency] = useState<'PKR' | 'USD' | 'AED'>('PKR');
   const [searchFilter, setSearchFilter] = useState<string>('');
   const [regionFilter, setRegionFilter] = useState<string>('all');
-
-  // Light / Dark Theme State Management
-  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    const saved = localStorage.getItem('safarnama_theme');
-    return (saved === 'light' || saved === 'dark') ? saved : 'dark';
-  });
-
-  useEffect(() => {
-    if (theme === 'light') {
-      document.documentElement.classList.add('light');
-    } else {
-      document.documentElement.classList.remove('light');
-    }
-    localStorage.setItem('safarnama_theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-  };
   
   // Modals
   const [detailTour, setDetailTour] = useState<Tour | null>(null);
@@ -89,14 +70,12 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 dark:bg-slate-950 light:bg-slate-50 text-slate-100 dark:text-slate-100 light:text-slate-900 font-sans selection:bg-emerald-500 selection:text-slate-950 overflow-x-hidden w-full max-w-full transition-colors duration-300">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950 overflow-x-hidden w-full max-w-full">
       
-      {/* Sticky Header Navigation with Theme Toggle */}
+      {/* Sticky Header Navigation */}
       <Navbar
         activeCurrency={activeCurrency}
         onCurrencyChange={setActiveCurrency}
-        theme={theme}
-        onToggleTheme={toggleTheme}
         onOpenCustomBuilder={() => {
           const el = document.getElementById('custom-trip');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
