@@ -232,8 +232,7 @@ export const InstagramFeedSection: React.FC = () => {
               <div className="p-3 sm:p-5 bg-[#04070d] border-t border-slate-800 flex items-center justify-between gap-2 sm:gap-3">
                 <span className="text-[11px] sm:text-sm font-bold text-amber-400 flex items-center gap-1.5 sm:gap-2 truncate">
                   <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E5983A] flex-shrink-0" />
-                  <span>Reel {activeIndex + 1} of {funReels.length}</span>
-                  <span className="hidden xs:inline">• @safarnamahangama</span>
+                  <span>Fun & Hangama with Safar Nama</span>
                 </span>
                 <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                   <a
