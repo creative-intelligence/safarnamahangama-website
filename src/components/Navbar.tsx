@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Logo } from './Logo';
-import { Phone, MessageCircle, Menu, X, Globe } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, Globe, Sun, Moon, ChevronDown } from 'lucide-react';
 
 interface NavbarProps {
   activeCurrency: 'PKR' | 'USD' | 'AED';
   onCurrencyChange: (currency: 'PKR' | 'USD' | 'AED') => void;
+  theme: 'dark' | 'light';
+  onToggleTheme: () => void;
   onOpenCustomBuilder: () => void;
   onOpenBooking: () => void;
 }
@@ -12,11 +14,14 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({
   activeCurrency,
   onCurrencyChange,
+  theme,
+  onToggleTheme,
   onOpenCustomBuilder,
   onOpenBooking
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [currencyDropdownOpen, setCurrencyDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { name: 'Gallery', href: '#gallery' },
     { name: 'Destinations', href: '#destinations' },
     { name: 'Checklist', href: '#checklist' },
+    { name: 'Reviews', href: '#reviews' },
   ];
 
   return (
@@ -65,30 +71,75 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Action Controls (Visible on Large screens lg+) */}
-          <div className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 h-full">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 h-full">
             
-            {/* Currency Selector */}
-            <div className="flex items-center bg-[#0f1523]/90 rounded-xl p-0.5 border border-amber-500/25 h-8 xl:h-9">
-              <Globe className="w-3 h-3 xl:w-3.5 xl:h-3.5 text-[#E5983A] ml-1.5 mr-1 flex-shrink-0" />
-              {(['PKR', 'USD', 'AED'] as const).map((curr) => (
-                <button
-                  key={curr}
-                  onClick={() => onCurrencyChange(curr)}
-                  className={`px-1.5 xl:px-2 py-0.5 rounded-lg font-black transition-all text-[10px] xl:text-[11px] whitespace-nowrap h-6 xl:h-7 ${
-                    activeCurrency === curr
-                      ? 'bg-[#E5983A] text-slate-950 shadow'
-                      : 'text-slate-300 hover:text-[#E5983A]'
+            {/* Sliding Pill Switch Light/Dark Mode Toggle (Left = Dark, Right = Light) */}
+            <div className="flex items-center gap-1.5">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                {theme === 'dark' ? 'Dark' : 'Light'}
+              </span>
+              <button
+                onClick={onToggleTheme}
+                className={`relative w-12 h-6.5 rounded-full p-0.5 transition-colors duration-300 border flex items-center shadow-inner ${
+                  theme === 'light'
+                    ? 'bg-amber-400 border-amber-500'
+                    : 'bg-slate-900 border-slate-700'
+                }`}
+                title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              >
+                {/* Sliding knob */}
+                <div
+                  className={`w-5 h-5 rounded-full bg-slate-950 flex items-center justify-center shadow-md transform transition-transform duration-300 ${
+                    theme === 'light' ? 'translate-x-5 bg-slate-950' : 'translate-x-0 bg-slate-950'
                   }`}
                 >
-                  {curr}
-                </button>
-              ))}
+                  {theme === 'light' ? (
+                    <Sun className="w-3 h-3 text-amber-400" />
+                  ) : (
+                    <Moon className="w-3 h-3 text-amber-400" />
+                  )}
+                </div>
+              </button>
+            </div>
+
+            {/* Compact Currency Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setCurrencyDropdownOpen(!currencyDropdownOpen)}
+                className="flex items-center gap-1.5 bg-[#0f1523]/90 hover:bg-slate-900 text-slate-200 text-xs font-extrabold px-2.5 py-1.5 rounded-xl border border-amber-500/25 transition h-8 xl:h-9 shadow-md"
+              >
+                <Globe className="w-3.5 h-3.5 text-[#E5983A]" />
+                <span>{activeCurrency}</span>
+                <ChevronDown className="w-3 h-3 text-slate-400" />
+              </button>
+
+              {currencyDropdownOpen && (
+                <div className="absolute right-0 mt-1.5 w-24 bg-[#0f1523] border border-amber-500/30 rounded-xl shadow-2xl overflow-hidden z-50 py-1">
+                  {(['PKR', 'USD', 'AED'] as const).map((curr) => (
+                    <button
+                      key={curr}
+                      onClick={() => {
+                        onCurrencyChange(curr);
+                        setCurrencyDropdownOpen(false);
+                      }}
+                      className={`w-full px-3 py-1.5 text-left text-xs font-bold transition flex items-center justify-between ${
+                        activeCurrency === curr
+                          ? 'bg-[#E5983A] text-slate-950'
+                          : 'text-slate-300 hover:bg-slate-800 hover:text-[#E5983A]'
+                      }`}
+                    >
+                      <span>{curr}</span>
+                      {activeCurrency === curr && <span className="text-slate-950 font-black">✓</span>}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Helpline Phone Button */}
             <a
               href="tel:+923331588959"
-              className="flex items-center gap-1 xl:gap-1.5 text-[11px] xl:text-xs font-bold text-slate-200 hover:text-white px-2 xl:px-3 h-8 xl:h-9 rounded-xl bg-[#0f1523]/90 border border-amber-500/25 hover:border-amber-400/50 transition whitespace-nowrap"
+              className="flex items-center gap-1 xl:gap-1.5 text-[11px] xl:text-xs font-bold text-slate-200 hover:text-white px-2.5 xl:px-3 h-8 xl:h-9 rounded-xl bg-[#0f1523]/90 border border-amber-500/25 hover:border-amber-400/50 transition whitespace-nowrap"
               title="Call Helpline: 0333 1588959"
             >
               <Phone className="w-3 h-3 xl:w-3.5 xl:h-3.5 text-[#E5983A] flex-shrink-0" />
@@ -105,8 +156,28 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Mobile & Tablet Toggle Menu Button (Visible <1024px) */}
+          {/* Mobile & Tablet Controls */}
           <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden flex-shrink-0">
+            {/* Mobile Pill Switch Theme Toggle */}
+            <button
+              onClick={onToggleTheme}
+              className={`relative w-10 h-5.5 rounded-full p-0.5 transition-colors border flex items-center ${
+                theme === 'light' ? 'bg-amber-400 border-amber-500' : 'bg-slate-900 border-slate-700'
+              }`}
+            >
+              <div
+                className={`w-4 h-4 rounded-full bg-slate-950 flex items-center justify-center transform transition-transform ${
+                  theme === 'light' ? 'translate-x-4' : 'translate-x-0'
+                }`}
+              >
+                {theme === 'light' ? (
+                  <Sun className="w-2.5 h-2.5 text-amber-400" />
+                ) : (
+                  <Moon className="w-2.5 h-2.5 text-amber-400" />
+                )}
+              </div>
+            </button>
+
             <button
               onClick={onOpenBooking}
               className="flex items-center justify-center gap-1 bg-[#E5983A] text-slate-950 text-[11px] sm:text-xs font-black px-2 sm:px-3 py-1.5 rounded-lg shadow-md whitespace-nowrap"
@@ -127,6 +198,27 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Mobile & Tablet Responsive Dropdown Drawer */}
         {mobileMenuOpen && (
           <div className="lg:hidden mt-2 p-3.5 sm:p-5 bg-[#04070d]/98 border border-amber-500/30 rounded-2xl sm:rounded-3xl backdrop-blur-2xl shadow-2xl space-y-3 animate-in slide-in-from-top duration-200 max-h-[85vh] overflow-y-auto">
+            {/* Theme Toggle & Currency Dropdown */}
+            <div className="flex items-center justify-between gap-2 bg-slate-900 p-2 rounded-xl border border-slate-800">
+              <span className="text-xs font-bold text-slate-300">Theme</span>
+              <button
+                onClick={onToggleTheme}
+                className="flex items-center gap-2 px-3 py-1 bg-slate-950 border border-slate-700 rounded-lg text-xs font-bold text-amber-400"
+              >
+                {theme === 'dark' ? (
+                  <>
+                    <Moon className="w-3.5 h-3.5" />
+                    <span>Dark Mode</span>
+                  </>
+                ) : (
+                  <>
+                    <Sun className="w-3.5 h-3.5 text-amber-500" />
+                    <span>Light Mode</span>
+                  </>
+                )}
+              </button>
+            </div>
+
             {/* Currency Selector Mobile */}
             <div className="grid grid-cols-3 gap-1.5 bg-slate-900 p-1 rounded-xl border border-slate-800">
               {(['PKR', 'USD', 'AED'] as const).map((curr) => (
