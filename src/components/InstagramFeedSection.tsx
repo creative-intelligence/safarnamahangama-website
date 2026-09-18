@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Instagram, Play, X, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Instagram, Play, X, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface FunReel {
   id: string;
@@ -10,6 +10,7 @@ interface FunReel {
 
 export const InstagramFeedSection: React.FC = () => {
   const [activeReel, setActiveReel] = useState<FunReel | null>(null);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   // All 30 Fun & Hangama video reels
   const funReels: FunReel[] = Array.from({ length: 30 }, (_, i) => ({
@@ -21,6 +22,59 @@ export const InstagramFeedSection: React.FC = () => {
 
   const row1 = funReels.slice(0, 15);
   const row2 = funReels.slice(15);
+
+  const activeIndex = activeReel ? funReels.findIndex((r) => r.id === activeReel.id) : -1;
+
+  const handlePrevModalReel = () => {
+    if (activeIndex !== -1) {
+      const prevIdx = (activeIndex - 1 + funReels.length) % funReels.length;
+      setActiveReel(funReels[prevIdx]);
+    }
+  };
+
+  const handleNextModalReel = () => {
+    if (activeIndex !== -1) {
+      const nextIdx = (activeIndex + 1) % funReels.length;
+      setActiveReel(funReels[nextIdx]);
+    }
+  };
+
+  // Keyboard navigation inside video modal
+  useEffect(() => {
+    if (!activeReel) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        const prevIdx = (activeIndex - 1 + funReels.length) % funReels.length;
+        setActiveReel(funReels[prevIdx]);
+      } else if (e.key === 'ArrowRight') {
+        const nextIdx = (activeIndex + 1) % funReels.length;
+        setActiveReel(funReels[nextIdx]);
+      } else if (e.key === 'Escape') {
+        setActiveReel(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeReel, activeIndex, funReels]);
+
+  // Touch swipe support inside video modal
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX;
+    if (Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        handleNextModalReel();
+      } else {
+        handlePrevModalReel();
+      }
+    }
+    setTouchStartX(null);
+  };
 
   return (
     <section id="instagram" className="py-16 sm:py-24 bg-[#04070d] text-white relative w-full max-w-full overflow-hidden">
@@ -48,10 +102,6 @@ export const InstagramFeedSection: React.FC = () => {
       {/* Option 2: Dual Infinity Marquee Scroll Showcase */}
       <div className="relative w-full overflow-hidden py-4 space-y-6 sm:space-y-8">
         
-        {/* Left & Right Edge Fading Gradients */}
-        <div className="absolute top-0 bottom-0 left-0 w-12 sm:w-32 bg-gradient-to-r from-[#04070d] via-[#04070d]/70 to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-12 sm:w-32 bg-gradient-to-l from-[#04070d] via-[#04070d]/70 to-transparent z-20 pointer-events-none" />
-
         {/* Row 1: Leftward Infinite Marquee */}
         <div className="flex overflow-hidden group">
           <div className="animate-marquee-left flex gap-4 sm:gap-6 pr-4 sm:pr-6 group-hover:[animation-play-state:paused]">
@@ -127,20 +177,47 @@ export const InstagramFeedSection: React.FC = () => {
           </a>
         </div>
 
-        {/* Large Immersive Cinema Video Lightbox Modal */}
+        {/* Large Immersive Cinema Video Lightbox Modal with Slider Navigation */}
         {activeReel && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/95 backdrop-blur-xl animate-in fade-in">
-            <div className="relative max-w-3xl sm:max-w-4xl w-full h-[85vh] max-h-[880px] bg-[#04070d] border border-slate-700/80 rounded-3xl overflow-hidden shadow-2xl flex flex-col text-white">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-slate-950/95 backdrop-blur-xl animate-in fade-in">
+            
+            {/* Modal Box */}
+            <div
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
+              className="relative max-w-3xl sm:max-w-4xl w-full h-[85vh] max-h-[880px] bg-[#04070d] border border-slate-700/80 rounded-3xl overflow-hidden shadow-2xl flex flex-col text-white select-none"
+            >
+              {/* Close Button */}
               <button
                 onClick={() => setActiveReel(null)}
-                className="absolute top-4 right-4 z-30 p-3 bg-slate-950/90 text-white rounded-full border border-slate-700 hover:bg-slate-900 shadow-2xl transition hover:scale-110"
+                className="absolute top-4 right-4 z-40 p-3 bg-slate-950/90 text-white rounded-full border border-slate-700 hover:bg-amber-500 hover:text-slate-950 shadow-2xl transition hover:scale-110"
                 title="Close"
               >
                 <X className="w-6 h-6" />
               </button>
 
+              {/* Prev Navigation Arrow */}
+              <button
+                onClick={handlePrevModalReel}
+                className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-40 p-3 sm:p-4 rounded-full bg-slate-950/80 hover:bg-[#E5983A] text-white hover:text-slate-950 border border-slate-700/80 hover:border-[#E5983A] shadow-2xl transition hover:scale-110 flex items-center justify-center"
+                title="Previous Reel (Left Arrow)"
+              >
+                <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7" />
+              </button>
+
+              {/* Next Navigation Arrow */}
+              <button
+                onClick={handleNextModalReel}
+                className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-40 p-3 sm:p-4 rounded-full bg-slate-950/80 hover:bg-[#E5983A] text-white hover:text-slate-950 border border-slate-700/80 hover:border-[#E5983A] shadow-2xl transition hover:scale-110 flex items-center justify-center"
+                title="Next Reel (Right Arrow)"
+              >
+                <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7" />
+              </button>
+
+              {/* Video Player */}
               <div className="relative flex-1 w-full bg-slate-950 overflow-hidden flex items-center justify-center">
                 <video
+                  key={activeReel.id}
                   src={activeReel.videoUrl}
                   controls
                   autoPlay
@@ -151,10 +228,11 @@ export const InstagramFeedSection: React.FC = () => {
                 />
               </div>
 
+              {/* Modal Footer Controls & Info */}
               <div className="p-4 sm:p-5 bg-[#04070d] border-t border-slate-800 flex items-center justify-between gap-3">
                 <span className="text-xs sm:text-sm font-bold text-amber-400 flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#E5983A]" />
-                  @safarnamahangama • Fun & Hangama Reel
+                  Reel {activeIndex + 1} of {funReels.length} • @safarnamahangama
                 </span>
                 <div className="flex items-center gap-3">
                   <a
@@ -184,4 +262,5 @@ export const InstagramFeedSection: React.FC = () => {
     </section>
   );
 };
+
 
