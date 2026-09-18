@@ -42,7 +42,7 @@ const LETTERS: LetterItem[] = [
   {
     char: 'E',
     word: 'EMPIRE MONETIZATION SLA',
-    description: 'Complete DFY operations backed by Usama Khursheed 90-day guarantee.',
+    description: 'Complete DFY operations backed by Tube Scale 90-day guarantee.',
     metric: '$14,280.00 / Mo',
   },
 ];
@@ -156,7 +156,7 @@ export const ThriveScrollReveal: React.FC = () => {
 
           <div className="mt-4 pt-3 border-t border-emerald-900/40 flex items-center justify-between text-xs text-slate-400 font-mono">
             <span>SCROLL DIRECTION: DOWN TO NEXT SUPERPOWER</span>
-            <span className="text-cyan-400 font-bold">USAMA KHURSHEED SLA</span>
+            <span className="text-cyan-400 font-bold">TUBE SCALE SLA</span>
           </div>
 
         </div>

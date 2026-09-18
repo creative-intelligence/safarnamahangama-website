@@ -69,7 +69,7 @@ export const PortfolioProof: React.FC = () => {
             <span className="gradient-text">Record</span>
           </h2>
           <p className="text-slate-300 text-base sm:text-lg">
-            Explore real channel growth benchmarks, view metrics, and revenue scaled by Usama Khursheed & production team.
+            Explore real channel growth benchmarks, view metrics, and revenue scaled by Tube Scale & production team.
           </p>
         </div>
 

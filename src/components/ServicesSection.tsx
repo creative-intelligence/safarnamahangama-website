@@ -28,7 +28,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenContact 
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-spin" />
-              <span>Usama Khursheed Production Engine</span>
+              <span>Tube Scale Production Engine</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight font-display">
               Full-Stack YouTube Production, <br />

@@ -20,9 +20,9 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
   };
 
   const tagSizes = {
-    sm: 'text-[7px] sm:text-[8px]',
-    md: 'text-[8px] sm:text-[10px]',
-    lg: 'text-[10px] sm:text-[12px]',
+    sm: 'text-[9px] sm:text-[10px]',
+    md: 'text-[11px] sm:text-[13px] md:text-[14px]',
+    lg: 'text-[14px] sm:text-[17px]',
   };
 
   return (
@@ -43,7 +43,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
           <span className={`font-black tracking-tight text-white ${textSizes[size]} font-sans leading-none whitespace-nowrap`}>
             SAFARNAMA <span className="text-[#E5983A]">HANGAMA</span>
           </span>
-          <span className={`font-semibold text-[#E5983A] tracking-normal mt-0.5 whitespace-nowrap ${tagSizes[size]}`}>
+          <span className={`font-extrabold text-[#E5983A] tracking-wider mt-1 whitespace-nowrap block w-full leading-none ${tagSizes[size]}`}>
             سفر، سفرنامہ کے سنگ
           </span>
         </div>

@@ -46,7 +46,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 Let's Build Your YouTube Asset
               </h3>
               <p className="text-xs sm:text-sm text-slate-300 font-sans">
-                Fill out the quick details below. Usama Khursheed and our team will audit your niche and respond within 4 hours.
+                Fill out the quick details below. Tube Scale and our team will audit your niche and respond within 4 hours.
               </p>
             </div>
 
@@ -56,7 +56,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <input
                   type="text"
                   required
-                  placeholder="e.g. Usama Khursheed"
+                  placeholder="e.g. Alex Morgan"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl bg-[#030C07] border border-emerald-900/60 text-white text-sm focus:outline-none focus:border-emerald-400"
@@ -137,7 +137,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
             </div>
             <h3 className="text-2xl font-bold text-white font-display">Strategy Request Received!</h3>
             <p className="text-sm text-slate-300 max-w-sm mx-auto font-sans">
-              Thank you, <strong className="text-white">{formData.name}</strong>. Usama Khursheed and team are reviewing your request and will reply at <strong className="text-emerald-300">{formData.email}</strong> within 4 hours.
+              Thank you, <strong className="text-white">{formData.name}</strong>. Tube Scale and team are reviewing your request and will reply at <strong className="text-emerald-300">{formData.email}</strong> within 4 hours.
             </p>
             <button
               onClick={onClose}

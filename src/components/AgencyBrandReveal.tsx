@@ -42,7 +42,7 @@ const BRAND_LETTERS: LetterItem[] = [
   {
     char: 'S',
     word: 'SLA MONETIZATION GUARANTEE',
-    description: 'Backing your channel with Usama Khursheed 90-day monetization SLA.',
+    description: 'Backing your channel with Tube Scale 90-day monetization SLA.',
     metric: '$14,280.00 / Mo Payouts',
   },
   {
@@ -117,7 +117,7 @@ export const AgencyBrandReveal: React.FC = () => {
         <div className="mb-4 z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/40 text-emerald-300 text-xs font-bold uppercase tracking-widest font-mono">
             <Sparkles className="w-4 h-4 text-emerald-400" />
-            <span>Usama Khursheed Agency Brand Reveal — Scroll Down</span>
+            <span>Tube Scale Agency Brand Reveal — Scroll Down</span>
           </div>
         </div>
 
@@ -179,7 +179,7 @@ export const AgencyBrandReveal: React.FC = () => {
 
           <div className="mt-4 pt-3 border-t border-emerald-900/40 flex items-center justify-between text-xs text-slate-400 font-mono">
             <span>SCROLL DOWN TO REVEAL FULL BRAND</span>
-            <span className="text-cyan-400 font-bold">USAMA KHURSHEED STUDIO</span>
+            <span className="text-cyan-400 font-bold">TUBE SCALE STUDIO</span>
           </div>
 
         </div>
