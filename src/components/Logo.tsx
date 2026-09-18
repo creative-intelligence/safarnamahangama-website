@@ -19,6 +19,12 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
     lg: 'text-lg sm:text-xl md:text-2xl',
   };
 
+  const tagSizes = {
+    sm: 'text-[7px] sm:text-[8px]',
+    md: 'text-[8px] sm:text-[10px]',
+    lg: 'text-[10px] sm:text-[12px]',
+  };
+
   return (
     <div className={`flex items-center gap-1.5 sm:gap-2.5 select-none ${className}`}>
       {/* Official Circular Logo Image */}
@@ -33,11 +39,11 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
 
       {/* Typography */}
       {showText && (
-        <div className="flex flex-col min-w-0">
+        <div className="flex flex-col min-w-0 justify-center">
           <span className={`font-black tracking-tight text-white ${textSizes[size]} font-sans leading-none whitespace-nowrap`}>
             SAFARNAMA <span className="text-[#E5983A]">HANGAMA</span>
           </span>
-          <span className="text-[8px] sm:text-[10px] font-bold tracking-wider sm:tracking-widest text-slate-300 uppercase mt-0.5 truncate hidden xs:block">
+          <span className={`font-bold tracking-widest text-[#E5983A] uppercase mt-0.5 whitespace-nowrap ${tagSizes[size]}`}>
             Explore Pakistan
           </span>
         </div>
