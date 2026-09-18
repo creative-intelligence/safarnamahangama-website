@@ -43,8 +43,8 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', showTex
           <span className={`font-black tracking-tight text-white ${textSizes[size]} font-sans leading-none whitespace-nowrap`}>
             SAFARNAMA <span className="text-[#E5983A]">HANGAMA</span>
           </span>
-          <span className={`font-bold tracking-widest text-[#E5983A] uppercase mt-0.5 whitespace-nowrap ${tagSizes[size]}`}>
-            Explore Pakistan
+          <span className={`font-semibold text-[#E5983A] tracking-normal mt-0.5 whitespace-nowrap ${tagSizes[size]}`}>
+            سفر، سفرنامہ کے سنگ
           </span>
         </div>
       )}

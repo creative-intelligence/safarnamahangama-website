@@ -70,7 +70,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           </span>
         </h1>
 
-        <p className="mt-3 sm:mt-5 text-xs sm:text-base md:text-lg lg:text-xl text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow px-2">
+        {/* Elegant Urdu Slogan */}
+        <p dir="rtl" className="mt-2.5 sm:mt-3.5 text-lg sm:text-2xl md:text-3xl font-extrabold text-[#E5983A] drop-shadow-[0_2px_15px_rgba(229,152,58,0.5)] tracking-wide">
+          سفر، سفرنامہ کے سنگ ✨
+        </p>
+
+        <p className="mt-3 sm:mt-4 text-xs sm:text-base md:text-lg lg:text-xl text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed drop-shadow px-2">
           Join Pakistan’s top-rated travel club for group tours, family getaways, and customized luxury expeditions across Hunza, Skardu, Swat, and Kashmir.
         </p>
 
