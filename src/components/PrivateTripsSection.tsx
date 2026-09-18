@@ -149,10 +149,10 @@ export const PrivateTripsSection: React.FC<PrivateTripsSectionProps> = ({ onSele
               <div className="p-6 pt-0">
                 <button
                   onClick={() => onSelectCategoryBooking(cat.id)}
-                  className="w-full py-3.5 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-xl shadow-lg flex items-center justify-center gap-2 transition hover:scale-[1.02]"
+                  className="w-full py-3.5 bg-gradient-to-r from-[#E5983A] via-amber-500 to-[#D97706] hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs rounded-xl shadow-lg flex items-center justify-center gap-2 transition hover:scale-[1.02] whitespace-nowrap"
                 >
-                  <span>Request {cat.title.split(' ')[0]} Package</span>
-                  <ArrowRight className="w-4 h-4 text-slate-950" />
+                  <span className="whitespace-nowrap">Request {cat.title.split(' ')[0]} Package</span>
+                  <ArrowRight className="w-4 h-4 text-slate-950 flex-shrink-0" />
                 </button>
               </div>
 

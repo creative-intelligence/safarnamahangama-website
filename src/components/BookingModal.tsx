@@ -176,7 +176,7 @@ Please send account details for deposit confirmation!`;
           {/* Payment Plan Selection */}
           <div>
             <label className="text-xs font-bold text-slate-300 block mb-1">Preferred Deposit Plan:</label>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               {[
                 { id: 'advance', label: '50% Advance Deposit' },
                 { id: 'full', label: 'Full Payment (Discount)' },
@@ -186,7 +186,7 @@ Please send account details for deposit confirmation!`;
                   type="button"
                   key={pm.id}
                   onClick={() => setPaymentMethod(pm.id)}
-                  className={`p-3 rounded-xl border text-[11px] font-bold text-center transition ${
+                  className={`p-2.5 sm:p-3 rounded-xl border text-xs font-bold text-center transition ${
                     paymentMethod === pm.id
                       ? 'bg-emerald-950 border-emerald-500 text-emerald-300'
                       : 'bg-slate-950 border-slate-800 text-slate-400'
@@ -211,12 +211,12 @@ Please send account details for deposit confirmation!`;
           </div>
 
           {/* Cost Summary Box */}
-          <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between">
+          <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
             <div>
               <span className="text-[11px] text-slate-400 block">Total Booking Amount ({seatsCount} Seat{seatsCount > 1 ? 's' : ''}):</span>
               <span className="text-xl font-black text-emerald-400">{formatPrice(grandTotalPKR)}</span>
             </div>
-            <div className="text-right text-[11px] text-slate-400">
+            <div className="text-left sm:text-right text-[11px] text-slate-400">
               <span>Accepted: </span>
               <span className="font-bold text-slate-200">JazzCash • EasyPaisa • Bank Transfer</span>
             </div>
@@ -225,9 +225,9 @@ Please send account details for deposit confirmation!`;
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 text-white font-extrabold text-sm rounded-2xl shadow-xl shadow-emerald-950 flex items-center justify-center gap-2 transition hover:scale-[1.01]"
+            className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 text-white font-extrabold text-xs sm:text-sm rounded-2xl shadow-xl shadow-emerald-950 flex items-center justify-center gap-2 transition hover:scale-[1.01]"
           >
-            <MessageCircle className="w-5 h-5 fill-white/20" />
+            <MessageCircle className="w-5 h-5 fill-white/20 flex-shrink-0" />
             <span>Confirm Booking via WhatsApp (+92 333 1588959)</span>
           </button>
         </form>

@@ -235,36 +235,36 @@ export const TourCatalog: React.FC<TourCatalogProps> = ({
                     </div>
 
                     {/* Price & Action Footer */}
-                    <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
-                      <div>
-                        <span className="text-[10px] text-slate-400 uppercase font-semibold block">Starting from</span>
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-xl font-black text-[#E5983A]">
+                    <div className="pt-4 border-t border-slate-800/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <span className="text-[10px] text-slate-400 uppercase font-semibold block whitespace-nowrap">Starting from</span>
+                        <div className="flex items-baseline gap-2 flex-wrap">
+                          <span className="text-lg sm:text-xl font-black text-[#E5983A] whitespace-nowrap">
                             {formatPrice(currentPrice)}
                           </span>
                           {hasDiscount && (
-                            <span className="text-xs text-slate-500 line-through">
+                            <span className="text-xs text-slate-500 line-through whitespace-nowrap">
                               {formatPrice(tour.pricePKR)}
                             </span>
                           )}
                         </div>
-                        <span className="text-[10px] text-slate-500">per person (twin/triple)</span>
+                        <span className="text-[10px] text-slate-500 block truncate">per person (twin/triple)</span>
                       </div>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 flex-shrink-0 justify-end">
                         <button
                           onClick={() => onSelectTour(tour)}
-                          className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white transition"
+                          className="p-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-300 hover:text-white transition flex-shrink-0"
                           title="View Full Day-by-Day Itinerary"
                         >
                           <Eye className="w-4 h-4 text-[#E5983A]" />
                         </button>
                         <button
                           onClick={() => onBookTour(tour)}
-                          className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#E5983A] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs shadow-md shadow-amber-950 flex items-center gap-1.5 transition-all hover:scale-105"
+                          className="px-3.5 sm:px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#E5983A] to-amber-500 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs shadow-md shadow-amber-950 flex items-center gap-1.5 transition-all hover:scale-105 whitespace-nowrap flex-shrink-0"
                         >
-                          <span>Book Now</span>
-                          <ArrowRight className="w-3.5 h-3.5 text-slate-950" />
+                          <span className="whitespace-nowrap">Book Now</span>
+                          <ArrowRight className="w-3.5 h-3.5 text-slate-950 flex-shrink-0" />
                         </button>
                       </div>
                     </div>

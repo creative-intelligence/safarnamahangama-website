@@ -380,24 +380,24 @@ Please share full itinerary & final price quote!`;
           )}
 
           {/* Navigation Controls */}
-          <div className="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
+          <div className="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between gap-3">
             {currentStep > 1 ? (
               <button
                 onClick={() => setCurrentStep(currentStep - 1)}
-                className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-bold text-slate-300 flex items-center gap-2 transition"
+                className="px-4 sm:px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-xs font-bold text-slate-300 flex items-center gap-2 transition whitespace-nowrap flex-shrink-0"
               >
-                <ArrowLeft className="w-4 h-4" />
-                Back
+                <ArrowLeft className="w-4 h-4 flex-shrink-0" />
+                <span className="whitespace-nowrap">Back</span>
               </button>
             ) : <div />}
 
             {currentStep < 4 && (
               <button
                 onClick={() => setCurrentStep(currentStep + 1)}
-                className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold flex items-center gap-2 shadow-md shadow-emerald-950 transition"
+                className="px-5 sm:px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold flex items-center gap-2 shadow-md shadow-emerald-950 transition whitespace-nowrap flex-shrink-0 ml-auto"
               >
-                <span>Continue Step {currentStep + 1}</span>
-                <ArrowRight className="w-4 h-4" />
+                <span className="whitespace-nowrap">Continue Step {currentStep + 1}</span>
+                <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
             )}
           </div>
